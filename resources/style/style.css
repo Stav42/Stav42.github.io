@@ -7,3 +7,7 @@ header{
     color: ivory;
     background-color: coral;
 }
+
+header #greeting{
+    padding-left: 1rem;
+}
