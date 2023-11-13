@@ -6,7 +6,8 @@ html {
 header{
     font-family: eczar;
     color: black;
-    background-color: transparent;
+    font-size: large;
+    /* background-color: transparent; */
 }
 
 body{
@@ -20,6 +21,12 @@ body{
 .navigation-bar {
     display: flex;
     justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it's above other elements */
+    background-color: rgba(0, 0, 0, 0.); /* Optional: Semi-transparent black background */
 }
 
 .header-name{
@@ -44,6 +51,8 @@ body{
 
 .banner{
     height: 40rem;
+    position: relative;
+    bottom: 40px;
 }
 
 .banner img{
