@@ -10,6 +10,7 @@ header{
     /* background-color: transparent; */
 }
 
+
 body{
     margin: 0;
 }
@@ -79,6 +80,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: white;
 }
 
 .navbar {
