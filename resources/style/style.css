@@ -10,6 +10,16 @@ header{
     /* background-color: transparent; */
 }
 
+.nav-links:link,
+.nav-link:visited,
+.nav-links:focus, 
+.nav-links:active,
+.nav-links {
+  /* background: palegoldenrod; */
+  color: black;
+  text-decoration: none;
+}
+
 
 body{
     margin: 0;
@@ -119,7 +129,7 @@ body{
     letter-spacing: .25em; /* Adjust as needed */
     font-size: larger;
     animation: 
-      typing 2.8s steps(16, end),
+      typing 2.8s steps(20, end),
       blink-caret .5s step-end infinite;
 }
 
