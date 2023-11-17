@@ -129,7 +129,7 @@ body{
     letter-spacing: .25em; /* Adjust as needed */
     font-size: larger;
     animation: 
-      typing 2.8s steps(20, end),
+      typing 2.8s steps(21, end),
       blink-caret .5s step-end infinite;
 }
 
@@ -138,14 +138,14 @@ body{
     position: relative;
     bottom: 50%;
     /* width: 6.2%;*/
-    width: 165.2px;
+    width: 161.2px;
     left: 30%;
     /* width: 30%; */
 }
 
 @keyframes typing {
     from { width: 0 }
-    to { width: 165.2px }
+    to { width: 100% }
   }
 
 @keyframes blink-caret {
