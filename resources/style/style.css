@@ -68,8 +68,8 @@ body{
     font-size: 1.2em;
     text-align: justify;
     text-justify: inter-word;
-    margin: 30px auto;
-    width: 90%;
+    margin: 20px auto;
+    width: 640px;
     line-height: 1.5em;
     letter-spacing: 0.2em;
 }
