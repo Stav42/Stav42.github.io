@@ -60,7 +60,7 @@ body{
 
 .float{
     float: right;
-    position: relative;
+    position: relative; 
     bottom: 25px;
 
 }
@@ -151,6 +151,10 @@ body{
     animation: 
       typing 2.8s steps(21, end),
       blink-caret .5s step-end infinite;
+}
+
+.references{
+    font-family: eczar;
 }
 
 .overlay{
