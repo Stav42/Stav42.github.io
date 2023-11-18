@@ -58,14 +58,21 @@ body{
     margin-top: 40px;
 }
 
-.paragraph img{
+.float{
     float: right;
+    position: relative;
+    bottom: 25px;
+
+}
+
+.paragraph img{
+    /* float: right; */
     height: 200px;
     width: 200px;
     position: relative;
     margin-left: 20px;
-    bottom: 25px;
     object-fit: contain;
+
 }
 
 .date{
