@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js" crossorigin="anonymous"></script>
 </head>
 <body >
     <header>
@@ -72,13 +73,56 @@
                     <i><strong>Specific Energy</strong></i>: Capacity of the battery in Wh/Kg. Its kind of how long the battery can sustain some load (as in how long it can keep supplying current). Higher specific energy, longer time to discharge.
                     <br><i><strong>Specific Power</strong></i>: This is related to the maximum current a battery can provide at any instant. Unit is W/kg. It relates more to the high-current load requirement than anything else. 
                     <br><br>
-                    Essentially, a battery is stored energy. In a battery, there are three components: a cathode, an anode, and an electrolyte. Cathode and anode are metal electrodes. When charging takes place, electrons move from the negative terminal
-                    of the charger and collect at the anode. This results in build-up of electrons at the anode. The ions in the electrolyte arrange themselves accordingly. As the electrons come to the anode, some chemical reactions start to take place. How, I'll explain later!
-                    When the electrons reach the anode, the anode material gains these electrons. This process is known as reduction. So in case of lithium ion batteries, these Li+ ions get reduced to Li. These new chemical bonds (of Li) are essentially where the energy is being stored,
+                    Essentially, a battery is stored energy. In a battery, there are four components: a cathode, an anode, a seperator, and an electrolyte. 
                     <br><br>
-                    Now during discharge, the entire set up (choice of electrodes, and electrolyte) is such that it makes it energetically favourable for the system to lose electrons back at the anode (this is oxidation; losing electrons). So the electrons are lost, and this movement of charged particles
-                    allow current when circuit is complete. Sometimes, an anode is defined in a self-fulfilling manner. An anode is the electrode where the electrons leave when discharge is happening.
+                    Let me give a general setting of a battery cell. Imagine a container, with copper plate at one side and zinc strips at the other. The container is filled with an electrolyte, which in this case is a sodium chloride salt solution (common salt dissolved in water).
+                    Connect a bulb, with the positive terminal of it attached to the zinc plate, and the negative terminal at zinc. Now when the connections are established the bulb lights up. What happened and why?
+                    <br><br>
+                    In this case, when the connections are established, chemical reactions take place at both ends. Since zinc is more reactive than copper, it starts to oxidate i.e. the following reaction occurs:
                 </p>
+
+                <p style="text-align: center;" class="paragraph">At Zinc (anode)</p>
+                <p class="paragraph">
+                    $$
+                    \begin{align}
+                    Zn \rightarrow Zn^{2+} + 2e^-;
+                    \end{align}
+                    $$ 
+                </p>
+                <p style="text-align: center;" class="paragraph">At Copper (cathode)</p>
+                <p class="paragraph">
+                    $$
+                    \begin{align}
+                    Cu^{2+} \rightarrow Cu + 2e^-;
+                    \end{align}
+                    $$
+                </p>
+                <p class="paragraph">
+                    
+                    Why this happens and not the other way round is slightly more theoretical, which we'll definitely get into but not now. Now, when the decomposition happens at the zinc (which is why it is called the anode. Anode, by definition, is the electrode from which electrons leave when discharging.) The electrons that are ejected 
+                    move through the external circuit to the cathode (copper) where they combine with \(Cu^{2+}\) to form good ol' normal Copper. 
+                    <br><br>This is important because when the electrons move through the external circuit, that is exactly what is known as electricity. To summarize:
+                    <br><br>
+                    <ul class="paragraph">
+                        <li>Anode: Electrode where the electrons are freed</li>
+                        <li>Cathode: Electrode where electrodes are absorbed</li>
+                    </ul>
+                </p>
+                <p class="paragraph">
+                    Of course, in the above reactions, ions are also decomposed. Over time during discharge, the concentration of \(Zn^{2+}\) increases and the concentration of \(Cu^{2+}\) decreases. Meanwhile, cathode is negatively charged due to the influx of electrons and the anode is positively charged. The ions in the electrolyte get attracted to each oppositely charged electrode (not necessarily the Zinc and copper ions. Ions of the electrolyte primarily are involved in this movement). 
+                    <ul class="paragraph">
+                        <li>Electrolyte: Facilitates the movement of ions. The electrons move only through the external circuit.</li>
+                    </ul>
+                </p>
+                <p class="paragraph">
+                    Finally, there is the <i>seperator</i> whose job is to ensure that the electrodes don't make contact i.e. do not short. If that happens, a lot of current will flow through. Fire, burns, you get the idea. So the seperator is also very important.
+                </p>
+                <p class="paragraph">
+                    
+                </p>
+
+                    
+                
                 
                     
                 <hr style="width: 30%; margin-top: 80px;">
