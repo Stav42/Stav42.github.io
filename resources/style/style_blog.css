@@ -59,11 +59,17 @@ body{
     z-index: 4000;
 }
 
+.video{
+    float: center;
+    position: relative; 
+    /* bottom: 25px; */
+}
+
+
 .float{
     float: right;
     position: relative; 
     bottom: 25px;
-
 }
 
 .paragraph img{
