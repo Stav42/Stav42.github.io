@@ -32,6 +32,7 @@ header{
     transform: rotate(135deg);
     margin-right: 0.5em;
     margin-left: 0.1em;
+    background-color: white;
 }
 
 .pop_arrow:hover{
