@@ -41,10 +41,10 @@ header{
 
 .pop {
     padding: 0 18px;
-    display: none;
+    /* display: none; */
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    transition: max-height 0.5s ease-out;
     background-color: #d1eaf0;
 
   }
