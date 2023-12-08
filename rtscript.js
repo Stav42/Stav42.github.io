@@ -29,7 +29,8 @@ for (let i = 0; i < coll.length; i++) {
             content.style.maxHeight = null;
             this.style.transform = "rotate(135deg)";
           } else {
-            content.style.maxHeight =  "100px";
+            var height = content.scrollHeight;
+            content.style.maxHeight =  height + "px";
             this.style.transform = "rotate(315deg)";
           }
     });
