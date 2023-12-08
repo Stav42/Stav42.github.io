@@ -18,6 +18,35 @@ header{
   text-decoration: none;
 }
 
+.pop_arrow{
+    position: relative;
+    top: 2.0px;
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 13px;
+    border-right: 0.1em solid black;
+    border-top: 0.1em solid black;
+    border-bottom: 0em;
+    border-left: 0em;
+    transform: rotate(135deg);
+    margin-right: 0.5em;
+    margin-left: 0.1em;
+}
+
+.pop_arrow:hover{
+    cursor: s-resize;
+}
+
+.pop {
+    padding: 0 18px;
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #d1eaf0;
+
+  }
 
 body{
     margin: 0;
