@@ -125,10 +125,10 @@ body{
     font-size: 1rem;
     text-align: justify;
     text-justify: inter-word;
-
+    word-spacing: 0.15em;
     /* width: 640px; */
     line-height: 1.5em;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.05em;
 }
 
 .navigation-bar {

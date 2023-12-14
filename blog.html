@@ -75,8 +75,9 @@
                     <br><br>
                     Essentially, a battery is stored energy. In a battery, there are four components: a cathode, an anode, a seperator, and an electrolyte. 
                     <br><br>
-                    Let me give a general setting of a battery cell. Imagine a container, with copper plate at one side and zinc strips at the other. The container is filled with an electrolyte, which in this case is a sodium chloride salt solution (common salt dissolved in water).
-                    Connect a bulb, with the positive terminal of it attached to the copper plate, and the negative terminal at zinc. Now when the connections are established the bulb lights up. What happened and why?
+                    What does a battery generally look like, in its simplest form? Imagine a container, with copper plate at one side and zinc strips at the other. The container is filled with an electrolyte, which in this case is a sodium chloride salt solution (common salt dissolved in water).
+                    An <strong>electrolyte</strong> is a substance which conducts electricity when dissolved into water. The details of the conduction mechanism is interesting in itself, but we will ignore it for the while. 
+                    Connect a bulb, with the positive terminal of it attached to the copper plate, and the negative terminal at zinc. Now when the connections are established the bulb lights up. 
                     <br><br>
                     In this case, when the connections are established, chemical reactions take place at both ends. Since zinc is more reactive than copper, it starts to oxidate i.e. the following reaction occurs:
                 </p>
@@ -99,29 +100,34 @@
                 </p>
                 <p class="paragraph">
                     
-                    Why this happens and not the other way round is slightly more theoretical, which we'll definitely get into but not now. Now, when the decomposition happens at the zinc (which is why it is called the anode. Anode, by definition, is the electrode from which electrons leave when discharging.) The electrons that are ejected 
-                    move through the external circuit to the cathode (copper) where they combine with \(Cu^{2+}\) to form good ol' normal Copper. 
-                    <br><br>This is important because when the electrons move through the external circuit, that is exactly what is known as electricity. To summarize:
+                    I'll give a hint of how this happens later. Right now, it is important to see that when the decomposition happens at the zinc (which is why it is called the anode. Anode, by definition, is the electrode from which electrons leave when discharging.) The electrons that are ejected 
+                    move through the external circuit to the cathode (copper) where they combine with \(Cu^{2+}\) to form normal solid Copper. 
+                    <br><br>This is important because when the electrons move through the external circuit, we call it electricity. To summarize:
                     <br>
                     <ul class="paragraph">
-                        <li>Anode: Electrode where the electrons are freed</li>
-                        <li>Cathode: Electrode where electrodes are absorbed</li>
+                        <li><strong>Anode</strong>: This is where oxidation occurs. Oxidation is the removal of electrons. So, anode is the electrode which loses electrons.</li>
+                        <li><strong>Cathode</strong>: This is where reduction occurs. Reduction is the addition of electrons. So cathode is the electrode where electrons are absorbed.</li>
+                        <li><strong>Electrolyte</strong>: Facilitates the movement of ions. These ions are not the ions produced by electron transfer in electrode. In our case, these are \(Na^+\) and \(Cl^-\).</li>
                     </ul>
                 </p>
                 <p class="paragraph">
-                    Of course, in the above reactions, ions are also decomposed. Over time during discharge, the concentration of \(Zn^{2+}\) increases and the concentration of \(Cu^{2+}\) decreases. Meanwhile, cathode is negatively charged due to the influx of electrons and the anode is positively charged. The ions in the electrolyte get attracted to each oppositely charged electrode (not necessarily the Zinc and copper ions. Ions of the electrolyte primarily are involved in this movement). 
-                    <ul class="paragraph">
-                        <li>Electrolyte: Facilitates the movement of ions. The electrons move only through the external circuit.</li>
-                    </ul>
+                    Finally, there is the <i><strong>seperator</strong></i> whose job is to ensure that the electrodes don't make contact i.e. do not short. If that happens, a lot of current will flow through. Fire, burns, you get the idea. So the seperator is also very important.
+                    <br><br>
+                    To get a sense of why reaction happens the way it does, it's is prudent to get a look at the famous electrode potential table. Following is a table that lists the relative <i>reactivity</i> of the electrodes in a sense.
                 </p>
+                <figure style="text-align: center;">
+                    <img style="height: 450px;" src="resources/Electrode_potential.jpeg" alt="Standard Reduction Potential">
+                    <figcaption style="font-style: italic; text-align: center;">Standard Electrode Potential for many materials</figcaption>
+                </figure>
                 <p class="paragraph">
-                    Finally, there is the <i>seperator</i> whose job is to ensure that the electrodes don't make contact i.e. do not short. If that happens, a lot of current will flow through. Fire, burns, you get the idea. So the seperator is also very important.
+                    In the table above, the <strong><i>reduction</i> potential</strong> refers to the tendency of the compounds/electrons to gain an electron. If you reverse the reactions and flip the sign of the numbers, you'll get the tendency of each of them to <i>oxidize</i> i.e. lose an electron.
+                    As you can see in the table, copper (Cu) has a higher tendency to get reduced than zinc (Zn), and therefore it is the one that gains electrons in the simple battery that we have. In our case, the copper electrode is therefore the cathode as it gains electrons.<br>
+                    <br>
+                     
+                    At this point, it probably is going to be useful to start talking about the popular types of battery in use in the world today. <strong>Lead Acid Battery</strong> is a good place to start, since it is a battery that is still in great use, and has seen multiple evolutions. We will probe the 
+                    capabilities, construction, issues and the chemistry behind it. In this process, I suspect we will learn a lot about materials, alloys and chemistry. 
                 </p>
-                <p class="paragraph">
-                    At this point, it probably is going to be useful to start talking about the popular types of battery in use in the world today. Lead Acid battery, a thoroughly dependable rechargable battery is a good place to start. We'll explore its chemistry and 
-                    engineering in great depth. 
-                </p>
-                <br><br>
+                <br>
                 <div class="paragraph" style="text-align: left;"><strong>Lead Acid Battery</strong></div>                
                 <p class="paragraph">
                     Lead acid batteries[2] is the first battery to be recyclable. It was discovered in 1859 by Gaston Planté. In a simple lead acid battery, there are three components:
@@ -163,22 +169,48 @@
                             $$
                         </p>
                         <p class="paragraph">
-                            In this complete reaction, \(PbSO_4\) is precipitated at both the plates[5]. The reaction during discharge happens through precipitation-dissolution reaction where \(Pb^{2+}\) is first formed through charge transfer reaction on \(Pb \) and \( \beta\text{-}PbO_2\) followed by precipitation of \(PbSO_4\) on both plates. 
-                            The particle size of \(PbSO_4\) formation depends on the concentration of \(Pb^{2+}\) ions. The concentration of \(Pb^{2+}\) is therefore an important factor in the charge and discharge reaction, which in turn is controlled by the concentration of sulfuric acid solution and the current density of discharge.
-                            After being completely discharged the entire composition looks like Figure 2. As a natural curiosity, lets analyze what spongy lead looks like. 
-                            <br><br>
-                            Because \(PbSO_4\) is a non-conducting ionic solid, the oxidation of \(PbSO_4\) to \(\beta\text{-}PbO_2\) and the reduction to \(Pb\) during charge happens at the interface between \(PbSO_4\) crystal and \(\beta\text{-}PbO_2\) or \(Pb\) on the grid alloy which is a conductor. Hence, current density, crystal size and solubility of \(PbSO_4\) in sulfuric acid solution, diffusion coefficient and diffusion path of 
-                            \(Pb^{2+}\) ions play an important role in affecting the charge performance. <button type="button" class="pop_arrow" id="diffusion"></button>
+                            In this complete reaction, \(PbSO_4\) is precipitated at both the plates[5]. The reaction during discharge happens through <strong>precipitation dissipation</strong> <button type="button" class="pop_arrow" id="precdiss"></button> reaction where a super-saturated \(Pb^{2+}\) solution is first formed through charge transfer reaction on \(Pb \) and \( \beta\text{-}PbO_2\) followed by precipitation of \(PbSO_4\) on both plates. The
+                             particle size of \(PbSO_4\) formation depends on the concentration of \(Pb^{2+}\) ions. The concentration of \(Pb^{2+}\) is therefore an important factor in the discharge reaction, which in turn is controlled by the concentration of sulfuric acid solution and the current density of discharge.
+                            <br>
                         </p>
-                            <div class="paragraph pop" id="diffusion_content">
-                                <br>
-                                Diffusion
-                                <hr>
-                                    <strong>Diffusion coefficient</strong>: The diffusion coefficient, typically denoted as \(D\), is a measure of the rate at which particles (like ions) diffuse, or spread out, through a medium. It quantifies how fast the particles are moving due to thermal energy. It depends on factors like temperature, the medium through which the ions are moving, and the size and charge of the ions. Generally, 
-                                    \(D\) increases with temperature due to increased atomic or molecular motion. This relationship is often described by the Arrhenius equation: \(D = D_0e^{-E_a/{RT}}\) <br>
-                                    <strong>Diffusion Path</strong>: The diffusion path refers to the physical route or trajectory that ions take as they move from one location to another through a solid, liquid, or gaseous medium.
+                        <div class="paragraph pop" id="precdiss_content">
+                            <br>
+                            <strong>Solubility Product</strong>
+                            <hr>
+                                The solubility of a substance in any liquid medium can range from completely soluble (miscible) to completely insoluble (immiscible). A substance which is only partially soluble, would precipitate if we add more substance
+                                in the medium than it can take. This means that for substances that are not completely miscible, there is a limit to the weight of it we can add to the medium and expect it to disappear completely
+                                in the solution. If we add more, it will start to settle in the container as solid. It won't dissolve any longer. 
                                 <br><br>
-                            </div>
+                                While this makes sense, the really interesting part in realizing that the situation is not a static one. In fact it is very dynamic. The solid form of the substance and the dissolved components are actually in dynamic equilibrium throughout. Such a reaction is called a <strong>precipitation dissipation</strong> reaction.
+                                <br><br>
+                                Take the example of Silver Chloride:
+                                $$
+                                \operatorname{AgCl}(s) \underset{\text { precipitation }}{\stackrel{\text { dissolution }}{\rightleftarrows}} \mathrm{Ag}^{+}(a q)+\mathrm{Cl}^{-}(a q)
+                                $$
+                             In this situation, at any point some part of the solid breaks and goes into the solution and some ions that are already present in the solution combinse, solidify and precipitate. Now, though the amount of solid in this saturated solution is 
+                             constant, the particles are not static. It's not the case that the elements in solid stay in the solid. This exchange keeps happening. This is called <strong>dynamic equilibrium</strong>.
+                             <br><br>
+                             One can also calculate the concentration of ions in the solution in a solution at equilibrium. This can be done through the concept of <strong>Solublity Product</strong> denoted usually as \(K_{sp}\)             
+                             <br><br>
+                             At equilibrium, \(K_{sp} = [Ag^+(aq)][Cl^-(aq)]\). The square elements are the values of the concentration of \(Ag^+\) and \(Cl^-\) in units of Molarity (which is number of moles of a substance in a litre of solution. A mole is a certain number of entities. We'll discuss all this later.)
+                             <br>The value of \(K_{sp}\) is fixed at a given temperature. So from the formula, one can get the exact concentration of the ions in the solution. To study solubility product further, [6] is a nice reference.
+                             <br><br>
+                        </div>
+                        <p class="paragraph">
+                            During charging, \(Pb^{2+}\) ions on both plates are supplied by \(PbSO_4\) crystals. Because \(PbSO_4\) is a non-conducting ionic solid, the oxidation of \(PbSO_4\) to \(\beta\text{-}PbO_2\) and the reduction to \(Pb\) during charge happens at the interface between \(PbSO_4\) crystal and \(\beta\text{-}PbO_2\) or \(Pb\) on the grid alloy which is a conductor. Hence, current density, crystal size and solubility of \(PbSO_4\) in sulfuric acid solution, diffusion coefficient and diffusion path of 
+                            \(Pb^{2+}\) ions play an important role in affecting the charge performance. <button type="button" class="pop_arrow" id="diffusion"></button>
+                            After being completely discharged the entire composition looks like Figure 2. As a natural curiosity, lets analyze what spongy lead looks like. 
+                            <br>
+                        </p>
+                        <div class="paragraph pop" id="diffusion_content">
+                            <br>
+                            Diffusion
+                            <hr>
+                                <strong>Diffusion coefficient</strong>: The diffusion coefficient, typically denoted as \(D\), is a measure of the rate at which particles (like ions) diffuse, or spread out, through a medium. It quantifies how fast the particles are moving due to thermal energy. It depends on factors like temperature, the medium through which the ions are moving, and the size and charge of the ions. Generally, 
+                                \(D\) increases with temperature due to increased atomic or molecular motion. This relationship is often described by the Arrhenius equation: \(D = D_0e^{-E_a/{RT}}\) <br>
+                                <strong>Diffusion Path</strong>: The diffusion path refers to the physical route or trajectory that ions take as they move from one location to another through a solid, liquid, or gaseous medium.
+                            <br><br>
+                        </div>
                         <p class="paragraph">
                             Lead sponge is a structure composed of a lot of lead strands connected to each other. It is extremely porous and is 75-90% empty space by volume. It has an extremely high surface area that might result in it being a more 
                             efficient negative plate. There is an excellent youtube video by NileRed who demonstrates such a structure. The one he produces is not exactly lead sponge, rather its a composite of lead and zinc with the structure held by lead strands coming out of zinc powder. No matter, its only for illustration. 
@@ -231,6 +263,7 @@
                     <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://en.wikipedia.org/wiki/Lead%E2%80%93acid_battery#Construction">Lead Acid - Wikipedia</a></li>
                     <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://en.wikipedia.org/wiki/Lead%E2%80%93acid_battery#Construction">Carbon-based neural electrodes: promises and challenges - Devi, Vomero, et. al.</a></li>
                     <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://www.sciencedirect.com/science/article/pii/S037877539900378X">Dissolution and precipitation reactions of lead sulfate in positive and negative electrodes in lead acid battery - Zen-ichiro Takehara</a></li>
+                    <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://courses.lumenlearning.com/chemistryformajors/chapter/precipitation-and-dissolution-2/">Precipitation and Dissolution - LumenLearning</a></li>
 
                 </ol>
             </div>
