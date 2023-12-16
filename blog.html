@@ -229,13 +229,55 @@
                         <p class="paragraph">   
                             Earlier, pure lead had been in use till its poor structural integrity necessitated replacement with lead alloy. The first alloy to be used was lead-antimony (8-12%). This antimony-heavy alloy had some issues, the main being the evolution of excessive
                             volumes of hydrogen in the process. As a result, they were replaced with lead-calcium and lead-selenium grid alloys. Antimony was still used but in lesser percentages. <br><br>These new alloys give more strength to the grid, allowing it to carry more active material which meant a battery with higher capacity. Adding antimony and tin also improves deep cycling.  <button type="button" class="pop_arrow" id="deep_cycling"></button>
+                            Antimony dissolves from the alloy and is retained in the active mass as hydrated antimony oxides which act as cement between active mass and grid, acting as cement. Hence, antimony-lead alloys promote a more dense and coherent \(PbO_2\) structure during charging. This prevents active mass shedding that happens due to deep cycling.
                             The coating on the plates is done with a paste of lead oxide, sulfuric acid and water. This is followed by curing where the plates are heated in high-humidity environment. The curing changes the paste into lead sulphate and evaporates the water. 
                         </p>
                         <div class="paragraph pop" id="deep_cycling_content">
                             <br>
                             Deep Cycling
                             <hr>
-                                Deep cycling refers to charging a battery, discharging it completely and repeating this cycle. When you completely discharge a battery, and do this quite often, it is bad for its health. In the case of lead acid battery, 
+                                Deep cycling, or discharging the battery substantially and then recharging, has several detrimental effect on the battery. Cycling is primarily associated with two faults: 
+                                <ul class="paragraph">
+                                    <li>Active Mass Shedding</li>
+                                    <li>Sulfation</li>
+                                </ul>
+                                <figure style="width: 300px; float: right; text-align: center; position: relative; bottom: 0px;">
+                                        <img style="height: 300px; object-fit: cover;"  src="./resources/Sulfation.png" alt="Crystal \(PbSO_4\)">
+                                        <figcaption style="font-style: italic; width: 100%; ">Fig (a): The large crystals are \(PbSO_4\) particles and the small ones are \(PbO_2\) particles.</figcaption>    
+                                </figure>
+                                In the lead acid battery, when the discharge happens, the structure of the active mass on the grid alloy changes. On the positive plate, the \(PbO_2\) changes to \(PbSO_4\) crystals. This happens at the negative plate as well.
+                                Figure (a) illustrates the difference in size between the \(PbSO_4\) crystals and \(PbO_2\) particles after a single discharge of the positive plate that contains \(PbO_2\)[7]. Something similar happens in negative plate. 
+                                <br><br>
+                                <strong>Sulfation</strong>: Active mass is the paste that is coated on the grid alloy at both electrode. At the positive plate, the grid alloy is coated by \(PbO_2\) and at the negative plate, the coating consists of spongy lead \(Pb\). 
+                                At the positive plate, when the discharge happens, the lead dioxide converts to lead sulphate which is crystalline in nature. When the battery is subjected to reverse reaction (that is charging), not all
+                                of the crystal gets converted to the lead dioxide. The size and toughness of crystal increases as the battery is kept unused and in a discharged state. <br><br>This is illustrated by an experiment done by [8], and the result is shown in Fig (a). In this figure, the peaks relate to the 
+                                current that is drawn or applied during discharging and charging. The peaks are different in nature, signifying that the reverse reaction is not exactly the same. Some active mass remains as lead sulphate, and don't 
+                                participate anymore in reaction. As time goes by, the active mass decreases leading to decreasing discharge capacity.
+                                <br><br>
+                                <strong>Active Mass Shedding</strong>: With each cycle, the active mass is recycled with a slightly different morphology[7]. Practically, with cycling, the active mass becomes softer. The integrity between the clump of particles in the 
+                                active mass decreases, leading to breaking away of active mass. Figure (b) shows the state of the grid alloy coating of a lead acid battery used in a public transport bus after 6 months of use. Since, in a public transport bus, the cycling happens extensively, degradation due to 
+                                mass shedding is quite dramatic.<br><br>
+                                Another degradation results from the preferential discharge of the active mass attached to the grid. As current goes through the grid, the section of the 
+                                coating that is at the grid-paste interface is converted to lead sulphate assisted by the acid that seeps in the pores of the coating. During recharge, the material is deposited at the surface of the coating and uniformly. This happens due to the 
+                                nature of this reaction being that of a dissipation precipitation reaction. The solid mass dissolves into the electrolyte and then precipitates on the surface. This leads to increasing porosity at the surface of the grid, leading to more crystal 
+                                formations. Now, when discharge happens repeatedly, the lead sulphate crystals increasingly interrupt the electrical connection leading to lower capacity.
+
+                                <br>
+                                <div style="display: inline-flex; justify-content: space-around; width: 100%;">
+                                    <figure style="width: 300px; text-align: center; position: relative; bottom: 0px;">
+                                        <img style="width: 300px; object-fit: contain;"  src="./resources/leadconversion.png" alt="Discharge Capacity">
+                                        <figcaption style="font-style: italic; padding-left: 20px; width: 100%; text-align: center; ">Fig (a): The peaks of the charge and discharge reaction are different. Hence, charge reaction does not convert all the lead sulphate back to lead dioxide.</figcaption>    
+                                    </figure>
+                                    <figure style="width: 300px; text-align: center; position: relative; bottom: 0px;">
+                                        <img style="width: 300px; object-fit: contain;"  src="./resources/activemassshedding.png" alt="Active Mass Shedding">
+                                        <figcaption style="font-style: italic; padding-left: 20px; width: 100%; text-align: center; ">Fig (b): Active mass shedding after 6 months of use in a public bus.</figcaption>    
+                                    </figure>
+                                    <!-- <figure style="width: 300px; text-align: center; position: relative; bottom: 0px;">
+                                        <img style="height: 300px; object-fit: contain;"  src="./resources/discharge_potential.png" alt="Discharge Capacity">
+                                        <figcaption style="font-style: italic; width: 100%; ">Fig (c): Discharge potential of a lead acid battery.</figcaption>    
+                                    </figure> -->
+                                </div>
+                                
                             <br><br>
                         </div>
                         <iframe style="top: 50px;float: right; padding-left: 20px; padding-top: 10px;"  width="380" height="250" src="https://www.youtube.com/embed/CXxQtlSysg4?si=oV7HOxJ3IGHiRHWQ&amp;start=19&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -267,6 +309,9 @@
                     <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://en.wikipedia.org/wiki/Lead%E2%80%93acid_battery#Construction">Carbon-based neural electrodes: promises and challenges - Devi, Vomero, et. al.</a></li>
                     <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://www.sciencedirect.com/science/article/pii/S037877539900378X">Dissolution and precipitation reactions of lead sulfate in positive and negative electrodes in lead acid battery - Zen-ichiro Takehara</a></li>
                     <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://courses.lumenlearning.com/chemistryformajors/chapter/precipitation-and-dissolution-2/">Precipitation and Dissolution - LumenLearning</a></li>
+                    <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://iopscience.iop.org/article/10.1149/1.2127282">Effects of Deep Cycling on Lead Positive Plates - C.P Wales and A.C. Simon</a></li>
+                    <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://www.sciencedirect.com/science/article/pii/S0378775303009340">Aging mechanisms and service life of lead–acid batteries - Paul Ruetschi</a></li>
+                    
 
                 </ol>
             </div>
