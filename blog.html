@@ -328,7 +328,7 @@
                         reaction is thermodynamically stable, it is kinetically slow.</li>
                     </ul>
                     <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
-                        <img style="height:80%; object-fit: cover;"  src="./resources/Diamond.jpeg" alt="Conversion of Diamond into Graphite">
+                        <img style="height:50%; width: 50%; object-fit: cover;"  src="./resources/Diamond.jpeg" alt="Conversion of Diamond into Graphite">
                         <figcaption style="font-style: italic; width: 100%; ">Figure 4: The diamond is thermodynamically unstable in normal conditions. At every moment, some part of it is being converted to graphite but this happens so slowly that the diamond seems to be stable. In such a scenario, one can say
                         that diamond is thermodynamically unstable but kinetically stable. The lattices in the bottom two images illustrate the arrangement of carbon atoms in each form. Graphite is made up of discs of carbon 'mat'. Each 'mat' is attached to the other through weak van der waal forces. Graphite is an excellent conductor of 
                     electricity. Source: Thermodynamics - LumenLearning [9]</figcaption>    
@@ -400,8 +400,59 @@
                     \Delta S_{univ} = \Delta S_{sys} + \Delta S_{surr}
                     \end{align}
                     $$
+                    For any system, entropy change can also be related to the input or output of heat energy into the system. That makes sense, right? If something gets heat energy, the particles get more energy, vibrations increase and entropy therefore increases. 
+                    There has been a formula suggested (and accepted as well), \(\Delta S = \frac{q}{T}\). This applies to both system and surrounding. There is obviously a catch-22 that when you try to apply this equation to a system, the addition of this heat energy might 
+                    lead to change in temperature. How then would one apply this formula? That relates to deeper study of thermodynamics, which we can ignore for the moment. <br><br>
+
+                    While the above statement is true, there is a very helpful approximation that we make which is that no matter what heat addition or reduction that you do to the surrounding, the temperature of the surrounding remains the same. Think about it, you can point your heat blower outside the window, but you seriously can't 
+                    expect the heat to change the temperature of air. <br><br>
+
+                    Let's get an intuition for this \(\Delta S_{univ}\). Take the case of a single object which is very hot at the moment. The heat would radiate out of it into the surrounding. The change in entropy for the system becomes \(\Delta S_{sys} = \frac{-q}{T_{sys}}\). For the surrounding, \(\Delta S_{surr} = \frac{q}{T_{sys}}\). The sign of
+                    \(\Delta S_{univ}\) would depend on the relative values of \(T_{surr}\) and \(T_{sys}\). From intuition, this heat transfer would happen if \(T_{sys} > T_{surr}\). In this situation, the sign of \(\Delta S_{univ}\) will be positive. 
+                    This generalizes very well to all kind of reactions:
+
+                    <ul class="paragraph">
+                        <li>\(\Delta S_{univ}>0\): The reaction is going to be spontaneous</li>
+                        <li>\(\Delta S_{univ}&lt0\): The reaction is not going to be spontaneous</li>
+                        <li>\(\Delta S_{univ} = 0\): The reaction is at equilibrium. The situation will stay as it is.</li>    
+                    </ul>
                 </p>
                      
+                <p class="paragraph">
+                    For convenience, we can state \(\Delta S_{univ} = \Delta S_{sys} + \frac{q_{surr}}{T}\). While this \(\Delta S_{univ}\) is sufficient to explain spontaneity of a process, literature also defines another quantity to define it 
+                    concisely, which is Gibbs Free Energy \(G\). \(G\) is related to \(\Delta S_{univ}\) as \(\Delta G = -T \Delta S_{univ}\). Therefore Free Energy is equivalent to universal entropy in explaining spontaneity. 
+
+                    <br><br>
+                    Let's talk about the equilibrium case. What exactly is equilibrium and how is that notion captured in numbers and stuff. A brief introduction is given in the collapsible for precipitation-dissipation reaction, so read that up. 
+                    In any reaction, there are products and reactants. In an example reaction \(nA + mB \rightarrow pC + qD\), \(n\) parts of \(A\) combines with \(m\) parts of \(B\), to give \(p\) parts of \(C\) and \(q\) parts of \(D\). 
+                    Let's say the reaction is spontaneous, which means that A and B spontaneously combine to give C and D. For this equation, \(\Delta G\) is negative, and \(\Delta S_{univ}\) is positive. 
+                    <br><br>
+                    In the above reaction, the reaction moves ahead until it reaches equilibrium. What equilibrium means is that A and B only combines uptil a point to produce certain amount of C and D. At that point, the net quantity of A, B, C and D does not change in the container
+                    that contains these components. What is happening at this point is that some A and B are combining continuously to produce C and D, but an equal amount of C and D is dissociating to produce A and B in an equal amount. This means that there is no net change in the quantity of each. 
+                    <br><br>
+                    Obviously, because the amount of reactants and products are same, their ratio would also stay the same at equilbrium. This ratio is expressed as equilibrium constant, denoted by \(k_{eq}\) or simply \(k\). The formula for equilbrium constant \(k\) is 
+                    \(k = \frac{[C]^{p}[D]^{q}}{[A]^n[B]^m}\). The value in brackets are the amount of components in the reaction medium. When the medium is liquid, the values are in Molarity \(M\). We can ignore the concept of molarity at this point. Just know that it is a quantity that expresses the concentration
+                    of some component in a reaction medium. 
+                    <br><br>
+                    In the setting for the above reaction, it is obvious that the reaction may be spontaneous in one condition, and the opposite reaction may be spontaneous in some other condition. How does one relate that to our current understanding of free energy?
+                    Clearly, when we are talking about different conditions, it is prudent to take some condition as a <i>standard</i> one that we can compare to. This <i>standard condition</i> is usually 298K and 1 atm pressure.
+                    Any thermodynamic quantity at this condition is usually expressed using the normal symbol but with a notch above it, e.g. \(S^o\), or \(\Delta G^o\). 
+
+                    So \(\Delta G^o\) for the above reaction would mean free energy change for the reaction at 298K and 1 atm pressure. At that point it may be spontaneous, but what about some other condition. Thankfully, we do have a formula to measure spontaneity at other conditions. The formula is:
+                    $$
+                    \begin{align}
+                    \Delta G = \Delta G^o + RTlnQ
+                    \end{align}
+                    $$                    
+                    Here R is universal gas constant with a value of 8.314 J/K mol. Therefore, this gives us the spontaneity at some temperature, and some component ratio. For example, lets say the reaction is at equilibrium, at this point the system would not go in any direction. That means that \(\Delta G = 0\) which implies that \(\Delta G^o = -RTlnk_{eq}\). Now, lets say you add some A and B in the beaker, this decreases \(lnQ\) and \(\Delta G\) becomes negative, which indicates that the reaction is once again spontaneous towards the forward direction.
+                    This is actually true, because the reaction would again seek to come to equilibrium ratio and that means more production of C and D which means forward reaction.
+
+                    <br><br>After all this wandering about, we are finally at a point to really understand the fundamentals of the chemistry behind batteries. That's not going to be very long. We'll finish it quickly. 
+                    <hr style="width: 30%; float: left;">
+                    <br>
+                    <div class="paragraph" style="text-align: left;"><strong>electrochemistry</strong></div>                    
+                </p>
+
                 <hr style="width: 30%; margin-top: 80px;">
                 <div class="paragraph" style="text-align: center;">references</div>
                 <ol style="padding-bottom: 40px;">
@@ -415,6 +466,7 @@
                     <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://www.sciencedirect.com/science/article/pii/S0378775303009340" target="_blank">Aging mechanisms and service life of lead–acid batteries - Paul Ruetschi</a></li>
                     <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://courses.lumenlearning.com/suny-albany-chemistry/chapter/spontaneity/" target="_blank">Thermodynamics - LumenLearning</a></li>
                     <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://courses.lumenlearning.com/suny-albany-chemistry/chapter/entropy/" target="_blank">Entropy - LumenLearning</a></li>
+                    <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://courses.lumenlearning.com/suny-albany-chemistry/chapter/the-second-and-third-laws-of-thermodynamics/" target="_blank">Laws of Thermodynamics - LumenLearning</a></li>
                 </ol>
             </div>
             
