@@ -453,6 +453,45 @@
                     <div class="paragraph" style="text-align: left;"><strong>electrochemistry</strong></div>                    
                 </p>
 
+                <p class="paragraph">
+                    It is time to properly introduce the concept of <strong>electrode potential</strong> and <strong>Nernst Equation</strong>. While I have talked about electrode potential previously, it wasn't sufficiently explained. Let's begin with a simple reaction. 
+                    Any electrochemical reaction that leads to some potential would invariably have two electrodes. One of the electrodes acts as anode and oxidizes, releases electrons and the other electrode (cathode) takes in that electron. This happens continuously and this exchange of electrons is 
+                    basically electricity. Clearly the arrangement has some amount of energy, using which it is able to transport these electrons from one place to another. This energy relates to the potential through something called <strong>Nernst equation</strong>.
+
+                    <br><br>
+                    While analyzing the copper zinc battery in the preceding sections, we had observed that copper reduces and zinc oxidizes. We had, as a consequence, said that the potential of such a cell would be \(E^o_{cell} = E^o_{Cu} - E^o_{Zn}\). Reading up the values, we get
+                    \(E^o_{cell} = 1.28 V\). So that's the potential that you can expect when you make such an arrangement. 
+                    <br><br>
+                    Where do these values (in the table) come from? Well, what you do is you create another cell arrangement against a standard electrode. Take the case of copper as an instance. Make the other electrode a tube of pressurized hydrogen gas immersed in a solution of HCl. The reaction on the electrode is:
+                    $$
+                    \begin{align}
+                    2\text{H}^{+}\left(aq, 1M\right)+2\text{e}^{-}\rightleftharpoons\text{H}_{2}\left(g,1\text{ atm}\right)\,\,\,\,\,\,\,E^{\circ}=0\text{ V}
+                    \end{align}
+                    $$         
+                    Put the copper electrode against this electrode and measure the potential. This potential becomes \(E^o_{Cu}\). Similarly all the other electrode potentials have been derived. This hydrogen electrode is known as <strong>standard hydrogen electrode (SHE)</strong>.
+
+                    <br><br>
+                    So, now that you know how the electrode potentials are realized, its time to relate this electrical quantity to the chemical energy available. Clearly in this situation, there is some chemical energy that is being converted to electrical energy. When you reverse the process, you can convert electrical energy 
+                    to chemical energy. This kind of foreshadows batteries, but we are rushing, so let's get back to creating electrical energy. <br><br> The amount of work required to transmit electrons from one place to the other is really the energy that is being consumed from the cell potential. The electrical work required in this 
+                    transportation is \(W = nFE_{cell}\), where \(F\) is a unit of charge, and \(n\) is the moles of electrons being transfered. This work is being done on the cost of the chemical potential. The gibbs free energy, being a proxy for the chemical energy, is equated to the work. This gives us another important equation of electrochemistry:
+                    $$
+                    \begin{align}
+                    \Delta G = nFE_{cell}
+                    \end{align}
+                    $$                         
+
+                    We can relate this to the other derivation that we have had about \(\Delta G\) and \(\Delta G^o\) to give us the following equation, known as <strong>Nernst Equation</strong>:
+                    $$
+                    \begin{align}
+                    E_{cell} = E^o_{cell} - \frac{RT}{nF}lnQ
+                    \end{align}
+                    $$                       
+
+                    There is a lot of significance to this equation. As the concentration changes during discharge, \(lnQ\) increases, eventually yielding \(E_{cell} = 0 V\). Thus Nernst equation can tell you exactly the potential at any point during the discharge. Another aspect of this is, that if you reverse the reaction using an external potential (charging basically) you can reverse the reaction upto whatever extent you want. Nernst equation 
+                    makes it obvious that there is no upper limit to the potential you can charge your battery to. But there is indeed a problem, in that, once you increase the potential beyond a certain extent, the electrodes start to degrade and the electrolyte starts to disintegrate. This, and many other side effects happen, which is why there are clear guidelines on the safe operating voltages of any battery. We will explore these ranges and why they are so. 
+                    We will get into the nitty gritty details. That is what the next 150 minutes are for!
+                </p>
+
                 <hr style="width: 30%; margin-top: 80px;">
                 <div class="paragraph" style="text-align: center;">references</div>
                 <ol style="padding-bottom: 40px;">
