@@ -497,8 +497,7 @@
                     <div class="paragraph" style="text-align: left;"><strong>back to batteries - lead acid</strong></div>  
                     </p>
                 <p class="paragraph">
-                    An interesting thing to observe in this context of this newly formed knowledge, is that each cell of a lead acid battery basically gives a nominal voltage of 2 V, which is higher than the 1.58 V that you would get from the reduction potential tables.
-                    This is interesting as it makes it clear that the standard potential is not any form of upper bound on the maximum voltage one can get from the cell. 
+                    An interesting thing to observe in this context of this newly formed knowledge, is that each cell of a lead acid battery basically gives a nominal voltage of 2 V, because the standard potential calculated through the reduction potential table actually does give a value of \(2.04 V\).
                     <br><br>
                     Now we'll explore all the types of lead acid batteries, its usage and the safe voltage range (and what happens if we go beyond it.)
 
@@ -529,7 +528,7 @@
                     to \(PbO_2\). The intermediate non-stoichiometric \(PbO_n\) forms a thin layer on the lead grid alloy (usually upto a few molecules thick), inhibiting the corrosion of lead, but eventually most of the alloy corrodes and that is one of the main causes for the degradation of lead acid cells. 
                     <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
                         <img style="width:30%; object-fit: cover;"  src="./resources/corrosion.png" alt="corrosion of Leads">
-                        <figcaption style="font-style: italic; width: 100%; ">Figure 8: Corrosion of a lead grid alloy. One of the main causes of lead acid battery degradation Source: [12]</figcaption>    
+                        <figcaption style="font-style: italic; width: 100%; ">Figure 8: Corrosion of a lead grid alloy. One of the main causes of lead acid battery degradation. Source: [8]</figcaption>    
                     </figure>
                 </p>
                 <p class="paragraph">
@@ -555,7 +554,50 @@
                     You might remember that the loss of active material is something we have already discussed. In the process of understanding corrosion, the formation of \(O_2\) gas was evident. During charging, the \(H_2O\) electrolyses to \(H_2\) and \(O_2\) which escape in spite of efforts to stop them. This drying up of electrolyte is also a problem. 
 
                     <br><br>
-                    Now talking about the various types of lead acid batteries
+                    Now before talking about the various types of lead acid batteries, one must understand that there is essentially one particular technology that is popular. This is the <strong>Valve-Regulated Lead-Acid Batteries (VRLA Batteries)</strong>. The general lead acid battery design looks like the following:
+                    <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
+                        <img style="width:50%; object-fit: cover;"  src="./resources/construction.png" alt="Construction of SLI">
+                        <figcaption style="font-style: italic; width: 100%; ">Figure 9: Construction of a Starter (SLI) Lead Acid Battery. Source: [12]</figcaption>    
+                    </figure>                    
+                </p>
+                <p class="paragraph">
+                    Since the amount of \(H2SO_4\) in the active block is restricted, there is a reservoir as well in the cell which supplies \(H2SO_4\) during discharge. During charge, \(H2SO_4\) is generated inside the active block and diffuses back to the reservoir. At the end of charge, the decomposition of water leads to generation of \(H_2\) and \(O_2\) 
+                    which is led out through valves. The valves allow addition of water or electrolyte as well. Multiple cell plates are arranged in an alternative manner as shown in the image and connected in series. A mass produced SLI lead acid cell typically has a specific energy of \(34-40 Wh\text{ }Kg^{-1}\). This is much less than the theoretical expectation of \(162.2 Wh\text{ }kg^{-1}\)
+                    <br><br>
+                    Immobilization of the electrolyte has been a modern innovation. The immobilisation is done either via absorption in the glass mat seperator or by converting into gel. This entire thing (with the valve and everything) is known as Valve-Regulated Lead-Acid Battery (VRLA Batteries). There is something called Closed Oxygen Cycle (COC) which operates as:
+                    <ul class="paragraph">
+                        <li>Water decomposition at the positive plate leads to the creation of \(O_2\) and \(H^+\).</li>
+                        <li>\(O_2\) and \(H^+\) goes to the negative plate where reduction of \(O_2\) results in the creation of water</li>
+                        <li>This water circulates back to the positive plate and replenishes the decomposed water volume. Hence, the COC cycle reduces water loss</li>
+                    </ul>
+                </p>
+                <p class="paragraph">
+                    Coming back to the types of lead acid batteries, there are basically two types of technologies in VRLA batteries:
+                    <ul class="paragraph">
+                        <li><strong>Absorptive Glass Mat (AGM)</strong>: These batteries have AGM as seperators and it absorbs the electrolytes thereby making it immobile. Absorptive Glass Mat is comprised of \(85\%\) borosilicate glass microfibres and \(15\%\) polymer fibres as reinforcement binders. </li>
+                        <li><strong>Gelled Electrolytes</strong>: In such batteries, the electrolyte is immobilized in the form of gel of \(SiO_2\) and \(Al_2O_3\) particles that are nanometer in diameter.</li>
+                    </ul>
+                </p>
+                <p class="paragraph">
+                    Applications of lead acid battery are also mostly of two types:
+                    <ul class="paragraph">
+                        <li><strong>SLI (starting, lighting, ignition) Batteries</strong>: These are used in automobiles to deliver large load current on the engine for a short time. This large current is supplied to start the engine and ignite the spark plug initiating the combustion process in the engine. Such batteries have very low internal resistance that is achieved by making plates very large and thin. The emphasis is on power rather than capacity.</li>
+                        <li><strong>Motive (Deep-cycle batteries)</strong>: These are meant for provide continuous power to vehicles such as golf cart, forklifts, wheelchair etc. This battery is built to be recharged fairly hgih number of times which is achieved by making the plates thick. </li>
+                        <li><strong>Stationary Batteries</strong>: Mostly for applications that require storage. Example being UPS (Uninterrupted Power Supply) for computer systems etc. </li>
+                    
+                    </ul>                    
+                </p>
+                <p class="paragraph">
+                    Finally, we end this section on lead acid batteries with a guide on charging of lead acid batteries. The charging of LA batteries is done through constant current/constant voltage (CC/CV) charging. This is a rather popular 
+                    way to charge batteries. A constant current charges the battery upto a set upper limit terminal voltage and once reached, the current starts decreasing as the battery capacity starts to saturate. Lead acid batteries usually take a long time to charge, from 8-16 hours. 
+                    <br><br>
+                    This charging is done in three stages: <strong>constant current charging</strong>, <strong>topping charge</strong>, and <strong>float charge</strong>. The constant current stage charges bulk of the capacity, and takes about half the time. The topping charge happens at decreasing current and saturates the battery. 
+                    The float charge compensates for the loss to be caused by self-discharge. The first stage charges 70% in 5-8 hours, and the topping charge fulfills the remaining 30% in 7-10 hours. The float charge maintains the battery at full charge. Full charge is said to happen when the current reaches 3-4% of the Ah rating. The charge voltage limit is kept usually at 2.3 to 2.45 V. Deciding the upper limit is kind of a compromise. one could charge 
+                    further to a higher voltage to increase capacity, and also avoid sulfation, but also must limit the upper voltage set to ensure gassing, water loss and grid corrosion on positive plate doesn't happen. Figure 10 shows the three stages:
+                    <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
+                        <img style="width:50%; object-fit: cover;"  src="./resources/charging.png" alt="Charging of Lead Acid Battery">
+                        <figcaption style="font-style: italic; width: 100%; ">Figure 10: Charge stages of a lead acid battery. Source: [1]</figcaption>    
+                    </figure>                     
                 </p>
                 <hr style="width: 30%; margin-top: 80px;">
                 <div class="paragraph" style="text-align: center;">references</div>
