@@ -503,9 +503,60 @@
                     Now we'll explore all the types of lead acid batteries, its usage and the safe voltage range (and what happens if we go beyond it.)
 
                     <br><br>
-
+                    Exploring the performance of a typical lead acid battery, there are some general trends common to all the lead acid battery types. Lead acid batteries typically have a life of 200 - 300 discharge/charge cycles when deep discharging. 
+                    The main reasons for this short life are corrosion of the grid, loss of active material and reduction of electrolyte. We'll expand on why the corrosion happens. 
+                    <br><br>
+                    Metallic lead in the positive plate is thermodynamically unstable [12]. Hence, like most other pure metals, it also reacts with oxygen to form oxides and hydroxides (in water). In the context of battery, the thing to question is where does this oxygen come from. The answer is an elegent sequence of events that talks about voids, and lattice structure of lead. 
+                    The mechanism for the corrosion happens in the following manner: 
+                    <br><br>
+                    In the elctrolytic solution, \(2 OH^-\) combine to form oxygen \(O_2\) as a byproduct. The reaction proceeds as follows:
+                    $$
+                    \begin{align*}
+                    &2H_2O \rightarrow 2OH^- + 2H^+ \\
+                    &2OH^- \rightarrow O + H_2O \\
+                    &2O \rightarrow O_2
+                    \end{align*}
+                    $$
+                    This oxygen diffuses through the vacancies in the \(PbO_2\) layer to reach the metallic lead. There the similarity in crystal lattices of the intermediate forms of lead oxides and lead comes into picture. Figure 7 illustrates the crystal lattices of various forms of lead. 
+                    <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
+                        <img style="width:50%; object-fit: cover;"  src="./resources/crystal.png" alt="Crystal Structures of Leads">
+                        <figcaption style="font-style: italic; width: 100%; ">Figure 7: The unit cells of metallic lead, Lead (red) tetragonal, and \(\alpha-PbO_2\) are very similar and this makes steric alterations relatively easy. Source: [12]</figcaption>    
+                    </figure>
                 </p>
+                <p class="paragraph">
+                    As the oxygen seeps through the \(PbO_2\) corrosion layer, it combines with the metallic lead 
+                    to give \(tet-PbO\). The crystal structure of tetragonal PbO has yet more space to accomodate additional oxygen atoms, which leads to a slightly unconventional form of lead oxide with not a very well defined formula \(PbO_n\) where \(n\) typically goes upto 1.4. Since the structures of \(tet-PbO\) and \(\alpha-PbO_2\) are very similar, the transition of these intermediate lead oxides convert 
+                    to \(PbO_2\). The intermediate non-stoichiometric \(PbO_n\) forms a thin layer on the lead grid alloy (usually upto a few molecules thick), inhibiting the corrosion of lead, but eventually most of the alloy corrodes and that is one of the main causes for the degradation of lead acid cells. 
+                    <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
+                        <img style="width:30%; object-fit: cover;"  src="./resources/corrosion.png" alt="corrosion of Leads">
+                        <figcaption style="font-style: italic; width: 100%; ">Figure 8: Corrosion of a lead grid alloy. One of the main causes of lead acid battery degradation Source: [12]</figcaption>    
+                    </figure>
+                </p>
+                <p class="paragraph">
+                    It is also often very helpful to compare the specific energy of batteries to gasoline. It gives us a reference to measure the progress of battery technology. At some point, when this specfic energy crosses that of gasoline, we will successfully transition to renewable technology. Well, here goes the calculation for the specific energy of the lead acid battery. The reaction, for reference, is:
+                    $$
+                    \begin{align}
+                    Pb + PbO_2 + 2H_2SO_4  \rightleftharpoons 2PbSO_4 + 2H_2O 
+                    \end{align}
+                    $$
 
+                    The active components of this reaction are \(Pb, PbO_2, H_2O \text{ and } H2_SO_4\). Their accumulated weight (assuming mole as unit) is: 
+                    $$
+                    P_{\mathrm{LAC}}=(207.2)_{\mathrm{Pb}}+(239.2)_{\mathrm{PbO}_2}+(196)_{2 \mathrm{H}_2 \mathrm{SO}_4}+(32)_{\mathrm{H}_2 \mathrm{O}}=674.4 \mathrm{~g}
+                    $$
+                    Now, because in this reaction 2 moles of \(e^-\) are exchanged, the charge exchanged is \(2 \times 96500 C\) or (equivalently) \(2\times 96500 \times \frac{1}{3600} = 53.61 Ah\). Assuming that this charge is transferred through a cell voltage of \(2.040 V\) (nominal voltage of lead acid batteries), 
+                    the specific energy for lead acid cell is:
+                    $$
+                    E_s = (53.61 \times 2.040)/0.6744 = 162.2 Wh\text{ }kg^{-1}
+                    $$
+
+                    Hence, \(162.2 Wh\text{ }kg^{-1}\) is the theoretical specific energy of lead acid battery assuming \(100\%\) conversion. Petroleum on the other hand, delivers a specific energy of \(12kWh\text{ }kg^{-1}\). As you can see, batteries (or atlead lead acid batteries) are a long way off in catching up with fossil fuel. 
+                    <br><br>
+                    You might remember that the loss of active material is something we have already discussed. In the process of understanding corrosion, the formation of \(O_2\) gas was evident. During charging, the \(H_2O\) electrolyses to \(H_2\) and \(O_2\) which escape in spite of efforts to stop them. This drying up of electrolyte is also a problem. 
+
+                    <br><br>
+                    Now talking about the various types of lead acid batteries
+                </p>
                 <hr style="width: 30%; margin-top: 80px;">
                 <div class="paragraph" style="text-align: center;">references</div>
                 <ol style="padding-bottom: 40px;">
@@ -520,6 +571,7 @@
                     <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://courses.lumenlearning.com/suny-albany-chemistry/chapter/spontaneity/" target="_blank">Thermodynamics - LumenLearning</a></li>
                     <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://courses.lumenlearning.com/suny-albany-chemistry/chapter/entropy/" target="_blank">Entropy - LumenLearning</a></li>
                     <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://courses.lumenlearning.com/suny-albany-chemistry/chapter/the-second-and-third-laws-of-thermodynamics/" target="_blank">Laws of Thermodynamics - LumenLearning</a></li>
+                    <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://www.sciencedirect.com/book/9780444595522/lead-acid-batteries-science-and-technology" target="_blank">Lead-Acid Batteries: Science and Technology D. Pavlov</a></li>
                 </ol>
             </div>
             
