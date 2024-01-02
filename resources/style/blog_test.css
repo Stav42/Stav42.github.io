@@ -220,15 +220,15 @@ body{
 }
 
 .topic_blog {
-    /* display: none; */
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0s ease-out;
+    display: none;
+    /* max-height: 0; */
+    /* overflow: hidden; */
+    /* transition: max-height 0s ease-out; */
   }
 
-.topic_blog#battery_blog_text{
+/* .topic_blog#battery_blog_text{
     transition: max-height 0s linear;
-}
+} */
 
 .typewriter{
     color: white;

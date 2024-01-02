@@ -1,4 +1,3 @@
-
   var buttons = document.querySelectorAll('.content_button'); // Select all buttons
 
   buttons.forEach(function(button) {
@@ -8,7 +7,8 @@
               otherButton.classList.remove('clicked');
               let flag_id = otherButton.id;
               let content_element = document.getElementById(flag_id+"_text")
-              content_element.style.maxHeight = null;
+              // content_element.style.maxHeight = null;
+              content_element.style.display = "none";
           });
 
           // Then, add 'clicked' class to the clicked button
@@ -18,12 +18,7 @@
           let content_element = document.getElementById(topic_text);
 
           var height = content_element.scrollHeight;
-          content_element.style.maxHeight = height + "px";
-
-          // var height = content_element.scrollHeight;
-          // console.log("ID: ", height)
+          content_element.style.display = "block";
           console.log("Scroll Height: ", content_element.style.maxHeight)
-          // content_element.style.maxHeight = height + "px";
-
       });
   });

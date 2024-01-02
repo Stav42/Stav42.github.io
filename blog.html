@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aditya Vats | IIT Kanpur</title>
-    <link rel="stylesheet" href="./resources/style/style_blog.css">
+    <link rel="stylesheet" href="./resources/style/blog_test.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link rel="icon" type="image/x-icon" href="/resources/fav.png">
+    <link rel="icon" type="image/x-icon" href="/resources/profile/fav.png">
     <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js" crossorigin="anonymous"></script>
 </head>
@@ -27,599 +27,649 @@
         </div>
     </header>
     <div class="banner">
-        <img class="image-item box" src="resources/KanagawaBattery.png" alt="impressionism battery">
+        <img class="image-item box" src="resources/banners/KanagawaBattery.png" alt="impressionism battery">
         <div class="banner-type overlay">
             <div class="typewriter">
                 thinking big.
             </div>
         </div>
     </div>
-    <div class="topic">battery technology</div>
-    <hr class="horizontal">
-    <div class="date" style="font-family: monospace;">18th Nov 2023</div>
-    <div id="reading-time" style="text-align: center; font-family: monospace;"></div>
-    <div class="intro">
-        <div class="text content" id="topic-content">
-            <div class="paragraph preset">
-                I have been meaning to do this for a very long time. To set the context, this is going to be a 3 hour read on battery technology (at a minimum!). It will be fairly rigorous. I hope to cover it till a point where the 
-                professionals might start finding it useful. For me, it serves as a starting point to find something to dedicate my working hours to.
+    <div class="blog_index">
+        <div class="content_button" id="battery_blog">
+            <div class="minibanner" style="height: 60%; border: 1px black ridge; text-align: center; background-color: rgb(252, 255, 250);  ">
+                <img src="resources/buttons/battery_button.png" style="object-fit: contain; height: 100%; ">
             </div>
-            <br>
-            <div class="inline-image">
-                <figure class="float">
-                    <img class="float-left" src="resources/parthian_battery.jpeg" alt="Parthian Battery">
-                    <figcaption style="font-style: italic; text-align: center;">Parthian battery, Baghdad</figcaption>
-                </figure>
-                <p class="paragraph">
-                    I'll start with some interesting checkpoints in history. The earliest evidence of something akin to battery is the Parthian Battery which is around 2000 years old and traced to the 
-                    Parthian empire. It is a clay jar with vinegar solution (electrolyte) into which an iron rod surrounded by copper cylinder was inserted (electrodes!). It gave off a voltage of 1.1 to 2V.
-                    Now while there are disputes about the purpose of this device (some think it was a battery, and others think it was some kind of electroplating) it still serves as a 
-                    nice note that experiments with potentials were in works since long ago.
-                    <br><br>
-                    Alessandro Volta discovered in 1800 that certain fluids generate a continuous flow of electrical current which led to the development of the first voltaic cell. He eventually
-                    also demonstrated a use for this phenomena through something he called 'an electrical pistol'. The set up included a long-distance communication wire with the other end in a jar of methane. When
-                    the electical spark was sent through, it made the jar burst. Single bit of information transfer. <i>On</i>.
-                    <br><br>
-                    In 1859 came the first rechargeable battery courtesy Mr. Gaston Plante using lead acid. In 1899, Waldemar Junger developed the Nickel-Cadmium battery (NiCd). Two years later, Edison replaced the 
-                    cadmium with Iron, giving birth to the NiFe battery. These legacy batteries have lost their relevance over the years. NiCd is harmful to the environment, and EU even necessitated replacememt of NiCd with 
-                    NiMH. <br><br>
-                </p>
-                    <hr style="width: 50%;"/>
-                    <div class="paragraph" style="text-align: center;"><strong>technical</strong></div>
-
-                <p class="paragraph">
-                    With the history out of the way, its time to dive into the technical aspects of battery. I want to establish a few standard terminologies to make sure we are on the same page. I won't digress too much. Only two terminologies (right now).
-                    <br><br>
-
-                    <i><strong>Specific Energy</strong></i>: Capacity of the battery in Wh/Kg. Its kind of how long the battery can sustain some load (as in how long it can keep supplying current). Higher specific energy, longer time to discharge.
-                    <br><i><strong>Specific Power</strong></i>: This is related to the maximum current a battery can provide at any instant. Unit is W/kg. It relates more to the high-current load requirement than anything else. 
-                    <br><br>
-                    Essentially, a battery is stored energy. In a battery, there are four components: a cathode, an anode, a seperator, and an electrolyte. 
-                    <br><br>
-                    What does a battery generally look like, in its simplest form? Imagine a container, with copper plate at one side and zinc strips at the other. The container is filled with an electrolyte, which in this case is a sodium chloride salt solution (common salt dissolved in water).
-                    An <strong>electrolyte</strong> is a substance which conducts electricity when dissolved into water. The details of the conduction mechanism is interesting in itself, but we will ignore it for the while. 
-                    Connect a bulb, with the positive terminal of it attached to the copper plate, and the negative terminal at zinc. Now when the connections are established the bulb lights up. 
-                    <br><br>
-                    In this case, when the connections are established, chemical reactions take place at both ends. Since zinc is more reactive than copper, it starts to oxidate i.e. the following reaction occurs:
-                </p>
-
-                <p style="text-align: center;" class="paragraph">At Zinc (anode)</p>
-                <p class="paragraph">
-                    $$
-                    \begin{align}
-                    Zn \rightarrow Zn^{2+} + 2e^-;
-                    \end{align}
-                    $$ 
-                </p>
-                <p style="text-align: center;" class="paragraph">At Copper (cathode)</p>
-                <p class="paragraph">
-                    $$
-                    \begin{align}
-                    Cu^{2+} \rightarrow Cu + 2e^-;
-                    \end{align}
-                    $$
-                </p>
-                <p class="paragraph">
-                    
-                    I'll give a hint of how this happens later. Right now, it is important to see that when the decomposition happens at the zinc (which is why it is called the anode. Anode, by definition, is the electrode from which electrons leave when discharging.) The electrons that are ejected 
-                    move through the external circuit to the cathode (copper) where they combine with \(Cu^{2+}\) to form normal solid Copper. 
-                    <br><br>This is important because when the electrons move through the external circuit, we call it electricity. To summarize:
-                    <br>
-                    <ul class="paragraph">
-                        <li><strong>Anode</strong>: This is where oxidation occurs. Oxidation is the removal of electrons. So, anode is the electrode which loses electrons.</li>
-                        <li><strong>Cathode</strong>: This is where reduction occurs. Reduction is the addition of electrons. So cathode is the electrode where electrons are absorbed.</li>
-                        <li><strong>Electrolyte</strong>: Facilitates the movement of ions. These ions are not the ions produced by electron transfer in electrode. In our case, these are \(Na^+\) and \(Cl^-\).</li>
-                    </ul>
-                </p>
-                <p class="paragraph">
-                    Finally, there is the <i><strong>seperator</strong></i> whose job is to ensure that the electrodes don't make contact i.e. do not short. If that happens, a lot of current will flow through. Fire, burns, you get the idea. So the seperator is also very important.
-                    <br><br>
-                    To get a sense of why reaction happens the way it does, it is prudent to get a look at the famous electrode potential table. Following is a table that lists the relative <i>reactivity</i> of the electrodes in a sense.
-                </p>
-                <figure style="text-align: center;">
-                    <img style="height: 450px;" src="resources/Electrode_potential.jpeg" alt="Standard Reduction Potential">
-                    <figcaption style="font-style: italic; text-align: center;">Standard Electrode Potential for many materials</figcaption>
-                </figure>
-                <p class="paragraph">
-                    In the table above, the <strong><i>reduction</i> potential</strong> refers to the tendency of the compounds/electrons to gain an electron. If you reverse the reactions and flip the sign of the numbers, you'll get the tendency of each of them to <i>oxidize</i> i.e. lose an electron.
-                    As you can see in the table, copper (Cu) has a higher tendency to get reduced than zinc (Zn), and therefore it is the one that gains electrons in the simple battery that we have. In our case, the copper electrode is therefore the cathode as it gains electrons.<br>
-                    <br>
-                    
-                    Since the electrons always move from a lower potential to a higher potential, we can say that copper is at the higher potential in this reaction. Hence, it will be called the <strong>positive electrode</strong>. Consequently, zinc electrode will be called the <strong>negative electrode</strong>. 
-                    Now, depending on the direction of the reaction (when charging, this reaction reverses), the anode and cathode may change but the positive and negative electrode will stay the same physical entity. 
-                    <br><br>
-                    At this point, it probably is going to be useful to start talking about the popular types of battery in use in the world today. <strong>Lead Acid Battery</strong> is a good place to start, since it is a battery that is still in great use, and has seen multiple evolutions. We will probe the 
-                    capabilities, construction, issues and the chemistry behind it. In this process, I suspect we will learn a lot about materials, alloys and chemistry. 
-                </p>
-                <br>
-                <div class="paragraph" style="text-align: left;"><strong>Lead Acid Battery</strong></div>                
-                <p class="paragraph">
-                    Lead acid battery[2] was the first batteries to be recyclable. It was discovered in 1859 by Gaston Planté. In a simple lead acid battery, there are three components:
-                    <ul class="paragraph">
-                        <li>Positive Plate: Lead Dioxide \(PbO_2\)</li>
-                        <li>Negative Plate: Spongy Lead \(Pb\)</li>
-                        <li>Electrolye: Diluted Sulfuric Acid \(H_2SO_4\)</li>
-                    </ul>
-                </p>
-
-                <p class="paragraph">
-                    The chemistry during discharge between these three components looks like:
-                </p>
-
-                <p style="text-align: center;" class="paragraph">At Negative Plate</p>
-                <p class="paragraph">
-                    $$
-                    \begin{align}
-                    Pb(s) + HSO_4^-(aq) \rightarrow PbSO_4(s) + H^+(aq) + 2e^-
-                    \end{align}
-                    $$ 
-                </p>
-                <p style="text-align: center;" class="paragraph">At Positive Plate</p>
-                <p class="paragraph">
-                    $$
-                    \begin{align}
-                    PbO_2(s) + HSO_4^-(aq) + 3H^+(aq)+ 2e^- \rightarrow PbSO_4(s) + 2H_2O(l)
-                    \end{align}
-                    $$
-                </p>
-                <p class="paragraph">
-                        <iframe style="top: 50px;float: right; padding-left: 20px;"  width="380" height="250" src="https://www.youtube.com/embed/1-NbDjxh_v0?si=hj38nt9oVFg5oJ5R&amp;start=214&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        <p class="paragraph">
-                            In both reactions, at the end the solid \(PbSO_4(s)\) is formed. The complete reaction during discharge hence looks like: 
-                            $$
-                            \begin{align}
-                            \beta\text{-}PbO_2 + Pb + 2H_2SO_4 \rightarrow 2PbSO_4 + 2H_2
-                            \end{align}
-                            $$
-                        </p>
-                        <p class="paragraph">
-                            In this complete reaction, \(PbSO_4\) crystal is precipitated at both the plates[5]. The reactions during discharge happen through <strong>precipitation dissipation</strong> <button type="button" class="pop_arrow" id="precdiss"></button> reaction where a super-saturated \(Pb^{2+}\) solution is first formed through charge transfer reaction on \(Pb \) and \( \beta\text{-}PbO_2\) followed by precipitation of \(PbSO_4\) on both plates. The
-                             particle size of \(PbSO_4\) formation depends on the concentration of \(Pb^{2+}\) ions. This process of dissipation and then precipitation is also how the reactions take place during charging. 
-                            <br>
-                        </p>
-                        <div class="paragraph pop" id="precdiss_content">
-                            <br>
-                            <strong>Solubility Product</strong>
-                            <hr>
-                                The solubility of a substance in any liquid medium can range from completely soluble (miscible) to completely insoluble (immiscible). A substance which is only partially soluble, would precipitate if we add more substance
-                                in the medium than it can take. This means that for substances that are not completely miscible, there is a limit to the weight of it we can add to the medium and expect it to disappear completely
-                                in the solution. If we add more, it will start to settle in the container as solid. It won't dissolve any longer. 
-                                <br><br>
-                                While this makes sense, the really interesting part in realizing that the situation is not a static one. In fact it is very dynamic. The solid form of the substance and the dissolved components are actually in dynamic equilibrium throughout. Such a reaction is called a <strong>precipitation dissipation</strong> reaction.
-                                <br><br>
-                                Take the example of Silver Chloride:
-                                $$
-                                \operatorname{AgCl}(s) \underset{\text { precipitation }}{\stackrel{\text { dissolution }}{\rightleftarrows}} \mathrm{Ag}^{+}(a q)+\mathrm{Cl}^{-}(a q)
-                                $$
-                             In this situation, at any point some part of the solid breaks and goes into the solution and some ions that are already present in the solution combinse, solidify and precipitate. Now, though the amount of solid in this saturated solution is 
-                             constant, the particles are not static. It's not the case that the elements in solid stay in the solid. This exchange keeps happening. This is called <strong>dynamic equilibrium</strong>.
-                             <br><br>
-                             One can also calculate the concentration of ions in the solution in a solution at equilibrium. This can be done through the concept of <strong>Solublity Product</strong> denoted usually as \(K_{sp}\)             
-                             <br><br>
-                             At equilibrium, \(K_{sp} = [Ag^+(aq)][Cl^-(aq)]\). The square elements are the values of the concentration of \(Ag^+\) and \(Cl^-\) in units of Molarity (which is number of moles of a substance in a litre of solution. A mole is a certain number of entities. We'll discuss all this later.)
-                             <br>The value of \(K_{sp}\) is fixed at a given temperature. So from the formula, one can get the exact concentration of the ions in the solution. To study solubility product further, [6] is a nice reference.
-                             <br><br>
-                        </div>
-                        <p class="paragraph">
-                            During charging, \(Pb^{2+}\) ions on both plates are supplied by the \(PbSO_4\) crystals that were formed during discharge. Because \(PbSO_4\) is a non-conducting ionic solid, the oxidation of \(PbSO_4\) to \(\beta\text{-}PbO_2\) and the reduction to \(Pb\) during charge happens at the interface between \(PbSO_4\) crystal and \(\beta\text{-}PbO_2\) or \(Pb\) on the grid alloy which is a conductor. Hence, current density, crystal size and solubility of \(PbSO_4\) in sulfuric acid solution, diffusion coefficient and diffusion path of 
-                            \(Pb^{2+}\) ions play an important role in affecting the charge performance. <button type="button" class="pop_arrow" id="diffusion"></button>
-                            After being completely discharged the entire composition looks like Figure 2. 
-                            <br>
-                        </p>
-                        <div class="paragraph pop" id="diffusion_content">
-                            <br>
-                            Diffusion
-                            <hr>
-                                <strong>Diffusion coefficient</strong>: The diffusion coefficient, typically denoted as \(D\), is a measure of the rate at which particles (like ions) diffuse, or spread out, through a medium. It quantifies how fast the particles are moving due to thermal energy. It depends on factors like temperature, the medium through which the ions are moving, and the size and charge of the ions. Generally, 
-                                \(D\) increases with temperature due to increased atomic or molecular motion. This relationship is often described by the Arrhenius equation: \(D = D_0e^{-E_a/{RT}}\) <br>
-                                <strong>Diffusion Path</strong>: The diffusion path refers to the physical route or trajectory that ions take as they move from one location to another through a solid, liquid, or gaseous medium.
-                            <br><br>
-                        </div>
-                        <p class="paragraph">
-                            Lead sponge is a structure composed of a lot of lead strands connected to each other. It is extremely porous and is 75-90% empty space by volume. It has an extremely high surface area that results in it being a more 
-                            efficient negative plate. The youtube channel <i>NileRed</i> demonstrates the creation of such a compound. While it is more of a composite of lead and zinc, the material produced in the video still serves the purpose of illustrating
-                            the kind of material spongy lead is.
-                        </p>
-                        <p class="paragraph">
-                            It's also worth going into the construction and manufacturing of components of lead acid battery. There are two electrodes with spongy lead on one and lead dioxide on the other, and their structural integrity is maintained through grids made of lead alloy at both side. The active material is pasted on the grid in a manner illustrated in the figure 3. The positive 
-                            grid plate is coated with lead dioxide and the negative grid plate is coated with spongy lead. The lead grid also acts a conductor for the entire process. <br><br>
-                        </p>
-                        <figure style="float: left; position: relative; bottom: 0px;">
-                            <img style="height: 200px;"  src="./resources/Image-of-a-lead-e-tin-electroplated-honeycomb-grid-and-pasted-and-cured-lead-acid-battery.png" alt="Grid Coating">
-                            <figcaption style="font-style: italic; text-align: center;">Figure 3: Coating on a grid</figcaption>
-                        </figure>
-                        <p class="paragraph">   
-                            Earlier, pure lead had been in use till its poor structural integrity necessitated replacement with lead alloy. The first alloy to be used was lead-antimony (8-12%). This antimony-heavy alloy had some issues, the main being the evolution of excessive
-                            volumes of hydrogen in the process. As a result, they were replaced with lead-calcium and lead-selenium grid alloys. Antimony was still used but in lesser percentages. <br><br>These new alloys give more strength to the grid, allowing it to carry more active material which meant a battery with higher capacity. Adding antimony and tin also improves deep cycling.  <button type="button" class="pop_arrow" id="deep_cycling"></button>
-                            Antimony dissolves from the alloy and is retained in the active mass as hydrated antimony oxides which act as cement between active mass and gridH. Hence, antimony-lead alloys promote a more dense and coherent \(PbO_2\) structure during charging. This prevents active mass shedding that happens due to deep cycling.
-                            The coating on the plates is done with a paste of lead oxide, sulfuric acid and water. This is followed by curing where the plates are heated in high-humidity environment. The curing changes the paste into lead sulphate and evaporates the water. 
-                        </p>
-                        <div class="paragraph pop" id="deep_cycling_content">
-                            <br>
-                            Deep Cycling
-                            <hr>
-                                Deep cycling, or discharging the battery substantially and then recharging, has several detrimental effect on the battery. Cycling is primarily associated with two faults: 
-                                <ul class="paragraph">
-                                    <li>Active Mass Shedding</li>
-                                    <li>Sulfation</li>
-                                </ul>
-                                <figure style="width: 300px; float: right; text-align: center; position: relative; bottom: 0px;">
-                                        <img style="height: 300px; object-fit: cover;"  src="./resources/Sulfation.png" alt="Crystal \(PbSO_4\)">
-                                        <figcaption style="font-style: italic; width: 100%; ">Fig (a): The large crystals are \(PbSO_4\) particles and the small ones are \(PbO_2\) particles.</figcaption>    
-                                </figure>
-                                In the lead acid battery, when the discharge happens, the structure of the active mass on the grid alloy changes. On the positive plate, the \(PbO_2\) changes to \(PbSO_4\) crystals. This happens at the negative plate as well.
-                                Figure (a) illustrates the difference in size between the \(PbSO_4\) crystals and \(PbO_2\) particles after a single discharge of the positive plate that contains \(PbO_2\)[7]. Something similar happens in negative plate. 
-                                <br><br>
-                                <strong>Sulfation</strong>: Active mass is the paste that is coated on the grid alloy at both electrode. At the positive plate, the grid alloy is coated by \(PbO_2\) and at the negative plate, the coating consists of spongy lead \(Pb\). 
-                                At the positive plate, when the discharge happens, the lead dioxide converts to lead sulphate which is crystalline in nature. When the battery is subjected to reverse reaction (that is charging), not all
-                                of the crystal gets converted to the lead dioxide. The size and toughness of crystal increases as the battery is kept unused and in a discharged state. <br><br>This is illustrated by an experiment done by [8], and the result is shown in Fig (a). In this figure, the peaks relate to the 
-                                current that is drawn or applied during discharging and charging. The peaks are different in nature, signifying that the reverse reaction is not exactly the same. Some active mass remains as lead sulphate, and don't 
-                                participate anymore in reaction. As time goes by, the active mass decreases leading to decreasing discharge capacity.
-                                <br><br>
-                                <strong>Active Mass Shedding</strong>: With each cycle, the active mass is recycled with a slightly different morphology[7]. Practically, with cycling, the active mass becomes softer. The integrity between the clump of particles in the 
-                                active mass decreases, leading to breaking away of active mass. Figure (b) shows the state of the grid alloy coating of a lead acid battery used in a public transport bus after 6 months of use. Since, in a public transport bus, the cycling happens extensively, degradation due to 
-                                mass shedding is quite dramatic.<br><br>
-                                Another degradation results from the preferential discharge of the active mass attached to the grid. As current goes through the grid, the section of the 
-                                coating that is at the grid-paste interface is converted to lead sulphate assisted by the acid that seeps in the pores of the coating. During recharge, the material is deposited at the surface of the coating and uniformly. This happens due to the 
-                                nature of this reaction being that of a dissipation precipitation reaction. The solid mass dissolves into the electrolyte and then precipitates on the surface. This leads to increasing porosity at the surface of the grid, leading to more crystal 
-                                formations. Now, when discharge happens repeatedly, the lead sulphate crystals increasingly interrupt the electrical connection leading to lower capacity.
-
-                                <br>
-                                <div style="display: inline-flex; justify-content: space-around; width: 100%;">
-                                    <figure style="width: 300px; text-align: center; position: relative; bottom: 0px;">
-                                        <img style="width: 300px; object-fit: contain;"  src="./resources/leadconversion.png" alt="Discharge Capacity">
-                                        <figcaption style="font-style: italic; padding-left: 20px; width: 100%; text-align: center; ">Fig (a): The peaks of the charge and discharge reaction are different. Hence, charge reaction does not convert all the lead sulphate back to lead dioxide.</figcaption>    
-                                    </figure>
-                                    <figure style="width: 300px; text-align: center; position: relative; bottom: 0px;">
-                                        <img style="width: 300px; object-fit: contain;"  src="./resources/activemassshedding.png" alt="Active Mass Shedding">
-                                        <figcaption style="font-style: italic; padding-left: 20px; width: 100%; text-align: center; ">Fig (b): Active mass shedding after 6 months of use in a public bus.</figcaption>    
-                                    </figure>
-                                    <!-- <figure style="width: 300px; text-align: center; position: relative; bottom: 0px;">
-                                        <img style="height: 300px; object-fit: contain;"  src="./resources/discharge_potential.png" alt="Discharge Capacity">
-                                        <figcaption style="font-style: italic; width: 100%; ">Fig (c): Discharge potential of a lead acid battery.</figcaption>    
-                                    </figure> -->
-                                </div>
-                                
-                            <br><br>
-                        </div>
-                        <iframe style="top: 50px;float: right; padding-left: 20px; padding-top: 10px;"  width="380" height="250" src="https://www.youtube.com/embed/CXxQtlSysg4?si=oV7HOxJ3IGHiRHWQ&amp;start=19&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        <p class="paragraph">
-                            The formation of lead sulphate crystals, or sulphation, is a major reason of deterioration of the charge capacity of the lead acid battery. To mitigate the error, modern day coating contains carbon black, Barium Sulphate \(BaSO_4\) and lignosulfate[2]. <button type="button" class="pop_arrow" id="lignosulfonate"></button> The lignosulfonate ensures that the crystal size doesn't become too large by keeping
-                            the lead sulphates seperate. (Read more on how this happens in the collapsible for lignosulfonate). Because, the smaller crystal molecules don't come closer, they don't agglomerate, thereby keeping the crystals small. This ensures that the charge
-                            reaction happens smoothly and more \(Pb^{2+}\) ions are created.
-                            <br> <br> \(BaSO_4\) acts as a spacer in the coating. It acts as an inert molecule and just sits in the paste to create gaps for the electrolyte (\(H_2SO_4\)) to seep in and react. As a result, more ions seep in and the reaction efficiency improves. 
-                            Carbon Black is an amorphous form of carbon, know for its excellent electrical conductivity properties. Adding it to the paste ensures that the current while operating the battery or discharging spreads uniformly throughout the coating.<br>
-
-                        </p>
-                        <div class="paragraph pop" id="lignosulfonate_content">
-                            <br>
-                            Lignosulfates - a digression
-                            <hr>
-                            Lignosulfonates are sulfonate derivate of lignin. This means that a lignosulfonate molecule is just a lignin molecule with some part removed and a sulfonate group \(HSO_3^-\) added instead. Lignin is a polymer of aromatic compounds, primarily phenylpropanoids, which means that it is a structure composed of a number of phenylpropanoid molecules linked to each other through some bonds. Lignin is the third most abundant organic
-                            compound after chitin and cellulose. 
-                            In nature, lignin is primarily present in plants to provide structural support to the cell walls of plant tissues. Lignin also assists in water transport within plants. 
-                            One of the functional properties of lignosulfonates is as a crystal growth modifier. The surface active properties of lignosulfonates cause interactions with the surface of growing crystals. 
-                            <br><br>
-                        </div>
-                </p>
-                <p class="paragraph">
-                    Clearly, discharging your lead acid battery to too much of an extent is going to be bad. Having introduced a nuance in understanding of the functioning of a battery, it's a nice time to 
-                    introduce the other limitations of batteries and the fundamental concepts related to batteries. We'll begin with the fundamentals. 
-
-                    <hr style="width: 30%; float: left;">
-                    <br>
-                    <div class="paragraph" style="text-align: left;"><strong>fundamentals</strong></div>
-                </p>
-                <p class="paragraph">
-                    We'll begin with the concept of <i><strong>entropy</strong></i>[9] as it describes exactly why the discharge reaction is a specific way and not the other way round in any battery. 
-                    You may have noticed that water freezes <strong>spontaneously</strong> in certain conditions. This freezing of water won't happen in the heat of the noon in Sahara desert. Ice won't spontaneously become liquid in Arctic. 
-                    Entropy gives you way to explain these peculiarities. In the process of developing this idea of entropy, using it, we can also tell whether a certain reaction is capable of occuring spontaneously. 
-                    <br><br>
-                    It must also be kept in mind that you can indeed force some non-spontaneous reactions to happen. If you enforce certain conditions you can make ice melt in arctic as well. So given external input, one can force non-spontaneous reactions to happen.
-                    But the fact that we had to force it to happen makes that reaction non-spontaneous.
-                    <br><br>As another example, water only flows from uphill to downhill. Taking it from downhill to uphill requires a pump device. This is how water reaches our washrooms. We pump the water to some tank at the top of a building, and then it falls 
-                    under gravity through our taps spontaneously. The pump, of course, requires energy in form of electricity. 
-                    <br><br>Another bit of nuance: Spontaneity does not correlate with speed. A spontaneous reaction may be very slow. An interesting example is that of diamond. \(C(s, diamond) \rightarrow C(s, graphite)\). The diamond form of carbon is stable only at very high
-                    pressures. At lower 'normal' pressure, the graphite form of carbon is the most stable. This means that the diamond should convert to grpahite, <i>and indeed it does.</i> But the reaction happens so slowly, that it doesn't matter
-                    in the time scale in which we operate. Therefore we don't worry about our diamonds turning into graphite dust. So, next time you see a diamond, know that it is at all times, slowly converting into graphite. In such a situation, one would say that 
-                    diamond is <i><strong>thermodynamically unstable</strong></i> while <i><strong>kinetically stable</strong></i>. This reaction is must faster at 1000K-2000K and is observable.
-                    <ul class="paragraph">
-                        <li><strong>Thermodynamically unstable</strong>: The term <i>thermodynamic</i> refers to the energy-related changes in a reaction, or a system. A stable system is one which has lower energy. In the case of diamond, it is stabler in the form of graphite as it has lower energy and hence the reaction moves in that direction.</li>
-                        <li><strong>Kinetically stable</strong>: The term <i>kinetic</i> refers to the speed of a reaction. In any reaction, there can be of course a million things that would affect the speed of the reaction. For example, moisture turns into vapour in clothes hung out to dry. But on humid days, this happens rather slowly. The external factors affect the speed of the reaction. Though this 
-                        reaction is thermodynamically stable, it is kinetically slow.</li>
-                    </ul>
-                    <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
-                        <img style="height:50%; width: 50%; object-fit: cover;"  src="./resources/Diamond.jpeg" alt="Conversion of Diamond into Graphite">
-                        <figcaption style="font-style: italic; width: 100%; ">Figure 4: The diamond is thermodynamically unstable in normal conditions. At every moment, some part of it is being converted to graphite but this happens so slowly that the diamond seems to be stable. In such a scenario, one can say
-                        that diamond is thermodynamically unstable but kinetically stable. The lattices in the bottom two images illustrate the arrangement of carbon atoms in each form. Graphite is made up of discs of carbon 'mat'. Each 'mat' is attached to the other through weak van der waal forces. Graphite is an excellent conductor of 
-                    electricity. Source: Thermodynamics - LumenLearning [9]</figcaption>    
-                    </figure>
-
-                </p>
-                
-                <p class="paragraph">
-                    Now that we know what sponetaneous and non-spontaneous reactions are, we can extend our discussion to another interesting aspect: <i>entropy</i>. Consider the following system: two flasks connected by a passage which can be closed by a valve. The left flask has some gas and the right one contains only vacuum (i.e. nothing is inside the right one). 
-                    What happens, when I open the valve? Your instincts would tell you that the gas in the left one would spread to the right one till both flasks have roughly equal amount of gas. But why does that happen? Is it because this configuration has lower energy? 
-                    <br><br>
-                    The answer to that is actually no. There is no change of energy in this change. I kind of need you to take that for granted, as the discussion would go beyond the topic that we are focusing here. The change of internal energy, denoted by \(\Delta U\), is zero i.e. \(\Delta U = 0\). 
-                    Since there is no change of energy, what exactly is causing this reaction to proceed in the direction that it is? <br><br>
-                    The driving force here seems to be the <i><strong>uniform dispersal of matter</strong></i> into both flasks.
-
-                    <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
-                        <img style="width:80%; object-fit: cover;"  src="./resources/Flask.jpeg" alt="Flask Arrangement">
-                        <figcaption style="font-style: italic; width: 100%; ">Figure 5: The left flask contains all the gas initially. As the valve opens, the gas flows into the other one till there is equal amount in both. Source: Thermodynamics - LumenLearning [9]</figcaption>    
-                    </figure>
-
-                </p>
-
-                <p class="paragraph">
-                    As another example, consider the following situation: Two objects at different temperature \(T_X\) and \(T_Y\). When you touch the two, heat flows from the hot one to the cold one. There is no net change in the energy of the system. Then why does this change happen? This again is 
-                    an example of uniform dispersal of energy.
-                    <br><br>
-                    Looking at all these examples, one can conclude that spontaneous reactions are one where more uniform dispersal of matter or energy takes place, irrespective of whether that reaction had a net loss or no loss of energy. Next question that comes in mind: how does one formalize this idea of uniform dispersal of matter?
-                    <br><br>
-                    <strong>Ludwig Boltzmann</strong> came up with a pretty neat idea to explain these phenomena. He explained these changes by analyzing the number of <strong><i>microstates</i></strong> possible for a system. A <strong>microstate (\(W\))</strong>  is a specific configuration of the locations and energies of the atoms or molecules in a system. While the idea
-                    of entropy had been given before by Claudius in 1865 in context of steam heat engines, Boltzmann gave a new definition to entropy. According to him, <strong>entropy \(S\) </strong> was defined as:
-                    $$
-                    \begin{align}
-                    S = klnW
-                    \end{align}
-                    $$ 
-                    where \(k\) is a constant known as Boltzmann constant. 
-                    <br><br>
-                    In a process, the change in entropy \(\Delta S\) is equal to \(kln\frac{W_1}{W_2}\) where \(W_1\) and \(W_2\) are the number of microstates in the two states (initial and final) of the reaction i.e. \(\Delta S = kln\frac{W_1}{W_2}\). For a reaction in which \(W_1>W_2\), \(\Delta S\) is positive and similarly for the other way round. 
-                    Now, what exactly is microstates? Let's understand through a few examples. 
-                    <br><br>
-                    Consider the following situation. You have 4 particles that you wish to distribute into 2 boxes. Each particle has the option of going into 2 boxes. For 4 particles, the number of configurations possible is \(2^4 = 16\). The configurations are illustrated in the following image:
-                    <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
-                        <img style="width:80%; object-fit: cover;"  src="./resources/Microstates.jpeg" alt="Microstates Arrangements">
-                        <figcaption style="font-style: italic; width: 100%; ">Figure 6: In total, the number of configurations is 16. Source: Entropy - LumenLearning [10]</figcaption>    
-                    </figure>
-                </p>
-
-                <p class="paragraph">
-                    Microstates with equivalent distribution of number of particles are assumed equivalent and are called <i><strong>distributions</strong></i>. Hence, there are only 5 distributions in case. Clearly, the number of possibilities for distribution (c) is the highest. 
-                    Hence probabilistically, arrangement of the particles is most likely to be in the (c) distribution, with equal number of particles in both boxes. This is very reminiscent of what we saw in the example of the flasks.
-                    Now as you increase the number of particles and 'boxes', the probability of the configuration of equal distribution will be considerably higher than the other distributions. One mole of a substance contains \(6.022 \times 10^{23}\), and with such numbers the probability becomes astronomically higher. 
-                    Hence the final configurations in the earlier given configurations were heavily probabilistically favored to be in the uniform distribution configuration.
-                    <br><br>
-                    This approach can also explain the heat flow for the two boxes. In both of these reactions, \(\Delta S > 0 \). With this understanding, one can also generalize this concept of entropy to reactions. Following are good guidelines to follow:
-                    <ul class="paragraph">
-                        <li>Change in state: <strong>\(S_{solid} &lt S_{liquid} &lt S_{gas}\)</strong>. This is so because in solids, the atoms are tightly packed. Since no other configurations, solid's entropy is lowest. Liquid has, using similar logic, higher entropy than solid. And gas as the highest entropy.</li>
-                        <li>Raising temperature increases entropy, as molecules absorb energy.</li>
-                        <li>For molecules, greater number of atoms indicate greater number of ways of vibrations and hence has higher entropy.</li>
-                        <li>System having greater variations of particles has a higher entropy. With multiple types of particles, the number of configurations increase and hence entropy increases. </li>
-                    </ul>
-                </p>
-                <p class="paragraph">
-                    <br>
-                    Now processes that involve increasing entropy usually are spontaneous, but there are multiple instances where a reaction occues spontaneously with decrease in entropy. Recall the conversion of liquid water to ice. 
-                    Clearly, there is something lacking in our explanation. The missing piece of the puzzle is to consider the entropy of the rest of the world as well, i.e. \(\Delta S_{univ}\). Extending our understanding of entropy to the entire 
-                    universe completes our theory. We define universal entropy as:
-                    $$
-                    \begin{align}
-                    \Delta S_{univ} = \Delta S_{sys} + \Delta S_{surr}
-                    \end{align}
-                    $$
-                    For any system, entropy change can also be related to the input or output of heat energy into the system. That makes sense, right? If something gets heat energy, the particles get more energy, vibrations increase and entropy therefore increases. 
-                    There has been a formula suggested (and accepted as well), \(\Delta S = \frac{q}{T}\). This applies to both system and surrounding. There is obviously a catch-22 that when you try to apply this equation to a system, the addition of this heat energy might 
-                    lead to change in temperature. How then would one apply this formula? That relates to deeper study of thermodynamics, which we can ignore for the moment. <br><br>
-
-                    While the above statement is true, there is a very helpful approximation that we make which is that no matter what heat addition or reduction that you do to the surrounding, the temperature of the surrounding remains the same. Think about it, you can point your heat blower outside the window, but you seriously can't 
-                    expect the heat to change the temperature of air. <br><br>
-
-                    Let's get an intuition for this \(\Delta S_{univ}\). Take the case of a single object which is very hot at the moment. The heat would radiate out of it into the surrounding. The change in entropy for the system becomes \(\Delta S_{sys} = \frac{-q}{T_{sys}}\). For the surrounding, \(\Delta S_{surr} = \frac{q}{T_{sys}}\). The sign of
-                    \(\Delta S_{univ}\) would depend on the relative values of \(T_{surr}\) and \(T_{sys}\). From intuition, this heat transfer would happen if \(T_{sys} > T_{surr}\). In this situation, the sign of \(\Delta S_{univ}\) will be positive. 
-                    This generalizes very well to all kind of reactions:
-
-                    <ul class="paragraph">
-                        <li>\(\Delta S_{univ}>0\): The reaction is going to be spontaneous</li>
-                        <li>\(\Delta S_{univ}&lt0\): The reaction is not going to be spontaneous</li>
-                        <li>\(\Delta S_{univ} = 0\): The reaction is at equilibrium. The situation will stay as it is.</li>    
-                    </ul>
-                </p>
-                     
-                <p class="paragraph">
-                    For convenience, we can state \(\Delta S_{univ} = \Delta S_{sys} + \frac{q_{surr}}{T}\). While this \(\Delta S_{univ}\) is sufficient to explain spontaneity of a process, literature also defines another quantity to define it 
-                    concisely, which is Gibbs Free Energy \(G\). \(G\) is related to \(\Delta S_{univ}\) as \(\Delta G = -T \Delta S_{univ}\). Therefore Free Energy is equivalent to universal entropy in explaining spontaneity. 
-
-                    <br><br>
-                    Let's talk about the equilibrium case. What exactly is equilibrium and how is that notion captured in numbers and stuff. A brief introduction is given in the collapsible for precipitation-dissipation reaction, so read that up. 
-                    In any reaction, there are products and reactants. In an example reaction \(nA + mB \rightarrow pC + qD\), \(n\) parts of \(A\) combines with \(m\) parts of \(B\), to give \(p\) parts of \(C\) and \(q\) parts of \(D\). 
-                    Let's say the reaction is spontaneous, which means that A and B spontaneously combine to give C and D. For this equation, \(\Delta G\) is negative, and \(\Delta S_{univ}\) is positive. 
-                    <br><br>
-                    In the above reaction, the reaction moves ahead until it reaches equilibrium. What equilibrium means is that A and B only combines uptil a point to produce certain amount of C and D. At that point, the net quantity of A, B, C and D does not change in the container
-                    that contains these components. What is happening at this point is that some A and B are combining continuously to produce C and D, but an equal amount of C and D is dissociating to produce A and B in an equal amount. This means that there is no net change in the quantity of each. 
-                    <br><br>
-                    Obviously, because the amount of reactants and products are same, their ratio would also stay the same at equilbrium. This ratio is expressed as equilibrium constant, denoted by \(k_{eq}\) or simply \(k\). The formula for equilbrium constant \(k\) is 
-                    \(k = \frac{[C]^{p}[D]^{q}}{[A]^n[B]^m}\). The value in brackets are the amount of components in the reaction medium. When the medium is liquid, the values are in Molarity \(M\). We can ignore the concept of molarity at this point. Just know that it is a quantity that expresses the concentration
-                    of some component in a reaction medium. 
-                    <br><br>
-                    In the setting for the above reaction, it is obvious that the reaction may be spontaneous in one condition, and the opposite reaction may be spontaneous in some other condition. How does one relate that to our current understanding of free energy?
-                    Clearly, when we are talking about different conditions, it is prudent to take some condition as a <i>standard</i> one that we can compare to. This <i>standard condition</i> is usually 298K and 1 atm pressure.
-                    Any thermodynamic quantity at this condition is usually expressed using the normal symbol but with a notch above it, e.g. \(S^o\), or \(\Delta G^o\). 
-
-                    So \(\Delta G^o\) for the above reaction would mean free energy change for the reaction at 298K and 1 atm pressure. At that point it may be spontaneous, but what about some other condition. Thankfully, we do have a formula to measure spontaneity at other conditions. The formula is:
-                    $$
-                    \begin{align}
-                    \Delta G = \Delta G^o + RTlnQ
-                    \end{align}
-                    $$                    
-                    Here R is universal gas constant with a value of 8.314 J/K mol. Therefore, this gives us the spontaneity at some temperature, and some component ratio. For example, lets say the reaction is at equilibrium, at this point the system would not go in any direction. That means that \(\Delta G = 0\) which implies that \(\Delta G^o = -RTlnk_{eq}\). Now, lets say you add some A and B in the beaker, this decreases \(lnQ\) and \(\Delta G\) becomes negative, which indicates that the reaction is once again spontaneous towards the forward direction.
-                    This is actually true, because the reaction would again seek to come to equilibrium ratio and that means more production of C and D which means forward reaction.
-
-                    <br><br>After all this wandering about, we are finally at a point to really understand the fundamentals of the chemistry behind batteries. That's not going to be very long. We'll finish it quickly. 
-                    <hr style="width: 30%; float: left;">
-                    <br>
-                    <div class="paragraph" style="text-align: left;"><strong>electrochemistry</strong></div>                    
-                </p>
-
-                <p class="paragraph">
-                    It is time to properly introduce the concept of <strong>electrode potential</strong> and <strong>Nernst Equation</strong>. While I have talked about electrode potential previously, it wasn't sufficiently explained. Let's begin with a simple reaction. 
-                    Any electrochemical reaction that leads to some potential would invariably have two electrodes. One of the electrodes acts as anode and oxidizes, releases electrons and the other electrode (cathode) takes in that electron. This happens continuously and this exchange of electrons is 
-                    basically electricity. Clearly the arrangement has some amount of energy, using which it is able to transport these electrons from one place to another. This energy relates to the potential through something called <strong>Nernst equation</strong>.
-
-                    <br><br>
-                    While analyzing the copper zinc battery in the preceding sections, we had observed that copper reduces and zinc oxidizes. We had, as a consequence, said that the potential of such a cell would be \(E^o_{cell} = E^o_{Cu} - E^o_{Zn}\). Reading up the values, we get
-                    \(E^o_{cell} = 1.28 V\). So that's the potential that you can expect when you make such an arrangement. 
-                    <br><br>
-                    Where do these values (in the table) come from? Well, what you do is you create another cell arrangement against a standard electrode. Take the case of copper as an instance. Make the other electrode a tube of pressurized hydrogen gas immersed in a solution of HCl. The reaction on the electrode is:
-                    $$
-                    \begin{align}
-                    2\text{H}^{+}\left(aq, 1M\right)+2\text{e}^{-}\rightleftharpoons\text{H}_{2}\left(g,1\text{ atm}\right)\,\,\,\,\,\,\,E^{\circ}=0\text{ V}
-                    \end{align}
-                    $$         
-                    Put the copper electrode against this electrode and measure the potential. This potential becomes \(E^o_{Cu}\). Similarly all the other electrode potentials have been derived. This hydrogen electrode is known as <strong>standard hydrogen electrode (SHE)</strong>.
-
-                    <br><br>
-                    So, now that you know how the electrode potentials are realized, its time to relate this electrical quantity to the chemical energy available. Clearly in this situation, there is some chemical energy that is being converted to electrical energy. When you reverse the process, you can convert electrical energy 
-                    to chemical energy. This kind of foreshadows batteries, but we are rushing, so let's get back to creating electrical energy. <br><br> The amount of work required to transmit electrons from one place to the other is really the energy that is being consumed from the cell potential. The electrical work required in this 
-                    transportation is \(W = nFE_{cell}\), where \(F\) is a unit of charge, and \(n\) is the moles of electrons being transfered. This work is being done on the cost of the chemical potential. The gibbs free energy, being a proxy for the chemical energy, is equated to the work. This gives us another important equation of electrochemistry:
-                    $$
-                    \begin{align}
-                    \Delta G = nFE_{cell}
-                    \end{align}
-                    $$                         
-
-                    We can relate this to the other derivation that we have had about \(\Delta G\) and \(\Delta G^o\) to give us the following equation, known as <strong>Nernst Equation</strong>:
-                    $$
-                    \begin{align}
-                    E_{cell} = E^o_{cell} - \frac{RT}{nF}lnQ
-                    \end{align}
-                    $$                       
-
-                    There is a lot of significance to this equation. As the concentration changes during discharge, \(lnQ\) increases, eventually yielding \(E_{cell} = 0 V\). Thus Nernst equation can tell you exactly the potential at any point during the discharge. Another aspect of this is, that if you reverse the reaction using an external potential (charging basically) you can reverse the reaction upto whatever extent you want. Nernst equation 
-                    makes it obvious that there is no upper limit to the potential you can charge your battery to. But there is indeed a problem, in that, once you increase the potential beyond a certain extent, the electrodes start to degrade and the electrolyte starts to disintegrate. This, and many other side effects happen, which is why there are clear guidelines on the safe operating voltages of any battery. We will explore these ranges and why they are so. 
-                    We will get into the nitty gritty details. That is what the next 150 minutes are for!
-
-                    <hr style="width: 30%; float: left;">
-                    <br>
-                    <div class="paragraph" style="text-align: left;"><strong>back to batteries - lead acid</strong></div>  
-                    </p>
-                <p class="paragraph">
-                    An interesting thing to observe in this context of this newly formed knowledge, is that each cell of a lead acid battery basically gives a nominal voltage of 2 V, because the standard potential calculated through the reduction potential table actually does give a value of \(2.04 V\).
-                    <br><br>
-                    Now we'll explore all the types of lead acid batteries, its usage and the safe voltage range (and what happens if we go beyond it.)
-
-                    <br><br>
-                    Exploring the performance of a typical lead acid battery, there are some general trends common to all the lead acid battery types. Lead acid batteries typically have a life of 200 - 300 discharge/charge cycles when deep discharging. 
-                    The main reasons for this short life are corrosion of the grid, loss of active material and reduction of electrolyte. We'll expand on why the corrosion happens. 
-                    <br><br>
-                    Metallic lead in the positive plate is thermodynamically unstable [12]. Hence, like most other pure metals, it also reacts with oxygen to form oxides and hydroxides (in water). In the context of battery, the thing to question is where does this oxygen come from. The answer is an elegent sequence of events that talks about voids, and lattice structure of lead. 
-                    The mechanism for the corrosion happens in the following manner: 
-                    <br><br>
-                    In the elctrolytic solution, \(2 OH^-\) combine to form oxygen \(O_2\) as a byproduct. The reaction proceeds as follows:
-                    $$
-                    \begin{align*}
-                    &2H_2O \rightarrow 2OH^- + 2H^+ \\
-                    &2OH^- \rightarrow O + H_2O \\
-                    &2O \rightarrow O_2
-                    \end{align*}
-                    $$
-                    This oxygen diffuses through the vacancies in the \(PbO_2\) layer to reach the metallic lead. There the similarity in crystal lattices of the intermediate forms of lead oxides and lead comes into picture. Figure 7 illustrates the crystal lattices of various forms of lead. 
-                    <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
-                        <img style="width:50%; object-fit: cover;"  src="./resources/crystal.png" alt="Crystal Structures of Leads">
-                        <figcaption style="font-style: italic; width: 100%; ">Figure 7: The unit cells of metallic lead, Lead (red) tetragonal, and \(\alpha-PbO_2\) are very similar and this makes steric alterations relatively easy. Source: [12]</figcaption>    
-                    </figure>
-                </p>
-                <p class="paragraph">
-                    As the oxygen seeps through the \(PbO_2\) corrosion layer, it combines with the metallic lead 
-                    to give \(tet-PbO\). The crystal structure of tetragonal PbO has yet more space to accomodate additional oxygen atoms, which leads to a slightly unconventional form of lead oxide with not a very well defined formula \(PbO_n\) where \(n\) typically goes upto 1.4. Since the structures of \(tet-PbO\) and \(\alpha-PbO_2\) are very similar, the transition of these intermediate lead oxides convert 
-                    to \(PbO_2\). The intermediate non-stoichiometric \(PbO_n\) forms a thin layer on the lead grid alloy (usually upto a few molecules thick), inhibiting the corrosion of lead, but eventually most of the alloy corrodes and that is one of the main causes for the degradation of lead acid cells. 
-                    <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
-                        <img style="width:30%; object-fit: cover;"  src="./resources/corrosion.png" alt="corrosion of Leads">
-                        <figcaption style="font-style: italic; width: 100%; ">Figure 8: Corrosion of a lead grid alloy. One of the main causes of lead acid battery degradation. Source: [8]</figcaption>    
-                    </figure>
-                </p>
-                <p class="paragraph">
-                    It is also often very helpful to compare the specific energy of batteries to gasoline. It gives us a reference to measure the progress of battery technology. At some point, when this specfic energy crosses that of gasoline, we will successfully transition to renewable technology. Well, here goes the calculation for the specific energy of the lead acid battery. The reaction, for reference, is:
-                    $$
-                    \begin{align}
-                    Pb + PbO_2 + 2H_2SO_4  \rightleftharpoons 2PbSO_4 + 2H_2O 
-                    \end{align}
-                    $$
-
-                    The active components of this reaction are \(Pb, PbO_2, H_2O \text{ and } H2_SO_4\). Their accumulated weight (assuming mole as unit) is: 
-                    $$
-                    P_{\mathrm{LAC}}=(207.2)_{\mathrm{Pb}}+(239.2)_{\mathrm{PbO}_2}+(196)_{2 \mathrm{H}_2 \mathrm{SO}_4}+(32)_{\mathrm{H}_2 \mathrm{O}}=674.4 \mathrm{~g}
-                    $$
-                    Now, because in this reaction 2 moles of \(e^-\) are exchanged, the charge exchanged is \(2 \times 96500 C\) or (equivalently) \(2\times 96500 \times \frac{1}{3600} = 53.61 Ah\). Assuming that this charge is transferred through a cell voltage of \(2.040 V\) (nominal voltage of lead acid batteries), 
-                    the specific energy for lead acid cell is:
-                    $$
-                    E_s = (53.61 \times 2.040)/0.6744 = 162.2 Wh\text{ }kg^{-1}
-                    $$
-
-                    Hence, \(162.2 Wh\text{ }kg^{-1}\) is the theoretical specific energy of lead acid battery assuming \(100\%\) conversion. Petroleum on the other hand, delivers a specific energy of \(12kWh\text{ }kg^{-1}\). As you can see, batteries (or atlead lead acid batteries) are a long way off in catching up with fossil fuel. 
-                    <br><br>
-                    You might remember that the loss of active material is something we have already discussed. In the process of understanding corrosion, the formation of \(O_2\) gas was evident. During charging, the \(H_2O\) electrolyses to \(H_2\) and \(O_2\) which escape in spite of efforts to stop them. This drying up of electrolyte is also a problem. 
-
-                    <br><br>
-                    Now before talking about the various types of lead acid batteries, one must understand that there is essentially one particular technology that is popular. This is the <strong>Valve-Regulated Lead-Acid Batteries (VRLA Batteries)</strong>. The general lead acid battery design looks like the following:
-                    <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
-                        <img style="width:50%; object-fit: cover;"  src="./resources/construction.png" alt="Construction of SLI">
-                        <figcaption style="font-style: italic; width: 100%; ">Figure 9: Construction of a Starter (SLI) Lead Acid Battery. Source: [12]</figcaption>    
-                    </figure>                    
-                </p>
-                <p class="paragraph">
-                    Since the amount of \(H2SO_4\) in the active block is restricted, there is a reservoir as well in the cell which supplies \(H2SO_4\) during discharge. During charge, \(H2SO_4\) is generated inside the active block and diffuses back to the reservoir. At the end of charge, the decomposition of water leads to generation of \(H_2\) and \(O_2\) 
-                    which is led out through valves. The valves allow addition of water or electrolyte as well. Multiple cell plates are arranged in an alternative manner as shown in the image and connected in series. A mass produced SLI lead acid cell typically has a specific energy of \(34-40 Wh\text{ }Kg^{-1}\). This is much less than the theoretical expectation of \(162.2 Wh\text{ }kg^{-1}\)
-                    <br><br>
-                    Immobilization of the electrolyte has been a modern innovation. The immobilisation is done either via absorption in the glass mat seperator or by converting into gel. This entire thing (with the valve and everything) is known as Valve-Regulated Lead-Acid Battery (VRLA Batteries). There is something called Closed Oxygen Cycle (COC) which operates as:
-                    <ul class="paragraph">
-                        <li>Water decomposition at the positive plate leads to the creation of \(O_2\) and \(H^+\).</li>
-                        <li>\(O_2\) and \(H^+\) goes to the negative plate where reduction of \(O_2\) results in the creation of water</li>
-                        <li>This water circulates back to the positive plate and replenishes the decomposed water volume. Hence, the COC cycle reduces water loss</li>
-                    </ul>
-                </p>
-                <p class="paragraph">
-                    Coming back to the types of lead acid batteries, there are basically two types of technologies in VRLA batteries:
-                    <ul class="paragraph">
-                        <li><strong>Absorptive Glass Mat (AGM)</strong>: These batteries have AGM as seperators and it absorbs the electrolytes thereby making it immobile. Absorptive Glass Mat is comprised of \(85\%\) borosilicate glass microfibres and \(15\%\) polymer fibres as reinforcement binders. </li>
-                        <li><strong>Gelled Electrolytes</strong>: In such batteries, the electrolyte is immobilized in the form of gel of \(SiO_2\) and \(Al_2O_3\) particles that are nanometer in diameter.</li>
-                    </ul>
-                </p>
-                <p class="paragraph">
-                    Applications of lead acid battery are also mostly of two types:
-                    <ul class="paragraph">
-                        <li><strong>SLI (starting, lighting, ignition) Batteries</strong>: These are used in automobiles to deliver large load current on the engine for a short time. This large current is supplied to start the engine and ignite the spark plug initiating the combustion process in the engine. Such batteries have very low internal resistance that is achieved by making plates very large and thin. The emphasis is on power rather than capacity.</li>
-                        <li><strong>Motive (Deep-cycle batteries)</strong>: These are meant for provide continuous power to vehicles such as golf cart, forklifts, wheelchair etc. This battery is built to be recharged fairly hgih number of times which is achieved by making the plates thick. </li>
-                        <li><strong>Stationary Batteries</strong>: Mostly for applications that require storage. Example being UPS (Uninterrupted Power Supply) for computer systems etc. </li>
-                    
-                    </ul>                    
-                </p>
-                <p class="paragraph">
-                    Finally, we end this section on lead acid batteries with a guide on charging of lead acid batteries. The charging of LA batteries is done through constant current/constant voltage (CC/CV) charging. This is a rather popular 
-                    way to charge batteries. A constant current charges the battery upto a set upper limit terminal voltage and once reached, the current starts decreasing as the battery capacity starts to saturate. Lead acid batteries usually take a long time to charge, from 8-16 hours. 
-                    <br><br>
-                    This charging is done in three stages: <strong>constant current charging</strong>, <strong>topping charge</strong>, and <strong>float charge</strong>. The constant current stage charges bulk of the capacity, and takes about half the time. The topping charge happens at decreasing current and saturates the battery. 
-                    The float charge compensates for the loss to be caused by self-discharge. The first stage charges 70% in 5-8 hours, and the topping charge fulfills the remaining 30% in 7-10 hours. The float charge maintains the battery at full charge. Full charge is said to happen when the current reaches 3-4% of the Ah rating. The charge voltage limit is kept usually at 2.3 to 2.45 V. Deciding the upper limit is kind of a compromise. one could charge 
-                    further to a higher voltage to increase capacity, and also avoid sulfation, but also must limit the upper voltage set to ensure gassing, water loss and grid corrosion on positive plate doesn't happen. Figure 10 shows the three stages:
-                    <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
-                        <img style="width:50%; object-fit: cover;"  src="./resources/charging.png" alt="Charging of Lead Acid Battery">
-                        <figcaption style="font-style: italic; width: 100%; ">Figure 10: Charge stages of a lead acid battery. Source: [1]</figcaption>    
-                    </figure>                     
-                </p>
-                <hr style="width: 30%; margin-top: 80px;">
-                <div class="paragraph" style="text-align: center;">references</div>
-                <ol style="padding-bottom: 40px;">
-                    <li style="font-family: monospace;">Battery University</li>
-                    <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://www.borregaard.com/product-areas/lignin/your-guide-to-lignin-and-lignosulfonates/" target="_blank">Lignosulfates</a></li>
-                    <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://en.wikipedia.org/wiki/Lead%E2%80%93acid_battery#Construction" target="_blank">Lead Acid - Wikipedia</a></li>
-                    <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://en.wikipedia.org/wiki/Lead%E2%80%93acid_battery#Construction" target="_blank">Carbon-based neural electrodes: promises and challenges - Devi, Vomero, et. al.</a></li>
-                    <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://www.sciencedirect.com/science/article/pii/S037877539900378X" target="_blank">Dissolution and precipitation reactions of lead sulfate in positive and negative electrodes in lead acid battery - Zen-ichiro Takehara</a></li>
-                    <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://courses.lumenlearning.com/chemistryformajors/chapter/precipitation-and-dissolution-2/" target="_blank">Precipitation and Dissolution - LumenLearning</a></li>
-                    <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://iopscience.iop.org/article/10.1149/1.2127282" target="_blank">Effects of Deep Cycling on Lead Positive Plates - C.P Wales and A.C. Simon</a></li>
-                    <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://www.sciencedirect.com/science/article/pii/S0378775303009340" target="_blank">Aging mechanisms and service life of lead–acid batteries - Paul Ruetschi</a></li>
-                    <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://courses.lumenlearning.com/suny-albany-chemistry/chapter/spontaneity/" target="_blank">Thermodynamics - LumenLearning</a></li>
-                    <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://courses.lumenlearning.com/suny-albany-chemistry/chapter/entropy/" target="_blank">Entropy - LumenLearning</a></li>
-                    <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://courses.lumenlearning.com/suny-albany-chemistry/chapter/the-second-and-third-laws-of-thermodynamics/" target="_blank">Laws of Thermodynamics - LumenLearning</a></li>
-                    <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://www.sciencedirect.com/book/9780444595522/lead-acid-batteries-science-and-technology" target="_blank">Lead-Acid Batteries: Science and Technology D. Pavlov</a></li>
-                </ol>
+            <div class="button_text" style="height: 40%;">
+                <div style="text-align: center; font-family: optima; font-size: x-large; margin: auto 0; padding-top: 40px;">
+                    Battery Technology
+                </div>
             </div>
-            
         </div>
+        <div class="content_button" id="genetic_blog">
+            <div class="minibanner" style="height: 60%; border: 1px black ridge; text-align: center; background-color: rgb(235, 235, 235);  ">
+                <img src="resources/buttons/dna.png" style="object-fit: contain; height: 100%; ">
+            </div>
+            <div class="button_text" style="height: 40%;">
+                <div style="text-align: center; font-family: optima; font-size: x-large; margin: auto 0; padding-top: 40px;">
+                    Genetics
+                </div>
+            </div>       
+        </div>
+        <div class="content_button" id="finance_blog">
+            <div class="minibanner" style="height: 60%; border: 1px black ridge; text-align: center; background-color: rgb(247, 245, 234);  ">
+                <img src="resources/buttons/dollar.png" style="object-fit: cover; height: 100%; ">
+            </div>
+            <div class="button_text" style="height: 40%;">
+                <div style="text-align: center; font-family: optima; font-size: x-large; margin: auto 0; padding-top: 40px;">
+                    Corporate Finance
+                </div>
+            </div>    
+        </div>
+    </div>
+    <br><br><br>
+    <div class="topic_blog" id="battery_blog_text">
+        <div class="topic">battery technology</div>
+        <hr class="horizontal">
+        <div class="date" style="font-family: monospace;">18th Nov 2023</div>
+        <div id="reading-time" style="text-align: center; font-family: monospace;"></div>
+        <div class="intro">
+            <div class="text content" id="topic-content">
+                <div class="paragraph preset">
+                    I have been meaning to do this for a very long time. To set the context, this is going to be a 3 hour read on battery technology (at a minimum!). It will be fairly rigorous. I hope to cover it till a point where the 
+                    professionals might start finding it useful. For me, it serves as a starting point to find something to dedicate my working hours to.
+                </div>
+                <br>
+                <div class="inline-image">
+                    <figure class="float">
+                        <img class="float-left" src="resources/battery/parthian_battery.jpeg" alt="Parthian Battery">
+                        <figcaption style="font-style: italic; text-align: center;">Parthian battery, Baghdad</figcaption>
+                    </figure>
+                    <p class="paragraph">
+                        I'll start with some interesting checkpoints in history. The earliest evidence of something akin to battery is the Parthian Battery which is around 2000 years old and traced to the 
+                        Parthian empire. It is a clay jar with vinegar solution (electrolyte) into which an iron rod surrounded by copper cylinder was inserted (electrodes!). It gave off a voltage of 1.1 to 2V.
+                        Now while there are disputes about the purpose of this device (some think it was a battery, and others think it was some kind of electroplating) it still serves as a 
+                        nice note that experiments with potentials were in works since long ago.
+                        <br><br>
+                        Alessandro Volta discovered in 1800 that certain fluids generate a continuous flow of electrical current which led to the development of the first voltaic cell. He eventually
+                        also demonstrated a use for this phenomena through something he called 'an electrical pistol'. The set up included a long-distance communication wire with the other end in a jar of methane. When
+                        the electical spark was sent through, it made the jar burst. Single bit of information transfer. <i>On</i>.
+                        <br><br>
+                        In 1859 came the first rechargeable battery courtesy Mr. Gaston Plante using lead acid. In 1899, Waldemar Junger developed the Nickel-Cadmium battery (NiCd). Two years later, Edison replaced the 
+                        cadmium with Iron, giving birth to the NiFe battery. These legacy batteries have lost their relevance over the years. NiCd is harmful to the environment, and EU even necessitated replacememt of NiCd with 
+                        NiMH. <br><br>
+                    </p>
+                        <hr style="width: 50%;"/>
+                        <div class="paragraph" style="text-align: center;"><strong>technical</strong></div>
+    
+                    <p class="paragraph">
+                        With the history out of the way, its time to dive into the technical aspects of battery. I want to establish a few standard terminologies to make sure we are on the same page. I won't digress too much. Only two terminologies (right now).
+                        <br><br>
+    
+                        <i><strong>Specific Energy</strong></i>: Capacity of the battery in Wh/Kg. Its kind of how long the battery can sustain some load (as in how long it can keep supplying current). Higher specific energy, longer time to discharge.
+                        <br><i><strong>Specific Power</strong></i>: This is related to the maximum current a battery can provide at any instant. Unit is W/kg. It relates more to the high-current load requirement than anything else. 
+                        <br><br>
+                        Essentially, a battery is stored energy. In a battery, there are four components: a cathode, an anode, a seperator, and an electrolyte. 
+                        <br><br>
+                        What does a battery generally look like, in its simplest form? Imagine a container, with copper plate at one side and zinc strips at the other. The container is filled with an electrolyte, which in this case is a sodium chloride salt solution (common salt dissolved in water).
+                        An <strong>electrolyte</strong> is a substance which conducts electricity when dissolved into water. The details of the conduction mechanism is interesting in itself, but we will ignore it for the while. 
+                        Connect a bulb, with the positive terminal of it attached to the copper plate, and the negative terminal at zinc. Now when the connections are established the bulb lights up. 
+                        <br><br>
+                        In this case, when the connections are established, chemical reactions take place at both ends. Since zinc is more reactive than copper, it starts to oxidate i.e. the following reaction occurs:
+                    </p>
+    
+                    <p style="text-align: center;" class="paragraph">At Zinc (anode)</p>
+                    <p class="paragraph">
+                        $$
+                        \begin{align}
+                        Zn \rightarrow Zn^{2+} + 2e^-;
+                        \end{align}
+                        $$ 
+                    </p>
+                    <p style="text-align: center;" class="paragraph">At Copper (cathode)</p>
+                    <p class="paragraph">
+                        $$
+                        \begin{align}
+                        Cu^{2+} \rightarrow Cu + 2e^-;
+                        \end{align}
+                        $$
+                    </p>
+                    <p class="paragraph">
+                        
+                        I'll give a hint of how this happens later. Right now, it is important to see that when the decomposition happens at the zinc (which is why it is called the anode. Anode, by definition, is the electrode from which electrons leave when discharging.) The electrons that are ejected 
+                        move through the external circuit to the cathode (copper) where they combine with \(Cu^{2+}\) to form normal solid Copper. 
+                        <br><br>This is important because when the electrons move through the external circuit, we call it electricity. To summarize:
+                        <br>
+                        <ul class="paragraph">
+                            <li><strong>Anode</strong>: This is where oxidation occurs. Oxidation is the removal of electrons. So, anode is the electrode which loses electrons.</li>
+                            <li><strong>Cathode</strong>: This is where reduction occurs. Reduction is the addition of electrons. So cathode is the electrode where electrons are absorbed.</li>
+                            <li><strong>Electrolyte</strong>: Facilitates the movement of ions. These ions are not the ions produced by electron transfer in electrode. In our case, these are \(Na^+\) and \(Cl^-\).</li>
+                        </ul>
+                    </p>
+                    <p class="paragraph">
+                        Finally, there is the <i><strong>seperator</strong></i> whose job is to ensure that the electrodes don't make contact i.e. do not short. If that happens, a lot of current will flow through. Fire, burns, you get the idea. So the seperator is also very important.
+                        <br><br>
+                        To get a sense of why reaction happens the way it does, it is prudent to get a look at the famous electrode potential table. Following is a table that lists the relative <i>reactivity</i> of the electrodes in a sense.
+                    </p>
+                    <figure style="text-align: center;">
+                        <img style="height: 450px;" src="resources/battery/Electrode_potential.jpeg" alt="Standard Reduction Potential">
+                        <figcaption style="font-style: italic; text-align: center;">Standard Electrode Potential for many materials</figcaption>
+                    </figure>
+                    <p class="paragraph">
+                        In the table above, the <strong><i>reduction</i> potential</strong> refers to the tendency of the compounds/electrons to gain an electron. If you reverse the reactions and flip the sign of the numbers, you'll get the tendency of each of them to <i>oxidize</i> i.e. lose an electron.
+                        As you can see in the table, copper (Cu) has a higher tendency to get reduced than zinc (Zn), and therefore it is the one that gains electrons in the simple battery that we have. In our case, the copper electrode is therefore the cathode as it gains electrons.<br>
+                        <br>
+                        
+                        Since the electrons always move from a lower potential to a higher potential, we can say that copper is at the higher potential in this reaction. Hence, it will be called the <strong>positive electrode</strong>. Consequently, zinc electrode will be called the <strong>negative electrode</strong>. 
+                        Now, depending on the direction of the reaction (when charging, this reaction reverses), the anode and cathode may change but the positive and negative electrode will stay the same physical entity. 
+                        <br><br>
+                        At this point, it probably is going to be useful to start talking about the popular types of battery in use in the world today. <strong>Lead Acid Battery</strong> is a good place to start, since it is a battery that is still in great use, and has seen multiple evolutions. We will probe the 
+                        capabilities, construction, issues and the chemistry behind it. In this process, I suspect we will learn a lot about materials, alloys and chemistry. 
+                    </p>
+                    <br>
+                    <div class="paragraph" style="text-align: left;"><strong>Lead Acid Battery</strong></div>                
+                    <p class="paragraph">
+                        Lead acid battery[2] was the first batteries to be recyclable. It was discovered in 1859 by Gaston Planté. In a simple lead acid battery, there are three components:
+                        <ul class="paragraph">
+                            <li>Positive Plate: Lead Dioxide \(PbO_2\)</li>
+                            <li>Negative Plate: Spongy Lead \(Pb\)</li>
+                            <li>Electrolye: Diluted Sulfuric Acid \(H_2SO_4\)</li>
+                        </ul>
+                    </p>
+    
+                    <p class="paragraph">
+                        The chemistry during discharge between these three components looks like:
+                    </p>
+    
+                    <p style="text-align: center;" class="paragraph">At Negative Plate</p>
+                    <p class="paragraph">
+                        $$
+                        \begin{align}
+                        Pb(s) + HSO_4^-(aq) \rightarrow PbSO_4(s) + H^+(aq) + 2e^-
+                        \end{align}
+                        $$ 
+                    </p>
+                    <p style="text-align: center;" class="paragraph">At Positive Plate</p>
+                    <p class="paragraph">
+                        $$
+                        \begin{align}
+                        PbO_2(s) + HSO_4^-(aq) + 3H^+(aq)+ 2e^- \rightarrow PbSO_4(s) + 2H_2O(l)
+                        \end{align}
+                        $$
+                    </p>
+                    <p class="paragraph">
+                            <iframe style="top: 50px;float: right; padding-left: 20px;"  width="380" height="250" src="https://www.youtube.com/embed/1-NbDjxh_v0?si=hj38nt9oVFg5oJ5R&amp;start=214&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <p class="paragraph">
+                                In both reactions, at the end the solid \(PbSO_4(s)\) is formed. The complete reaction during discharge hence looks like: 
+                                $$
+                                \begin{align}
+                                \beta\text{-}PbO_2 + Pb + 2H_2SO_4 \rightarrow 2PbSO_4 + 2H_2
+                                \end{align}
+                                $$
+                            </p>
+                            <p class="paragraph">
+                                In this complete reaction, \(PbSO_4\) crystal is precipitated at both the plates[5]. The reactions during discharge happen through <strong>precipitation dissipation</strong> <button type="button" class="pop_arrow" id="precdiss"></button> reaction where a super-saturated \(Pb^{2+}\) solution is first formed through charge transfer reaction on \(Pb \) and \( \beta\text{-}PbO_2\) followed by precipitation of \(PbSO_4\) on both plates. The
+                                 particle size of \(PbSO_4\) formation depends on the concentration of \(Pb^{2+}\) ions. This process of dissipation and then precipitation is also how the reactions take place during charging. 
+                                <br>
+                            </p>
+                            <div class="paragraph pop" id="precdiss_content">
+                                <br>
+                                <strong>Solubility Product</strong>
+                                <hr>
+                                    The solubility of a substance in any liquid medium can range from completely soluble (miscible) to completely insoluble (immiscible). A substance which is only partially soluble, would precipitate if we add more substance
+                                    in the medium than it can take. This means that for substances that are not completely miscible, there is a limit to the weight of it we can add to the medium and expect it to disappear completely
+                                    in the solution. If we add more, it will start to settle in the container as solid. It won't dissolve any longer. 
+                                    <br><br>
+                                    While this makes sense, the really interesting part in realizing that the situation is not a static one. In fact it is very dynamic. The solid form of the substance and the dissolved components are actually in dynamic equilibrium throughout. Such a reaction is called a <strong>precipitation dissipation</strong> reaction.
+                                    <br><br>
+                                    Take the example of Silver Chloride:
+                                    $$
+                                    \operatorname{AgCl}(s) \underset{\text { precipitation }}{\stackrel{\text { dissolution }}{\rightleftarrows}} \mathrm{Ag}^{+}(a q)+\mathrm{Cl}^{-}(a q)
+                                    $$
+                                 In this situation, at any point some part of the solid breaks and goes into the solution and some ions that are already present in the solution combinse, solidify and precipitate. Now, though the amount of solid in this saturated solution is 
+                                 constant, the particles are not static. It's not the case that the elements in solid stay in the solid. This exchange keeps happening. This is called <strong>dynamic equilibrium</strong>.
+                                 <br><br>
+                                 One can also calculate the concentration of ions in the solution in a solution at equilibrium. This can be done through the concept of <strong>Solublity Product</strong> denoted usually as \(K_{sp}\)             
+                                 <br><br>
+                                 At equilibrium, \(K_{sp} = [Ag^+(aq)][Cl^-(aq)]\). The square elements are the values of the concentration of \(Ag^+\) and \(Cl^-\) in units of Molarity (which is number of moles of a substance in a litre of solution. A mole is a certain number of entities. We'll discuss all this later.)
+                                 <br>The value of \(K_{sp}\) is fixed at a given temperature. So from the formula, one can get the exact concentration of the ions in the solution. To study solubility product further, [6] is a nice reference.
+                                 <br><br>
+                            </div>
+                            <p class="paragraph">
+                                During charging, \(Pb^{2+}\) ions on both plates are supplied by the \(PbSO_4\) crystals that were formed during discharge. Because \(PbSO_4\) is a non-conducting ionic solid, the oxidation of \(PbSO_4\) to \(\beta\text{-}PbO_2\) and the reduction to \(Pb\) during charge happens at the interface between \(PbSO_4\) crystal and \(\beta\text{-}PbO_2\) or \(Pb\) on the grid alloy which is a conductor. Hence, current density, crystal size and solubility of \(PbSO_4\) in sulfuric acid solution, diffusion coefficient and diffusion path of 
+                                \(Pb^{2+}\) ions play an important role in affecting the charge performance. <button type="button" class="pop_arrow" id="diffusion"></button>
+                                After being completely discharged the entire composition looks like Figure 2. 
+                                <br>
+                            </p>
+                            <div class="paragraph pop" id="diffusion_content">
+                                <br>
+                                Diffusion
+                                <hr>
+                                    <strong>Diffusion coefficient</strong>: The diffusion coefficient, typically denoted as \(D\), is a measure of the rate at which particles (like ions) diffuse, or spread out, through a medium. It quantifies how fast the particles are moving due to thermal energy. It depends on factors like temperature, the medium through which the ions are moving, and the size and charge of the ions. Generally, 
+                                    \(D\) increases with temperature due to increased atomic or molecular motion. This relationship is often described by the Arrhenius equation: \(D = D_0e^{-E_a/{RT}}\) <br>
+                                    <strong>Diffusion Path</strong>: The diffusion path refers to the physical route or trajectory that ions take as they move from one location to another through a solid, liquid, or gaseous medium.
+                                <br><br>
+                            </div>
+                            <p class="paragraph">
+                                Lead sponge is a structure composed of a lot of lead strands connected to each other. It is extremely porous and is 75-90% empty space by volume. It has an extremely high surface area that results in it being a more 
+                                efficient negative plate. The youtube channel <i>NileRed</i> demonstrates the creation of such a compound. While it is more of a composite of lead and zinc, the material produced in the video still serves the purpose of illustrating
+                                the kind of material spongy lead is.
+                            </p>
+                            <p class="paragraph">
+                                It's also worth going into the construction and manufacturing of components of lead acid battery. There are two electrodes with spongy lead on one and lead dioxide on the other, and their structural integrity is maintained through grids made of lead alloy at both side. The active material is pasted on the grid in a manner illustrated in the figure 3. The positive 
+                                grid plate is coated with lead dioxide and the negative grid plate is coated with spongy lead. The lead grid also acts a conductor for the entire process. <br><br>
+                            </p>
+                            <figure style="float: left; position: relative; bottom: 0px;">
+                                <img style="height: 200px;"  src="./resources/battery/Image-of-a-lead-e-tin-electroplated-honeycomb-grid-and-pasted-and-cured-lead-acid-battery.png" alt="Grid Coating">
+                                <figcaption style="font-style: italic; text-align: center;">Figure 3: Coating on a grid</figcaption>
+                            </figure>
+                            <p class="paragraph">   
+                                Earlier, pure lead had been in use till its poor structural integrity necessitated replacement with lead alloy. The first alloy to be used was lead-antimony (8-12%). This antimony-heavy alloy had some issues, the main being the evolution of excessive
+                                volumes of hydrogen in the process. As a result, they were replaced with lead-calcium and lead-selenium grid alloys. Antimony was still used but in lesser percentages. <br><br>These new alloys give more strength to the grid, allowing it to carry more active material which meant a battery with higher capacity. Adding antimony and tin also improves deep cycling.  <button type="button" class="pop_arrow" id="deep_cycling"></button>
+                                Antimony dissolves from the alloy and is retained in the active mass as hydrated antimony oxides which act as cement between active mass and gridH. Hence, antimony-lead alloys promote a more dense and coherent \(PbO_2\) structure during charging. This prevents active mass shedding that happens due to deep cycling.
+                                The coating on the plates is done with a paste of lead oxide, sulfuric acid and water. This is followed by curing where the plates are heated in high-humidity environment. The curing changes the paste into lead sulphate and evaporates the water. 
+                            </p>
+                            <div class="paragraph pop" id="deep_cycling_content">
+                                <br>
+                                Deep Cycling
+                                <hr>
+                                    Deep cycling, or discharging the battery substantially and then recharging, has several detrimental effect on the battery. Cycling is primarily associated with two faults: 
+                                    <ul class="paragraph">
+                                        <li>Active Mass Shedding</li>
+                                        <li>Sulfation</li>
+                                    </ul>
+                                    <figure style="width: 300px; float: right; text-align: center; position: relative; bottom: 0px;">
+                                            <img style="height: 300px; object-fit: cover;"  src="./resources/battery/Sulfation.png" alt="Crystal \(PbSO_4\)">
+                                            <figcaption style="font-style: italic; width: 100%; ">Fig (a): The large crystals are \(PbSO_4\) particles and the small ones are \(PbO_2\) particles.</figcaption>    
+                                    </figure>
+                                    In the lead acid battery, when the discharge happens, the structure of the active mass on the grid alloy changes. On the positive plate, the \(PbO_2\) changes to \(PbSO_4\) crystals. This happens at the negative plate as well.
+                                    Figure (a) illustrates the difference in size between the \(PbSO_4\) crystals and \(PbO_2\) particles after a single discharge of the positive plate that contains \(PbO_2\)[7]. Something similar happens in negative plate. 
+                                    <br><br>
+                                    <strong>Sulfation</strong>: Active mass is the paste that is coated on the grid alloy at both electrode. At the positive plate, the grid alloy is coated by \(PbO_2\) and at the negative plate, the coating consists of spongy lead \(Pb\). 
+                                    At the positive plate, when the discharge happens, the lead dioxide converts to lead sulphate which is crystalline in nature. When the battery is subjected to reverse reaction (that is charging), not all
+                                    of the crystal gets converted to the lead dioxide. The size and toughness of crystal increases as the battery is kept unused and in a discharged state. <br><br>This is illustrated by an experiment done by [8], and the result is shown in Fig (a). In this figure, the peaks relate to the 
+                                    current that is drawn or applied during discharging and charging. The peaks are different in nature, signifying that the reverse reaction is not exactly the same. Some active mass remains as lead sulphate, and don't 
+                                    participate anymore in reaction. As time goes by, the active mass decreases leading to decreasing discharge capacity.
+                                    <br><br>
+                                    <strong>Active Mass Shedding</strong>: With each cycle, the active mass is recycled with a slightly different morphology[7]. Practically, with cycling, the active mass becomes softer. The integrity between the clump of particles in the 
+                                    active mass decreases, leading to breaking away of active mass. Figure (b) shows the state of the grid alloy coating of a lead acid battery used in a public transport bus after 6 months of use. Since, in a public transport bus, the cycling happens extensively, degradation due to 
+                                    mass shedding is quite dramatic.<br><br>
+                                    Another degradation results from the preferential discharge of the active mass attached to the grid. As current goes through the grid, the section of the 
+                                    coating that is at the grid-paste interface is converted to lead sulphate assisted by the acid that seeps in the pores of the coating. During recharge, the material is deposited at the surface of the coating and uniformly. This happens due to the 
+                                    nature of this reaction being that of a dissipation precipitation reaction. The solid mass dissolves into the electrolyte and then precipitates on the surface. This leads to increasing porosity at the surface of the grid, leading to more crystal 
+                                    formations. Now, when discharge happens repeatedly, the lead sulphate crystals increasingly interrupt the electrical connection leading to lower capacity.
+    
+                                    <br>
+                                    <div style="display: inline-flex; justify-content: space-around; width: 100%;">
+                                        <figure style="width: 300px; text-align: center; position: relative; bottom: 0px;">
+                                            <img style="width: 300px; object-fit: contain;"  src="./resources/battery/leadconversion.png" alt="Discharge Capacity">
+                                            <figcaption style="font-style: italic; padding-left: 20px; width: 100%; text-align: center; ">Fig (a): The peaks of the charge and discharge reaction are different. Hence, charge reaction does not convert all the lead sulphate back to lead dioxide.</figcaption>    
+                                        </figure>
+                                        <figure style="width: 300px; text-align: center; position: relative; bottom: 0px;">
+                                            <img style="width: 300px; object-fit: contain;"  src="./resources/battery/activemassshedding.png" alt="Active Mass Shedding">
+                                            <figcaption style="font-style: italic; padding-left: 20px; width: 100%; text-align: center; ">Fig (b): Active mass shedding after 6 months of use in a public bus.</figcaption>    
+                                        </figure>
+                                        <!-- <figure style="width: 300px; text-align: center; position: relative; bottom: 0px;">
+                                            <img style="height: 300px; object-fit: contain;"  src="./resources/discharge_potential.png" alt="Discharge Capacity">
+                                            <figcaption style="font-style: italic; width: 100%; ">Fig (c): Discharge potential of a lead acid battery.</figcaption>    
+                                        </figure> -->
+                                    </div>
+                                    
+                                <br><br>
+                            </div>
+                            <iframe style="top: 50px;float: right; padding-left: 20px; padding-top: 10px;"  width="380" height="250" src="https://www.youtube.com/embed/CXxQtlSysg4?si=oV7HOxJ3IGHiRHWQ&amp;start=19&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <p class="paragraph">
+                                The formation of lead sulphate crystals, or sulphation, is a major reason of deterioration of the charge capacity of the lead acid battery. To mitigate the error, modern day coating contains carbon black, Barium Sulphate \(BaSO_4\) and lignosulfate[2]. <button type="button" class="pop_arrow" id="lignosulfonate"></button> The lignosulfonate ensures that the crystal size doesn't become too large by keeping
+                                the lead sulphates seperate. (Read more on how this happens in the collapsible for lignosulfonate). Because, the smaller crystal molecules don't come closer, they don't agglomerate, thereby keeping the crystals small. This ensures that the charge
+                                reaction happens smoothly and more \(Pb^{2+}\) ions are created.
+                                <br> <br> \(BaSO_4\) acts as a spacer in the coating. It acts as an inert molecule and just sits in the paste to create gaps for the electrolyte (\(H_2SO_4\)) to seep in and react. As a result, more ions seep in and the reaction efficiency improves. 
+                                Carbon Black is an amorphous form of carbon, know for its excellent electrical conductivity properties. Adding it to the paste ensures that the current while operating the battery or discharging spreads uniformly throughout the coating.<br>
+    
+                            </p>
+                            <div class="paragraph pop" id="lignosulfonate_content">
+                                <br>
+                                Lignosulfates - a digression
+                                <hr>
+                                Lignosulfonates are sulfonate derivate of lignin. This means that a lignosulfonate molecule is just a lignin molecule with some part removed and a sulfonate group \(HSO_3^-\) added instead. Lignin is a polymer of aromatic compounds, primarily phenylpropanoids, which means that it is a structure composed of a number of phenylpropanoid molecules linked to each other through some bonds. Lignin is the third most abundant organic
+                                compound after chitin and cellulose. 
+                                In nature, lignin is primarily present in plants to provide structural support to the cell walls of plant tissues. Lignin also assists in water transport within plants. 
+                                One of the functional properties of lignosulfonates is as a crystal growth modifier. The surface active properties of lignosulfonates cause interactions with the surface of growing crystals. 
+                                <br><br>
+                            </div>
+                    </p>
+                    <p class="paragraph">
+                        Clearly, discharging your lead acid battery to too much of an extent is going to be bad. Having introduced a nuance in understanding of the functioning of a battery, it's a nice time to 
+                        introduce the other limitations of batteries and the fundamental concepts related to batteries. We'll begin with the fundamentals. 
+    
+                        <hr style="width: 30%; float: left;">
+                        <br>
+                        <div class="paragraph" style="text-align: left;"><strong>fundamentals</strong></div>
+                    </p>
+                    <p class="paragraph">
+                        We'll begin with the concept of <i><strong>entropy</strong></i>[9] as it describes exactly why the discharge reaction is a specific way and not the other way round in any battery. 
+                        You may have noticed that water freezes <strong>spontaneously</strong> in certain conditions. This freezing of water won't happen in the heat of the noon in Sahara desert. Ice won't spontaneously become liquid in Arctic. 
+                        Entropy gives you way to explain these peculiarities. In the process of developing this idea of entropy, using it, we can also tell whether a certain reaction is capable of occuring spontaneously. 
+                        <br><br>
+                        It must also be kept in mind that you can indeed force some non-spontaneous reactions to happen. If you enforce certain conditions you can make ice melt in arctic as well. So given external input, one can force non-spontaneous reactions to happen.
+                        But the fact that we had to force it to happen makes that reaction non-spontaneous.
+                        <br><br>As another example, water only flows from uphill to downhill. Taking it from downhill to uphill requires a pump device. This is how water reaches our washrooms. We pump the water to some tank at the top of a building, and then it falls 
+                        under gravity through our taps spontaneously. The pump, of course, requires energy in form of electricity. 
+                        <br><br>Another bit of nuance: Spontaneity does not correlate with speed. A spontaneous reaction may be very slow. An interesting example is that of diamond. \(C(s, diamond) \rightarrow C(s, graphite)\). The diamond form of carbon is stable only at very high
+                        pressures. At lower 'normal' pressure, the graphite form of carbon is the most stable. This means that the diamond should convert to grpahite, <i>and indeed it does.</i> But the reaction happens so slowly, that it doesn't matter
+                        in the time scale in which we operate. Therefore we don't worry about our diamonds turning into graphite dust. So, next time you see a diamond, know that it is at all times, slowly converting into graphite. In such a situation, one would say that 
+                        diamond is <i><strong>thermodynamically unstable</strong></i> while <i><strong>kinetically stable</strong></i>. This reaction is must faster at 1000K-2000K and is observable.
+                        <ul class="paragraph">
+                            <li><strong>Thermodynamically unstable</strong>: The term <i>thermodynamic</i> refers to the energy-related changes in a reaction, or a system. A stable system is one which has lower energy. In the case of diamond, it is stabler in the form of graphite as it has lower energy and hence the reaction moves in that direction.</li>
+                            <li><strong>Kinetically stable</strong>: The term <i>kinetic</i> refers to the speed of a reaction. In any reaction, there can be of course a million things that would affect the speed of the reaction. For example, moisture turns into vapour in clothes hung out to dry. But on humid days, this happens rather slowly. The external factors affect the speed of the reaction. Though this 
+                            reaction is thermodynamically stable, it is kinetically slow.</li>
+                        </ul>
+                        <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
+                            <img style="height:50%; width: 50%; object-fit: cover;"  src="./resources/battery/Diamond.jpeg" alt="Conversion of Diamond into Graphite">
+                            <figcaption style="font-style: italic; width: 100%; ">Figure 4: The diamond is thermodynamically unstable in normal conditions. At every moment, some part of it is being converted to graphite but this happens so slowly that the diamond seems to be stable. In such a scenario, one can say
+                            that diamond is thermodynamically unstable but kinetically stable. The lattices in the bottom two images illustrate the arrangement of carbon atoms in each form. Graphite is made up of discs of carbon 'mat'. Each 'mat' is attached to the other through weak van der waal forces. Graphite is an excellent conductor of 
+                        electricity. Source: Thermodynamics - LumenLearning [9]</figcaption>    
+                        </figure>
+    
+                    </p>
+                    
+                    <p class="paragraph">
+                        Now that we know what sponetaneous and non-spontaneous reactions are, we can extend our discussion to another interesting aspect: <i>entropy</i>. Consider the following system: two flasks connected by a passage which can be closed by a valve. The left flask has some gas and the right one contains only vacuum (i.e. nothing is inside the right one). 
+                        What happens, when I open the valve? Your instincts would tell you that the gas in the left one would spread to the right one till both flasks have roughly equal amount of gas. But why does that happen? Is it because this configuration has lower energy? 
+                        <br><br>
+                        The answer to that is actually no. There is no change of energy in this change. I kind of need you to take that for granted, as the discussion would go beyond the topic that we are focusing here. The change of internal energy, denoted by \(\Delta U\), is zero i.e. \(\Delta U = 0\). 
+                        Since there is no change of energy, what exactly is causing this reaction to proceed in the direction that it is? <br><br>
+                        The driving force here seems to be the <i><strong>uniform dispersal of matter</strong></i> into both flasks.
+    
+                        <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
+                            <img style="width:80%; object-fit: cover;"  src="./resources/battery/Flask.jpeg" alt="Flask Arrangement">
+                            <figcaption style="font-style: italic; width: 100%; ">Figure 5: The left flask contains all the gas initially. As the valve opens, the gas flows into the other one till there is equal amount in both. Source: Thermodynamics - LumenLearning [9]</figcaption>    
+                        </figure>
+    
+                    </p>
+    
+                    <p class="paragraph">
+                        As another example, consider the following situation: Two objects at different temperature \(T_X\) and \(T_Y\). When you touch the two, heat flows from the hot one to the cold one. There is no net change in the energy of the system. Then why does this change happen? This again is 
+                        an example of uniform dispersal of energy.
+                        <br><br>
+                        Looking at all these examples, one can conclude that spontaneous reactions are one where more uniform dispersal of matter or energy takes place, irrespective of whether that reaction had a net loss or no loss of energy. Next question that comes in mind: how does one formalize this idea of uniform dispersal of matter?
+                        <br><br>
+                        <strong>Ludwig Boltzmann</strong> came up with a pretty neat idea to explain these phenomena. He explained these changes by analyzing the number of <strong><i>microstates</i></strong> possible for a system. A <strong>microstate (\(W\))</strong>  is a specific configuration of the locations and energies of the atoms or molecules in a system. While the idea
+                        of entropy had been given before by Claudius in 1865 in context of steam heat engines, Boltzmann gave a new definition to entropy. According to him, <strong>entropy \(S\) </strong> was defined as:
+                        $$
+                        \begin{align}
+                        S = klnW
+                        \end{align}
+                        $$ 
+                        where \(k\) is a constant known as Boltzmann constant. 
+                        <br><br>
+                        In a process, the change in entropy \(\Delta S\) is equal to \(kln\frac{W_1}{W_2}\) where \(W_1\) and \(W_2\) are the number of microstates in the two states (initial and final) of the reaction i.e. \(\Delta S = kln\frac{W_1}{W_2}\). For a reaction in which \(W_1>W_2\), \(\Delta S\) is positive and similarly for the other way round. 
+                        Now, what exactly is microstates? Let's understand through a few examples. 
+                        <br><br>
+                        Consider the following situation. You have 4 particles that you wish to distribute into 2 boxes. Each particle has the option of going into 2 boxes. For 4 particles, the number of configurations possible is \(2^4 = 16\). The configurations are illustrated in the following image:
+                        <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
+                            <img style="width:80%; object-fit: cover;"  src="./resources/battery/Microstates.jpeg" alt="Microstates Arrangements">
+                            <figcaption style="font-style: italic; width: 100%; ">Figure 6: In total, the number of configurations is 16. Source: Entropy - LumenLearning [10]</figcaption>    
+                        </figure>
+                    </p>
+    
+                    <p class="paragraph">
+                        Microstates with equivalent distribution of number of particles are assumed equivalent and are called <i><strong>distributions</strong></i>. Hence, there are only 5 distributions in case. Clearly, the number of possibilities for distribution (c) is the highest. 
+                        Hence probabilistically, arrangement of the particles is most likely to be in the (c) distribution, with equal number of particles in both boxes. This is very reminiscent of what we saw in the example of the flasks.
+                        Now as you increase the number of particles and 'boxes', the probability of the configuration of equal distribution will be considerably higher than the other distributions. One mole of a substance contains \(6.022 \times 10^{23}\), and with such numbers the probability becomes astronomically higher. 
+                        Hence the final configurations in the earlier given configurations were heavily probabilistically favored to be in the uniform distribution configuration.
+                        <br><br>
+                        This approach can also explain the heat flow for the two boxes. In both of these reactions, \(\Delta S > 0 \). With this understanding, one can also generalize this concept of entropy to reactions. Following are good guidelines to follow:
+                        <ul class="paragraph">
+                            <li>Change in state: <strong>\(S_{solid} &lt S_{liquid} &lt S_{gas}\)</strong>. This is so because in solids, the atoms are tightly packed. Since no other configurations, solid's entropy is lowest. Liquid has, using similar logic, higher entropy than solid. And gas as the highest entropy.</li>
+                            <li>Raising temperature increases entropy, as molecules absorb energy.</li>
+                            <li>For molecules, greater number of atoms indicate greater number of ways of vibrations and hence has higher entropy.</li>
+                            <li>System having greater variations of particles has a higher entropy. With multiple types of particles, the number of configurations increase and hence entropy increases. </li>
+                        </ul>
+                    </p>
+                    <p class="paragraph">
+                        <br>
+                        Now processes that involve increasing entropy usually are spontaneous, but there are multiple instances where a reaction occues spontaneously with decrease in entropy. Recall the conversion of liquid water to ice. 
+                        Clearly, there is something lacking in our explanation. The missing piece of the puzzle is to consider the entropy of the rest of the world as well, i.e. \(\Delta S_{univ}\). Extending our understanding of entropy to the entire 
+                        universe completes our theory. We define universal entropy as:
+                        $$
+                        \begin{align}
+                        \Delta S_{univ} = \Delta S_{sys} + \Delta S_{surr}
+                        \end{align}
+                        $$
+                        For any system, entropy change can also be related to the input or output of heat energy into the system. That makes sense, right? If something gets heat energy, the particles get more energy, vibrations increase and entropy therefore increases. 
+                        There has been a formula suggested (and accepted as well), \(\Delta S = \frac{q}{T}\). This applies to both system and surrounding. There is obviously a catch-22 that when you try to apply this equation to a system, the addition of this heat energy might 
+                        lead to change in temperature. How then would one apply this formula? That relates to deeper study of thermodynamics, which we can ignore for the moment. <br><br>
+    
+                        While the above statement is true, there is a very helpful approximation that we make which is that no matter what heat addition or reduction that you do to the surrounding, the temperature of the surrounding remains the same. Think about it, you can point your heat blower outside the window, but you seriously can't 
+                        expect the heat to change the temperature of air. <br><br>
+    
+                        Let's get an intuition for this \(\Delta S_{univ}\). Take the case of a single object which is very hot at the moment. The heat would radiate out of it into the surrounding. The change in entropy for the system becomes \(\Delta S_{sys} = \frac{-q}{T_{sys}}\). For the surrounding, \(\Delta S_{surr} = \frac{q}{T_{sys}}\). The sign of
+                        \(\Delta S_{univ}\) would depend on the relative values of \(T_{surr}\) and \(T_{sys}\). From intuition, this heat transfer would happen if \(T_{sys} > T_{surr}\). In this situation, the sign of \(\Delta S_{univ}\) will be positive. 
+                        This generalizes very well to all kind of reactions:
+    
+                        <ul class="paragraph">
+                            <li>\(\Delta S_{univ}>0\): The reaction is going to be spontaneous</li>
+                            <li>\(\Delta S_{univ}&lt0\): The reaction is not going to be spontaneous</li>
+                            <li>\(\Delta S_{univ} = 0\): The reaction is at equilibrium. The situation will stay as it is.</li>    
+                        </ul>
+                    </p>
+                         
+                    <p class="paragraph">
+                        For convenience, we can state \(\Delta S_{univ} = \Delta S_{sys} + \frac{q_{surr}}{T}\). While this \(\Delta S_{univ}\) is sufficient to explain spontaneity of a process, literature also defines another quantity to define it 
+                        concisely, which is Gibbs Free Energy \(G\). \(G\) is related to \(\Delta S_{univ}\) as \(\Delta G = -T \Delta S_{univ}\). Therefore Free Energy is equivalent to universal entropy in explaining spontaneity. 
+    
+                        <br><br>
+                        Let's talk about the equilibrium case. What exactly is equilibrium and how is that notion captured in numbers and stuff. A brief introduction is given in the collapsible for precipitation-dissipation reaction, so read that up. 
+                        In any reaction, there are products and reactants. In an example reaction \(nA + mB \rightarrow pC + qD\), \(n\) parts of \(A\) combines with \(m\) parts of \(B\), to give \(p\) parts of \(C\) and \(q\) parts of \(D\). 
+                        Let's say the reaction is spontaneous, which means that A and B spontaneously combine to give C and D. For this equation, \(\Delta G\) is negative, and \(\Delta S_{univ}\) is positive. 
+                        <br><br>
+                        In the above reaction, the reaction moves ahead until it reaches equilibrium. What equilibrium means is that A and B only combines uptil a point to produce certain amount of C and D. At that point, the net quantity of A, B, C and D does not change in the container
+                        that contains these components. What is happening at this point is that some A and B are combining continuously to produce C and D, but an equal amount of C and D is dissociating to produce A and B in an equal amount. This means that there is no net change in the quantity of each. 
+                        <br><br>
+                        Obviously, because the amount of reactants and products are same, their ratio would also stay the same at equilbrium. This ratio is expressed as equilibrium constant, denoted by \(k_{eq}\) or simply \(k\). The formula for equilbrium constant \(k\) is 
+                        \(k = \frac{[C]^{p}[D]^{q}}{[A]^n[B]^m}\). The value in brackets are the amount of components in the reaction medium. When the medium is liquid, the values are in Molarity \(M\). We can ignore the concept of molarity at this point. Just know that it is a quantity that expresses the concentration
+                        of some component in a reaction medium. 
+                        <br><br>
+                        In the setting for the above reaction, it is obvious that the reaction may be spontaneous in one condition, and the opposite reaction may be spontaneous in some other condition. How does one relate that to our current understanding of free energy?
+                        Clearly, when we are talking about different conditions, it is prudent to take some condition as a <i>standard</i> one that we can compare to. This <i>standard condition</i> is usually 298K and 1 atm pressure.
+                        Any thermodynamic quantity at this condition is usually expressed using the normal symbol but with a notch above it, e.g. \(S^o\), or \(\Delta G^o\). 
+    
+                        So \(\Delta G^o\) for the above reaction would mean free energy change for the reaction at 298K and 1 atm pressure. At that point it may be spontaneous, but what about some other condition. Thankfully, we do have a formula to measure spontaneity at other conditions. The formula is:
+                        $$
+                        \begin{align}
+                        \Delta G = \Delta G^o + RTlnQ
+                        \end{align}
+                        $$                    
+                        Here R is universal gas constant with a value of 8.314 J/K mol. Therefore, this gives us the spontaneity at some temperature, and some component ratio. For example, lets say the reaction is at equilibrium, at this point the system would not go in any direction. That means that \(\Delta G = 0\) which implies that \(\Delta G^o = -RTlnk_{eq}\). Now, lets say you add some A and B in the beaker, this decreases \(lnQ\) and \(\Delta G\) becomes negative, which indicates that the reaction is once again spontaneous towards the forward direction.
+                        This is actually true, because the reaction would again seek to come to equilibrium ratio and that means more production of C and D which means forward reaction.
+    
+                        <br><br>After all this wandering about, we are finally at a point to really understand the fundamentals of the chemistry behind batteries. That's not going to be very long. We'll finish it quickly. 
+                        <hr style="width: 30%; float: left;">
+                        <br>
+                        <div class="paragraph" style="text-align: left;"><strong>electrochemistry</strong></div>                    
+                    </p>
+    
+                    <p class="paragraph">
+                        It is time to properly introduce the concept of <strong>electrode potential</strong> and <strong>Nernst Equation</strong>. While I have talked about electrode potential previously, it wasn't sufficiently explained. Let's begin with a simple reaction. 
+                        Any electrochemical reaction that leads to some potential would invariably have two electrodes. One of the electrodes acts as anode and oxidizes, releases electrons and the other electrode (cathode) takes in that electron. This happens continuously and this exchange of electrons is 
+                        basically electricity. Clearly the arrangement has some amount of energy, using which it is able to transport these electrons from one place to another. This energy relates to the potential through something called <strong>Nernst equation</strong>.
+    
+                        <br><br>
+                        While analyzing the copper zinc battery in the preceding sections, we had observed that copper reduces and zinc oxidizes. We had, as a consequence, said that the potential of such a cell would be \(E^o_{cell} = E^o_{Cu} - E^o_{Zn}\). Reading up the values, we get
+                        \(E^o_{cell} = 1.28 V\). So that's the potential that you can expect when you make such an arrangement. 
+                        <br><br>
+                        Where do these values (in the table) come from? Well, what you do is you create another cell arrangement against a standard electrode. Take the case of copper as an instance. Make the other electrode a tube of pressurized hydrogen gas immersed in a solution of HCl. The reaction on the electrode is:
+                        $$
+                        \begin{align}
+                        2\text{H}^{+}\left(aq, 1M\right)+2\text{e}^{-}\rightleftharpoons\text{H}_{2}\left(g,1\text{ atm}\right)\,\,\,\,\,\,\,E^{\circ}=0\text{ V}
+                        \end{align}
+                        $$         
+                        Put the copper electrode against this electrode and measure the potential. This potential becomes \(E^o_{Cu}\). Similarly all the other electrode potentials have been derived. This hydrogen electrode is known as <strong>standard hydrogen electrode (SHE)</strong>.
+    
+                        <br><br>
+                        So, now that you know how the electrode potentials are realized, its time to relate this electrical quantity to the chemical energy available. Clearly in this situation, there is some chemical energy that is being converted to electrical energy. When you reverse the process, you can convert electrical energy 
+                        to chemical energy. This kind of foreshadows batteries, but we are rushing, so let's get back to creating electrical energy. <br><br> The amount of work required to transmit electrons from one place to the other is really the energy that is being consumed from the cell potential. The electrical work required in this 
+                        transportation is \(W = nFE_{cell}\), where \(F\) is a unit of charge, and \(n\) is the moles of electrons being transfered. This work is being done on the cost of the chemical potential. The gibbs free energy, being a proxy for the chemical energy, is equated to the work. This gives us another important equation of electrochemistry:
+                        $$
+                        \begin{align}
+                        \Delta G = nFE_{cell}
+                        \end{align}
+                        $$                         
+    
+                        We can relate this to the other derivation that we have had about \(\Delta G\) and \(\Delta G^o\) to give us the following equation, known as <strong>Nernst Equation</strong>:
+                        $$
+                        \begin{align}
+                        E_{cell} = E^o_{cell} - \frac{RT}{nF}lnQ
+                        \end{align}
+                        $$                       
+    
+                        There is a lot of significance to this equation. As the concentration changes during discharge, \(lnQ\) increases, eventually yielding \(E_{cell} = 0 V\). Thus Nernst equation can tell you exactly the potential at any point during the discharge. Another aspect of this is, that if you reverse the reaction using an external potential (charging basically) you can reverse the reaction upto whatever extent you want. Nernst equation 
+                        makes it obvious that there is no upper limit to the potential you can charge your battery to. But there is indeed a problem, in that, once you increase the potential beyond a certain extent, the electrodes start to degrade and the electrolyte starts to disintegrate. This, and many other side effects happen, which is why there are clear guidelines on the safe operating voltages of any battery. We will explore these ranges and why they are so. 
+                        We will get into the nitty gritty details. That is what the next 150 minutes are for!
+    
+                        <hr style="width: 30%; float: left;">
+                        <br>
+                        <div class="paragraph" style="text-align: left;"><strong>back to batteries - lead acid</strong></div>  
+                    </p>
+                    <p class="paragraph">
+                        An interesting thing to observe in this context of this newly formed knowledge, is that each cell of a lead acid battery basically gives a nominal voltage of 2 V, because the standard potential calculated through the reduction potential table actually does give a value of \(2.04 V\).
+                        <br><br>
+                        Now we'll explore all the types of lead acid batteries, its usage and the safe voltage range (and what happens if we go beyond it.)
+    
+                        <br><br>
+                        Exploring the performance of a typical lead acid battery, there are some general trends common to all the lead acid battery types. Lead acid batteries typically have a life of 200 - 300 discharge/charge cycles when deep discharging. 
+                        The main reasons for this short life are corrosion of the grid, loss of active material and reduction of electrolyte. We'll expand on why the corrosion happens. 
+                        <br><br>
+                        Metallic lead in the positive plate is thermodynamically unstable [12]. Hence, like most other pure metals, it also reacts with oxygen to form oxides and hydroxides (in water). In the context of battery, the thing to question is where does this oxygen come from. The answer is an elegent sequence of events that talks about voids, and lattice structure of lead. 
+                        The mechanism for the corrosion happens in the following manner: 
+                        <br><br>
+                        In the elctrolytic solution, \(2 OH^-\) combine to form oxygen \(O_2\) as a byproduct. The reaction proceeds as follows:
+                        $$
+                        \begin{align*}
+                        &2H_2O \rightarrow 2OH^- + 2H^+ \\
+                        &2OH^- \rightarrow O + H_2O \\
+                        &2O \rightarrow O_2
+                        \end{align*}
+                        $$
+                        This oxygen diffuses through the vacancies in the \(PbO_2\) layer to reach the metallic lead. There the similarity in crystal lattices of the intermediate forms of lead oxides and lead comes into picture. Figure 7 illustrates the crystal lattices of various forms of lead. 
+                        <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
+                            <img style="width:50%; object-fit: cover;"  src="./resources/battery/crystal.png" alt="Crystal Structures of Leads">
+                            <figcaption style="font-style: italic; width: 100%; ">Figure 7: The unit cells of metallic lead, Lead (red) tetragonal, and \(\alpha-PbO_2\) are very similar and this makes steric alterations relatively easy. Source: [12]</figcaption>    
+                        </figure>
+                    </p>
+                    <p class="paragraph">
+                        As the oxygen seeps through the \(PbO_2\) corrosion layer, it combines with the metallic lead 
+                        to give \(tet-PbO\). The crystal structure of tetragonal PbO has yet more space to accomodate additional oxygen atoms, which leads to a slightly unconventional form of lead oxide with not a very well defined formula \(PbO_n\) where \(n\) typically goes upto 1.4. Since the structures of \(tet-PbO\) and \(\alpha-PbO_2\) are very similar, the transition of these intermediate lead oxides convert 
+                        to \(PbO_2\). The intermediate non-stoichiometric \(PbO_n\) forms a thin layer on the lead grid alloy (usually upto a few molecules thick), inhibiting the corrosion of lead, but eventually most of the alloy corrodes and that is one of the main causes for the degradation of lead acid cells. 
+                        <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
+                            <img style="width:30%; object-fit: cover;"  src="./resources/battery/corrosion.png" alt="corrosion of Leads">
+                            <figcaption style="font-style: italic; width: 100%; ">Figure 8: Corrosion of a lead grid alloy. One of the main causes of lead acid battery degradation. Source: [8]</figcaption>    
+                        </figure>
+                    </p>
+                    <p class="paragraph">
+                        It is also often very helpful to compare the specific energy of batteries to gasoline. It gives us a reference to measure the progress of battery technology. At some point, when this specfic energy crosses that of gasoline, we will successfully transition to renewable technology. Well, here goes the calculation for the specific energy of the lead acid battery. The reaction, for reference, is:
+                        $$
+                        \begin{align}
+                        Pb + PbO_2 + 2H_2SO_4  \rightleftharpoons 2PbSO_4 + 2H_2O 
+                        \end{align}
+                        $$
+    
+                        The active components of this reaction are \(Pb, PbO_2, H_2O \text{ and } H2_SO_4\). Their accumulated weight (assuming mole as unit) is: 
+                        $$
+                        P_{\mathrm{LAC}}=(207.2)_{\mathrm{Pb}}+(239.2)_{\mathrm{PbO}_2}+(196)_{2 \mathrm{H}_2 \mathrm{SO}_4}+(32)_{\mathrm{H}_2 \mathrm{O}}=674.4 \mathrm{~g}
+                        $$
+                        Now, because in this reaction 2 moles of \(e^-\) are exchanged, the charge exchanged is \(2 \times 96500 C\) or (equivalently) \(2\times 96500 \times \frac{1}{3600} = 53.61 Ah\). Assuming that this charge is transferred through a cell voltage of \(2.040 V\) (nominal voltage of lead acid batteries), 
+                        the specific energy for lead acid cell is:
+                        $$
+                        E_s = (53.61 \times 2.040)/0.6744 = 162.2 Wh\text{ }kg^{-1}
+                        $$
+    
+                        Hence, \(162.2 Wh\text{ }kg^{-1}\) is the theoretical specific energy of lead acid battery assuming \(100\%\) conversion. Petroleum on the other hand, delivers a specific energy of \(12kWh\text{ }kg^{-1}\). As you can see, batteries (or atlead lead acid batteries) are a long way off in catching up with fossil fuel. 
+                        <br><br>
+                        You might remember that the loss of active material is something we have already discussed. In the process of understanding corrosion, the formation of \(O_2\) gas was evident. During charging, the \(H_2O\) electrolyses to \(H_2\) and \(O_2\) which escape in spite of efforts to stop them. This drying up of electrolyte is also a problem. 
+    
+                        <br><br>
+                        Now before talking about the various types of lead acid batteries, one must understand that there is essentially one particular technology that is popular. This is the <strong>Valve-Regulated Lead-Acid Batteries (VRLA Batteries)</strong>. The general lead acid battery design looks like the following:
+                        <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
+                            <img style="width:50%; object-fit: cover;"  src="./resources/battery/construction.png" alt="Construction of SLI">
+                            <figcaption style="font-style: italic; width: 100%; ">Figure 9: Construction of a Starter (SLI) Lead Acid Battery. Source: [12]</figcaption>    
+                        </figure>                    
+                    </p>
+                    <p class="paragraph">
+                        Since the amount of \(H2SO_4\) in the active block is restricted, there is a reservoir as well in the cell which supplies \(H2SO_4\) during discharge. During charge, \(H2SO_4\) is generated inside the active block and diffuses back to the reservoir. At the end of charge, the decomposition of water leads to generation of \(H_2\) and \(O_2\) 
+                        which is led out through valves. The valves allow addition of water or electrolyte as well. Multiple cell plates are arranged in an alternative manner as shown in the image and connected in series. A mass produced SLI lead acid cell typically has a specific energy of \(34-40 Wh\text{ }Kg^{-1}\). This is much less than the theoretical expectation of \(162.2 Wh\text{ }kg^{-1}\)
+                        <br><br>
+                        Immobilization of the electrolyte has been a modern innovation. The immobilisation is done either via absorption in the glass mat seperator or by converting into gel. This entire thing (with the valve and everything) is known as Valve-Regulated Lead-Acid Battery (VRLA Batteries). There is something called Closed Oxygen Cycle (COC) which operates as:
+                        <ul class="paragraph">
+                            <li>Water decomposition at the positive plate leads to the creation of \(O_2\) and \(H^+\).</li>
+                            <li>\(O_2\) and \(H^+\) goes to the negative plate where reduction of \(O_2\) results in the creation of water</li>
+                            <li>This water circulates back to the positive plate and replenishes the decomposed water volume. Hence, the COC cycle reduces water loss</li>
+                        </ul>
+                    </p>
+                    <p class="paragraph">
+                        Coming back to the types of lead acid batteries, there are basically two types of technologies in VRLA batteries:
+                        <ul class="paragraph">
+                            <li><strong>Absorptive Glass Mat (AGM)</strong>: These batteries have AGM as seperators and it absorbs the electrolytes thereby making it immobile. Absorptive Glass Mat is comprised of \(85\%\) borosilicate glass microfibres and \(15\%\) polymer fibres as reinforcement binders. </li>
+                            <li><strong>Gelled Electrolytes</strong>: In such batteries, the electrolyte is immobilized in the form of gel of \(SiO_2\) and \(Al_2O_3\) particles that are nanometer in diameter.</li>
+                        </ul>
+                    </p>
+                    <p class="paragraph">
+                        Applications of lead acid battery are also mostly of two types:
+                        <ul class="paragraph">
+                            <li><strong>SLI (starting, lighting, ignition) Batteries</strong>: These are used in automobiles to deliver large load current on the engine for a short time. This large current is supplied to start the engine and ignite the spark plug initiating the combustion process in the engine. Such batteries have very low internal resistance that is achieved by making plates very large and thin. The emphasis is on power rather than capacity.</li>
+                            <li><strong>Motive (Deep-cycle batteries)</strong>: These are meant for provide continuous power to vehicles such as golf cart, forklifts, wheelchair etc. This battery is built to be recharged fairly hgih number of times which is achieved by making the plates thick. </li>
+                            <li><strong>Stationary Batteries</strong>: Mostly for applications that require storage. Example being UPS (Uninterrupted Power Supply) for computer systems etc. </li>
+                        
+                        </ul>                    
+                    </p>
+                    <p class="paragraph">
+                        Finally, we end this section on lead acid batteries with a guide on charging of lead acid batteries. The charging of LA batteries is done through constant current/constant voltage (CC/CV) charging. This is a rather popular 
+                        way to charge batteries. A constant current charges the battery upto a set upper limit terminal voltage and once reached, the current starts decreasing as the battery capacity starts to saturate. Lead acid batteries usually take a long time to charge, from 8-16 hours. 
+                        <br><br>
+                        This charging is done in three stages: <strong>constant current charging</strong>, <strong>topping charge</strong>, and <strong>float charge</strong>. The constant current stage charges bulk of the capacity, and takes about half the time. The topping charge happens at decreasing current and saturates the battery. 
+                        The float charge compensates for the loss to be caused by self-discharge. The first stage charges 70% in 5-8 hours, and the topping charge fulfills the remaining 30% in 7-10 hours. The float charge maintains the battery at full charge. Full charge is said to happen when the current reaches 3-4% of the Ah rating. The charge voltage limit is kept usually at 2.3 to 2.45 V. Deciding the upper limit is kind of a compromise. one could charge 
+                        further to a higher voltage to increase capacity, and also avoid sulfation, but also must limit the upper voltage set to ensure gassing, water loss and grid corrosion on positive plate doesn't happen. Figure 10 shows the three stages:
+                        <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
+                            <img style="width:50%; object-fit: cover;"  src="./resources/battery/charging.png" alt="Charging of Lead Acid Battery">
+                            <figcaption style="font-style: italic; width: 100%; ">Figure 10: Charge stages of a lead acid battery. Source: [1]</figcaption>    
+                        </figure>                     
+                    </p>
+                    <hr style="width: 30%; margin-top: 80px;">
+                    <div class="paragraph" style="text-align: center;">references</div>
+                    <ol style="padding-bottom: 40px;">
+                        <li style="font-family: monospace;">Battery University</li>
+                        <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://www.borregaard.com/product-areas/lignin/your-guide-to-lignin-and-lignosulfonates/" target="_blank">Lignosulfates</a></li>
+                        <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://en.wikipedia.org/wiki/Lead%E2%80%93acid_battery#Construction" target="_blank">Lead Acid - Wikipedia</a></li>
+                        <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://en.wikipedia.org/wiki/Lead%E2%80%93acid_battery#Construction" target="_blank">Carbon-based neural electrodes: promises and challenges - Devi, Vomero, et. al.</a></li>
+                        <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://www.sciencedirect.com/science/article/pii/S037877539900378X" target="_blank">Dissolution and precipitation reactions of lead sulfate in positive and negative electrodes in lead acid battery - Zen-ichiro Takehara</a></li>
+                        <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://courses.lumenlearning.com/chemistryformajors/chapter/precipitation-and-dissolution-2/" target="_blank">Precipitation and Dissolution - LumenLearning</a></li>
+                        <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://iopscience.iop.org/article/10.1149/1.2127282" target="_blank">Effects of Deep Cycling on Lead Positive Plates - C.P Wales and A.C. Simon</a></li>
+                        <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://www.sciencedirect.com/science/article/pii/S0378775303009340" target="_blank">Aging mechanisms and service life of lead–acid batteries - Paul Ruetschi</a></li>
+                        <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://courses.lumenlearning.com/suny-albany-chemistry/chapter/spontaneity/" target="_blank">Thermodynamics - LumenLearning</a></li>
+                        <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://courses.lumenlearning.com/suny-albany-chemistry/chapter/entropy/" target="_blank">Entropy - LumenLearning</a></li>
+                        <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://courses.lumenlearning.com/suny-albany-chemistry/chapter/the-second-and-third-laws-of-thermodynamics/" target="_blank">Laws of Thermodynamics - LumenLearning</a></li>
+                        <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://www.sciencedirect.com/book/9780444595522/lead-acid-batteries-science-and-technology" target="_blank">Lead-Acid Batteries: Science and Technology D. Pavlov</a></li>
+                    </ol>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="topic_blog" id="genetic_blog_text">
+        <div class="topic">genetic technology</div>
+        <hr class="horizontal">
+        <div class="date" style="font-family: monospace;">Upcoming</div>
+        <div id="reading-time" style="text-align: center; font-family: monospace;"></div>
+        <br><br><br><br>
+    </div>
+    <div class="topic_blog" id="finance_blog_text">
+        <div class="topic">corporate finance</div>
+        <hr class="horizontal">
+        <div class="date" style="font-family: monospace;">Upcoming</div>
+        <div id="reading-time" style="text-align: center; font-family: monospace;"></div>
+        <br><br><br><br>
     </div>
 
     <script src="./rtscript.js"></script>
+    <script src="./button.js"></script>
 </body>
 </html>
