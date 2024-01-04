@@ -226,6 +226,10 @@ body{
     /* transition: max-height 0s ease-out; */
   }
 
+#battery_blog_text{
+    display: block;
+}
+
 /* .topic_blog#battery_blog_text{
     transition: max-height 0s linear;
 } */

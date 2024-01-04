@@ -9,6 +9,10 @@
               let content_element = document.getElementById(flag_id+"_text")
               // content_element.style.maxHeight = null;
               content_element.style.display = "none";
+              // if(flag_id == "battery_blog"){
+              //   console.log("flag id: ");
+              //   content_element.style.display = "block";
+              // }
           });
 
           // Then, add 'clicked' class to the clicked button
