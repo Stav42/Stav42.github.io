@@ -50,19 +50,6 @@ header{
     transition: 0.2s;
 }
 
-.dropdown-content{
-    display:none;
-    position: absolute;
-    width: 100%;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    list-style: none;
-}
-
-.dropdown:hover .dropdown-content{
-    display: block;
-}
-
 .content_button:hover:after {
     top: 0px;
     left: 0px;
@@ -199,6 +186,19 @@ body{
     background: linear-gradient(to top, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.1));
 }
 
+.dropdown-content{
+    display:none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    list-style: none;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
 .header-name{
     display: flex;
     flex-direction: column;
@@ -248,7 +248,7 @@ body{
 } */
 
 .typewriter{
-    color: whitesmoke;
+    color: #ff9999;
     /* font-family: monospace; */
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid orange; /* The typwriter cursor */
