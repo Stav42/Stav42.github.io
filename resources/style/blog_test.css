@@ -14,7 +14,7 @@ header{
 .nav-links:focus, 
 .nav-links:active,
 .nav-links {
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
@@ -218,6 +218,7 @@ body{
 
 .nav-item{
     padding: 0 4rem 0 4rem;
+    color: white;
 }
 
 .banner{
