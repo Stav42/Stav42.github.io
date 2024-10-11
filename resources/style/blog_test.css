@@ -40,7 +40,7 @@ header{
 
 .content_button:after {
     content: "";
-    background-color: #ffe54c;
+    background-color: #B7CBAA;
     width: 100%;
     z-index: -1;
     position: absolute;
