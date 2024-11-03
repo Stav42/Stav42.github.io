@@ -1,5 +1,5 @@
-function countWords() {
-    var text = document.getElementById('topic-content').textContent;
+function countWordsBattery() {
+    var text = document.getElementById('topic-content-battery').textContent;
     wordCount = text.replace( /[^\w ]/g, "" ).split( /\s+/ ).length;
     let readingTime = Math.floor(wordCount/228) + 1;
     let readingTimeinString = readingTime + " min";
@@ -7,7 +7,18 @@ function countWords() {
     return readingTimeinString;
 }
 
-document.getElementById("reading-time").innerText = "Reading Time: " + countWords();
+function countWordsSurgical() {
+  var text = document.getElementById('topic-content-surgical').textContent;
+  wordCount = text.replace( /[^\w ]/g, "" ).split( /\s+/ ).length;
+  let readingTime = Math.floor(wordCount/228) + 1;
+  let readingTimeinString = readingTime + " min";
+
+  return readingTimeinString;
+}
+
+
+document.getElementById("reading-time-battery").innerText = "Reading Time: " + countWordsBattery();
+document.getElementById("reading-time-surgical").innerText = "Reading Time: " + countWordsSurgical();
 
 var coll = document.getElementsByClassName("pop_arrow");
 
