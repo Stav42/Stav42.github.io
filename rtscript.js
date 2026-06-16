@@ -33,3 +33,11 @@ for (let i = 0; i < coll.length; i++) {
           }
     });
 }
+
+var triggers = document.getElementsByClassName("collapsible-trigger");
+for (let i = 0; i < triggers.length; i++) {
+    triggers[i].addEventListener("click", function() {
+        var btn = this.querySelector(".pop_arrow");
+        if (btn) btn.click();
+    });
+}

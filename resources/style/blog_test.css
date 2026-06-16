@@ -120,6 +120,27 @@ header{
     color: #333;
 }
 
+.collapsible-trigger {
+    border-left: 3px solid #d0d0d0;
+    padding: 10px 14px;
+    margin: 18px 0 4px;
+    background: #f9f9f9;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    user-select: none;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.collapsible-trigger:hover {
+    border-color: #999;
+    background: #f2f2f2;
+}
+
+.collapsible-trigger .pop_arrow {
+    float: right;
+    margin-top: -1px;
+}
+
 .pop {
     padding: 0 18px;
     /* display: none; */
