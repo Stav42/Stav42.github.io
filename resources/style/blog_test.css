@@ -393,7 +393,7 @@ body{
 } */
 
 .typewriter{
-    color: #004F98;
+    color: #ff9999;
     /* font-family: monospace; */
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .15em solid orange; /* The typwriter cursor */
