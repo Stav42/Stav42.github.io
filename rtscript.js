@@ -1,24 +1,22 @@
-function countWordsBattery() {
-    var text = document.getElementById('topic-content-battery').textContent;
-    wordCount = text.replace( /[^\w ]/g, "" ).split( /\s+/ ).length;
-    let readingTime = Math.floor(wordCount/228) + 1;
-    let readingTimeinString = readingTime + " min";
-
-    return readingTimeinString;
+function countWords(sourceId) {
+    var source = document.getElementById(sourceId);
+    if (!source) return null;
+    var text = source.textContent;
+    var wordCount = text.replace( /[^\w ]/g, "" ).split( /\s+/ ).length;
+    var readingTime = Math.floor(wordCount/228) + 1;
+    return readingTime + " min";
 }
 
-function countWordsSurgical() {
-  var text = document.getElementById('topic-content-surgical').textContent;
-  wordCount = text.replace( /[^\w ]/g, "" ).split( /\s+/ ).length;
-  let readingTime = Math.floor(wordCount/228) + 1;
-  let readingTimeinString = readingTime + " min";
-
-  return readingTimeinString;
+function setReadingTime(targetId, sourceId) {
+    var target = document.getElementById(targetId);
+    var readingTime = countWords(sourceId);
+    if (target && readingTime) {
+        target.innerText = "Reading Time: " + readingTime;
+    }
 }
 
-
-document.getElementById("reading-time-battery").innerText = "Reading Time: " + countWordsBattery();
-document.getElementById("reading-time-surgical").innerText = "Reading Time: " + countWordsSurgical();
+setReadingTime("reading-time-battery", "topic-content-battery");
+setReadingTime("reading-time-surgical", "topic-content-surgical");
 
 var coll = document.getElementsByClassName("pop_arrow");
 

@@ -1,5 +1,5 @@
 html {
-    font-size: 16;
+    font-size: 16px;
 }
 
 
@@ -10,7 +10,7 @@ header{
 }
 
 .nav-links:link,
-.nav-link:visited,
+.nav-links:visited,
 .nav-links:focus, 
 .nav-links:active,
 .nav-links {
@@ -133,7 +133,7 @@ body{
 }
 
 .video{
-    float: center;
+    margin: 0 auto;
     position: relative; 
     /* bottom: 25px; */
 }
@@ -256,7 +256,7 @@ body{
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .25em; /* Adjust as needed */
     font-size: larger;
-    animation: 
+    animation:
       typing 2.8s steps(21, end),
       blink-caret .5s step-end infinite;
 }
@@ -283,4 +283,105 @@ body{
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: orange; }
+}
+
+/* ---------- Scroll-down cue: hidden on desktop ---------- */
+.scroll-down {
+    display: none;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* Keep the nav compact over the full-screen image */
+    header {
+        font-size: 1em;
+    }
+    .header-name {
+        display: none;
+    }
+    .navbar {
+        margin: 0;
+        padding: 0;
+    }
+    .nav-item {
+        padding: 0 0.9rem;
+    }
+
+    /* Banner fills the entire screen */
+    .banner {
+        height: 100vh;
+        height: 100svh;
+        bottom: 0;
+    }
+    .banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Center "thinking big." vertically and horizontally */
+    .overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+    }
+
+    /* "scroll down" indicator pinned to the bottom of the image */
+    .scroll-down {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        position: absolute;
+        bottom: 28px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        text-decoration: none;
+        font-family: monospace;
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
+        z-index: 10;
+        animation: scroll-bounce 1.6s ease-in-out infinite;
+    }
+    .scroll-down .chevron {
+        width: 12px;
+        height: 12px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg);
+    }
+
+    /* Article content fits the viewport */
+    .preset {
+        width: 90%;
+    }
+    .inline-image {
+        width: 90%;
+    }
+    .horizontal {
+        width: 60%;
+    }
+    .blog_index {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+}
+
+@keyframes scroll-bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+}
+
+@keyframes scroll-bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
 }
