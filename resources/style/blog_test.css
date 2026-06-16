@@ -196,12 +196,13 @@ body{
 }
 
 .blog-article {
-    max-width: 720px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .toc {
+    max-width: 640px;
     margin: 20px auto 40px;
     padding: 20px 28px;
     background: #f8f8f8;
