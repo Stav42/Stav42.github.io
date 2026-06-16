@@ -1,0 +1,106 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1781631707393,
+  "projectRoot": "/Users/stav.42/Stav42.github.io",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "resources": {
+      "path": "resources",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1781631707352,
+      "keyFiles": []
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "resources/style/style.css",
+      "accessCount": 16,
+      "lastAccessed": 1781634927775,
+      "type": "file"
+    },
+    {
+      "path": "resources/style/factory.css",
+      "accessCount": 15,
+      "lastAccessed": 1781634963064,
+      "type": "file"
+    },
+    {
+      "path": "resources/style/project.css",
+      "accessCount": 15,
+      "lastAccessed": 1781634982658,
+      "type": "file"
+    },
+    {
+      "path": "resources/style/blog_test.css",
+      "accessCount": 15,
+      "lastAccessed": 1781635002428,
+      "type": "file"
+    },
+    {
+      "path": "blog.html",
+      "accessCount": 6,
+      "lastAccessed": 1781634249485,
+      "type": "file"
+    },
+    {
+      "path": "index.html",
+      "accessCount": 4,
+      "lastAccessed": 1781634205272,
+      "type": "file"
+    },
+    {
+      "path": "storyboard.html",
+      "accessCount": 3,
+      "lastAccessed": 1781634211026,
+      "type": "file"
+    },
+    {
+      "path": "rtscript.js",
+      "accessCount": 2,
+      "lastAccessed": 1781632942516,
+      "type": "file"
+    },
+    {
+      "path": "factory.html",
+      "accessCount": 2,
+      "lastAccessed": 1781634209482,
+      "type": "file"
+    },
+    {
+      "path": "resources/style/style_blog.css",
+      "accessCount": 1,
+      "lastAccessed": 1781632807035,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}
