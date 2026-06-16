@@ -16,6 +16,7 @@ function setReadingTime(targetId, sourceId) {
 }
 
 setReadingTime("reading-time-battery", "topic-content-battery");
+setReadingTime("reading-time-playstation", "topic-content-playstation");
 
 var coll = document.getElementsByClassName("pop_arrow");
 

@@ -651,7 +651,176 @@
     <div class="topic_blog" id="finance_blog_text">
         <div class="topic">playstation architecture</div>
         <hr class="horizontal">
-        <div class="date" style="font-family: monospace;">Upcoming</div>
+        <div class="date" style="font-family: monospace;">9th Jun 2026</div>
+        <div id="reading-time-playstation" style="text-align: center; font-family: monospace;"></div>
+        <div class="intro">
+            <div class="text content" id="topic-content-playstation">
+                <div class="paragraph preset">
+                    As a mechanical engineer (by degree, at least!), I've always wanted to get an in-depth understanding of a classic piece of electronics. It has seemed out of reach, but in this day and age (of AI), it feels wrong to say that. This article is a beginner's guide to understanding another brilliant explainer on Playstation Architecture by <a style="color: black; text-decoration: underline;" href="https://www.copetti.org/writings/consoles/playstation/" target="_blank">Rodrigo Copetti</a>. We run through the article here, and explain the concepts in an entirely self-contained manner. The objective is that anyone who has a rather too-basic understanding of computer architecture can follow along.
+                </div>
+                <div class="paragraph">
+                    The first section looks at the PlayStation's CPU. There are two main chips in the console. One of them is Sony CXD8530BQ. The article comments that this is similar to a system-on-chip architecture today. Let us explore these few sentences, and what each term means.
+                    <br><br>
+                    When one says two main chips, they are referring to the CPU and the GPU that are embedded on a single printed circuit board (PCB). A PCB is a thin layer that you might see when you open any electronics (like a TV remote). It's usually green and has a bunch of boxes and lines on it.
+                </div>
+
+                <div class="paragraph">
+                    <button type="button" class="pop_arrow" id="soc_explainer"></button>
+                    <strong>System-on-Chip &amp; Subsystems</strong>
+                </div>
+                <div class="paragraph pop" id="soc_explainer_content">
+                    <br>
+                    <strong>The trap.</strong> "System-on-Chip" <em>sounds</em> like it should mean "the entire console on one chip." It doesn't. The word "system" here does not mean "the whole PlayStation" — it means a <strong>CPU-class subsystem</strong>: a processor plus the support blocks that processor needs to function (a memory controller, a bus interface, a coprocessor or two). That cluster is the "system" being put "on a chip."
+                    <br><br>
+                    Chip #1, the <strong>CXD8530BQ</strong>, is the CPU-side system. Sony took the MIPS CPU core and its support blocks — memory management, the Geometry Transformation Engine, the Motion Decoder — and fused them onto a single die. That fusion is exactly what earns the "SoC" label: it describes chip #1 <em>internally</em>, not the console as a whole.
+                    <br><br>
+                    <strong>What makes something a "subsystem"?</strong> Two things, and both matter:
+                    <ol class="paragraph">
+                        <li>It does <strong>one coherent part</strong> of the larger job — not the whole thing, and not some random scrap.</li>
+                        <li>It's <strong>packaged as a unit</strong> with a clear input and output: you hand it something, it hands something back, and you never need to know how it did it inside.</li>
+                    </ol>
+                    By that definition, each block on chip #1 is its own subsystem:
+                    <ul class="paragraph">
+                        <li><strong>CPU core</strong> — the general worker. Arithmetic, logic, decisions.</li>
+                        <li><strong>Memory controller</strong> — one job: fetching and storing data in RAM.</li>
+                        <li><strong>Geometry Transformation Engine</strong> — one job: the heavy 3D math (rotating and positioning shapes in space) so the CPU doesn't have to.</li>
+                        <li><strong>Motion Decoder</strong> — one job: unpacking compressed video.</li>
+                    </ul>
+                    Each qualifies as a subsystem because each does one coherent part and exposes a clean input → output, hiding its internals from the others.
+                    <br><br>
+                    So the <strong>"system" in System-on-Chip</strong> is this whole cluster of subsystems — CPU core + memory controller + geometry engine + decoder. "SoC" means <em>"we put this whole cluster of subsystems onto one piece of silicon."</em> It does <strong>not</strong> mean "the whole console," because the GPU is a different job entirely, living on its own chip.
+                </div>
+
+                <hr style="width: 30%; float: left;">
+                <br>
+                <div class="paragraph" style="text-align: left;"><strong>History</strong></div>
+
+                <div class="paragraph">
+                    The article then talks about some 8-bit processors like Z80 and 6502 before jumping into Motorola 68000. Instead of just having an abstract sense on what an 8-bit processor is, I think it's worthwhile to really look at the thing. To see how it actually looks like and worked. Before we open up the PlayStation's own chips, it helps to know what a "processor" was in the years leading up to 1994 — because the PS1's design was very much a reaction to what came before it. A processor (or CPU) is just the part of a machine that reads instructions one after another and carries them out: add these two numbers, compare them, jump somewhere else if the result is zero. Everything a console does — running game logic, moving objects, deciding what to draw — eventually boils down to a stream of these tiny instructions.
+                    <br><br>
+                    The home machines of the 1980s ran on humble 8-bit chips like the MOS 6502 (the brain of the NES and the Commodore 64) and the Zilog Z80 (the Master System, countless arcade boards). These were cheap and clever, but narrow: they shuffled data eight bits at a time and topped out at fairly modest speeds.
+                    <br><br>
+                    So let's actually open one up — not the PlayStation yet, but a generic 8-bit machine of that era. Once you can see how the pieces sit together, the later jump to the 68000 (and then to the PlayStation itself) turns out to be the same handful of ideas, just scaled up.
+                </div>
+
+                <div class="paragraph" style="text-align: left;"><strong>What a processor physically is</strong></div>
+
+                <div class="paragraph">
+                    Strip away the mystique and a CPU is a chip that does three things, over and over, in a loop: it <strong>reads numbers from memory</strong>, <strong>does arithmetic or logic on them</strong>, and <strong>writes numbers back</strong>. That's the entire job. Every other part we're about to meet exists only to keep that loop fed and moving.
+                    <br><br>
+                    Here's the physical fact that makes the rest click: the CPU and the memory are <em>separate chips</em>. The processor does not hold your program inside it — the program lives in other chips sitting next to it on the board. So the very first thing to understand isn't really the CPU; it's the <strong>wires</strong> that connect it to everything else, because every other component hangs off those wires.
+                </div>
+
+                <div class="paragraph" style="text-align: left;"><strong>Buses: the wires everything hangs off</strong></div>
+
+                <div class="paragraph">
+                    A <strong>bus</strong> is simply a bundle of wires that carries one kind of signal. Slow down here — this is the load-bearing idea that the whole rest of the article rests on. Three buses connect the CPU to the rest of the board:
+                </div>
+
+                <table style="width: 90%; margin: 10px auto; font-size: 0.9rem; border-collapse: collapse;">
+                    <caption style="font-style: italic; text-align: center; margin-bottom: 8px;">The three buses on a typical 8-bit machine (6502 / Z80).</caption>
+                    <tr style="border-bottom: 1px solid #ccc;"><th style="padding: 6px 8px; text-align: left;">Bus</th><th style="padding: 6px 8px; text-align: left;">What it carries</th><th style="padding: 6px 8px; text-align: left;">Width &amp; meaning</th></tr>
+                    <tr style="border-bottom: 1px solid #ccc;"><td style="padding: 6px 8px;"><strong>Data bus</strong></td><td style="padding: 6px 8px;">The actual numbers being moved to and from memory.</td><td style="padding: 6px 8px;">8 wires → one <strong>byte</strong> (8 bits) per trip.</td></tr>
+                    <tr style="border-bottom: 1px solid #ccc;"><td style="padding: 6px 8px;"><strong>Address bus</strong></td><td style="padding: 6px 8px;">Which location in memory to read from or write to.</td><td style="padding: 6px 8px;">16 wires → 2<sup>16</sup> = 65,536 locations.</td></tr>
+                    <tr style="border-bottom: 1px solid #ccc;"><td style="padding: 6px 8px;"><strong>Control bus</strong></td><td style="padding: 6px 8px;">What <em>kind</em> of operation this is: read vs. write, "the address is valid now," interrupt signals, the clock tick.</td><td style="padding: 6px 8px;">A handful of single-purpose wires.</td></tr>
+                </table>
+
+                <br>
+                <div class="paragraph">
+                    <strong>The thing almost everyone gets wrong:</strong> "8-bit" refers to the <strong>data bus width</strong> — how many bits move per memory access — <em>not</em> the size of the CPU's internal registers, and <em>not</em> the address size. The 6502 and Z80 are called 8-bit because they move 8 bits at a time, even though their address bus is 16 bits wide. <strong>Data-bus width</strong> sets how much you move per cycle; <strong>address-bus width</strong> sets how much you can address. They are independent, and an 8-bit CPU with a 16-bit address bus is the completely normal case.
+                </div>
+
+                <div class="paragraph">
+                    That address-bus width has a hard, physical consequence. With 16 address wires you can count out 2<sup>16</sup> = 65,536 distinct locations. Each location holds one byte, so that is 65,536 bytes = <strong>64 KB</strong>. This is the famous "64 KB wall": an 8-bit machine simply runs out of addresses there, because there are no more wires to count any higher. (Tricks like <em>bank-switching</em> let programs swap different chunks of memory into view, but the raw ceiling is set purely by the wire count.)
+                </div>
+
+                <div class="paragraph" style="text-align: left;"><strong>What's inside the CPU</strong></div>
+
+                <div class="paragraph">
+                    Before we open the chip, one word in that loop needs unpacking, because every block inside leans on it: <strong>register</strong>.
+                    <br><br>
+                    <strong>So what actually is a register?</strong> Picture the CPU as a cook working at a small counter. The cook can only chop and mix the few ingredients actually sitting on the counter in front of them; the pantry — where everything is really kept — is across the room, and walking over to fetch something takes time and breaks the rhythm. A <strong>register</strong> is one spot on that counter: a tiny, named container <em>inside</em> the CPU that holds exactly one number at a time. The "pantry across the room" is the memory (RAM) we met earlier, reached over the data bus; the "counter" is the CPU's small set of registers, sitting right on the chip.
+                    <br><br>
+                    <strong>Now zoom right in on one of those counter slots.</strong> On an 8-bit CPU a typical register is <strong>8 bits wide</strong> — which is just a fancy way of saying it is a row of <strong>eight</strong> tiny storage cells sitting side by side. Each cell holds a single <strong>bit</strong>: one of two states, on or off, which we write as <strong>1</strong> or <strong>0</strong>. Picture eight little light switches in a row. The <em>pattern</em> of which switches are up and which are down <em>is</em> the number, written in binary. Eight switches can be arranged 2<sup>8</sup> = 256 different ways, so one 8-bit register holds exactly one whole number somewhere from <strong>0 to 255</strong> at any instant — no more, and never more than one at a time.
+                </div>
+
+                <div class="paragraph" style="text-align: center; font-family: monospace;">
+                    An 8-bit register holding the decimal number <strong>42</strong>:<br><br>
+                    bit → &nbsp; b7 b6 b5 b4 b3 b2 b1 b0<br>
+                    val → &nbsp; &nbsp;0 &nbsp;0 &nbsp;<strong>1</strong> &nbsp;0 &nbsp;<strong>1</strong> &nbsp;0 &nbsp;<strong>1</strong> &nbsp;0<br><br>
+                    binary <code>0010 1010</code> = <strong>42</strong> in decimal (32 + 8 + 2)
+                </div>
+
+                <div class="paragraph">
+                    How does a cell actually <em>hold</em> its bit? Each one is a minuscule circuit called a <strong>flip-flop</strong> (or latch) — a scrap of logic wired so that it stays put in whichever state it was last set to, holding its 0 or 1 steady for as long as the chip has power. Cut the power and every cell forgets at once; that is precisely why registers (and RAM) lose everything the moment the machine switches off. A handful of special registers that have to hold a memory <em>address</em> — like the Program Counter — are made wider, <strong>16 bits</strong>, so they can store a full 16-bit address rather than a 0–255 value.
+                    <br><br>
+                    And how do you get values in and out? <strong>Reading</strong> a register means copying its eight on/off states out onto the CPU's internal wires, so the ALU or another block can use them — and it is a <em>copy</em>, so reading never disturbs what is stored; you can read the same register as often as you like. <strong>Writing</strong> goes the other way: the new value is placed on the register's input wires, and a single control signal — call it "load" — tells the register to <em>latch</em> those eight bits on the next clock tick, overwriting whatever was there. That is the whole reason a register only ever holds one number: "storing a new value" literally means throwing the old pattern away and freezing a new one in its place.
+                    <br><br>
+                    Two consequences fall out of that picture. Registers are <em>fast</em> precisely because they live on the chip — no bus trip required — so the CPU keeps whatever it is working on <em>right now</em> in them. And there are only a <em>few</em> of them, because a counter has limited space — which is why each one gets its own short name. Those short names are exactly the cryptic single letters you will run into in any 8-bit programming guide.
+                    <br><br>
+                    With "register" demystified, the rest of the loop's supporting cast stops looking arbitrary. Each block below exists to keep "<em>fetch → operate → store</em>" running:
+                    <ul class="paragraph">
+                        <li><strong>The registers themselves</strong> — <em>how many</em> a CPU has, and what they are called, was a design choice each chip made differently. The <strong>6502</strong> kept just a tiny handful and named them by job: <strong>A</strong>, the <em>accumulator</em>, where arithmetic results land, plus two helpers, <strong>X</strong> and <strong>Y</strong>, used for counting and stepping through data. The <strong>Z80</strong> offered more and simply labelled most of them with plain letters — <strong>A, B, C, D, E, H, L</strong> — where A is again the accumulator and the rest are general-purpose scratch slots. Two of them, <strong>H</strong> and <strong>L</strong> (short for <em>High</em> and <em>Low</em>), can be glued together into a single 16-bit value, "HL" — handy because, as we saw, a 16-bit number is exactly the width of a memory address.</li>
+                        <li><strong>ALU (Arithmetic Logic Unit)</strong> — the part that actually computes: add, subtract, AND, OR. It typically takes the accumulator plus one other value as inputs, and writes the answer back to the accumulator.</li>
+                        <li><strong>Program Counter (PC)</strong> — holds the address of the <em>next</em> instruction, and ticks upward automatically. This is what makes the CPU march forward through a program instead of repeating one step forever.</li>
+                        <li><strong>Status / flag register</strong> — a single byte whose bits record side effects of the last ALU operation (was the result zero? did it overflow past 8 bits?), so the CPU can make decisions like "jump <em>only if</em> the last result was zero."</li>
+                    </ul>
+                </div>
+
+                <div class="paragraph" style="text-align: left;"><strong>The fetch–decode–execute cycle</strong></div>
+
+                <div class="paragraph">
+                    This is the one thing worth memorising — and it's not a component but a <em>process</em>, because it's how all those blocks cooperate. The CPU repeats this loop forever, millions of times a second:
+                    <ol class="paragraph">
+                        <li><strong>Fetch</strong> — the Program Counter puts the next instruction's address out onto the address bus.</li>
+                        <li>Memory responds by placing that instruction byte onto the data bus, where it lands in the instruction register.</li>
+                        <li><strong>Decode</strong> — the decoder reads the byte and fires the appropriate control signals.</li>
+                        <li><strong>Execute</strong> — the ALU and registers do the work; the flags update to record what happened; the Program Counter advances.</li>
+                        <li><strong>Repeat</strong> — over and over, until the power goes off.</li>
+                    </ol>
+                </div>
+
+                <div class="paragraph">
+                    If reading about this loop isn't enough, <a style="color: black; text-decoration: underline;" href="https://eater.net/8bit" target="_blank">Ben Eater's "Build an 8-bit computer from scratch"</a> series is the gold standard: he builds exactly this — buses, registers, the fetch–decode–execute cycle — on breadboards, one blinking LED at a time. The companion <a style="color: black; text-decoration: underline;" href="https://www.youtube.com/playlist?list=PLowKtXNTBypGqImE405J2565dvjafglHU" target="_blank">YouTube playlist</a> walks through every step.
+                </div>
+
+                <div class="paragraph" style="text-align: left;"><strong>The chips around the CPU</strong></div>
+
+                <div class="paragraph">
+                    A CPU on its own does nothing — it needs company. On a real 8-bit board you will physically see a small cast of supporting chips, and now you can recognise what each is for:
+                    <ul class="paragraph">
+                        <li><strong>ROM (Read-Only Memory)</strong> — <em>non-volatile</em> storage: it keeps its contents even with the power off. It holds the program/firmware that runs the instant you switch the machine on.</li>
+                        <li><strong>RAM (Random-Access Memory)</strong> — <em>volatile</em> read/write scratch space. Fast and flexible, but it forgets everything the moment power is cut.</li>
+                        <li><strong>Clock / crystal oscillator</strong> — often a little metal can that "ticks" millions of times per second. Every single CPU step is gated by this tick. The 6502 ran at about 1 MHz (a million ticks a second); the Z80 at roughly 2–4 MHz. A faster clock means more instructions per second (roughly).</li>
+                        <li><strong>I/O chips</strong> — for example the 6522 VIA in the 6502 world, or the Z80 PIO. The CPU only knows how to read and write addresses; these chips bridge it to the messy outside world — keyboard, joystick, sound, serial ports — by making those things <em>look like</em> memory addresses. (That trick is called <strong>memory-mapped I/O</strong>.)</li>
+                        <li><strong>Address decoder</strong> — often just a cheap 74-series logic chip. It watches the top bits of the address bus and decides which chip the CPU is talking to right now (ROM? RAM? the I/O chip?). Without it, every chip would try to answer at once and you'd get garbage.</li>
+                    </ul>
+                </div>
+
+                <div class="paragraph" style="text-align: left;"><strong>The Motorola 68000</strong></div>
+
+                <div class="paragraph">
+                    The chip that defined the next era was the <strong>Motorola 68000</strong>, introduced in 1979. It was a 16/32-bit design — 32-bit registers and arithmetic internally, talking to the outside world over a 16-bit data bus — and it became the workhorse of an entire generation of serious hardware. It powered the original Apple Macintosh, the Commodore Amiga, the Atari ST, and, closer to home for games, the <strong>Sega Mega Drive / Genesis</strong> and a huge swathe of arcade machines (including Sega and Capcom boards) right through the late 1980s and early 1990s.
+                    <br><br>
+                    Now the 68000's spec sheet actually <em>means</em> something. It's a <strong>16/32-bit</strong> chip: a 16-bit data bus (it moves two bytes per trip instead of one), 32-bit registers (its internal storage and arithmetic chew through 32-bit numbers natively), and a 24-bit address bus. Run the same calculation we did before — 2<sup>24</sup> = 16,777,216 locations ≈ <strong>16 MB</strong> addressable. The 64 KB wall doesn't just move; it <em>vanishes</em>. Arithmetic handles big numbers in one go, and the register file is large and uniform instead of cramped. Every limitation we just walked through gets relaxed at once — and that "all at once" is precisely what made the 68000 feel like a generational leap.
+                    <br><br>
+                    The 68000 was a <strong>CISC</strong> design — a <em>Complex</em> Instruction Set Computer. It offered a rich, elaborate menu of instructions and flexible ways of addressing memory, which made it pleasant for humans to program in assembly. The trade-off: that complexity made each instruction take a variable, often large number of clock cycles, and it made the silicon itself bigger and harder to speed up.
+                    <br><br>
+                    This is the fork in the road that matters for the PlayStation. By the early 1990s, an alternative philosophy — <strong>RISC</strong>, the <em>Reduced</em> Instruction Set approach — had matured: keep the instructions few and uniform so each runs fast and predictably, and lean on the compiler and on dedicated coprocessors to do the heavy lifting. When Sony designed the PlayStation, they did not reach for a 68000 descendant; they chose a RISC core from the MIPS family instead. The next section looks at why — and at what that choice cost and bought them.
+                </div>
+
+                <hr style="width: 30%; margin-top: 80px;">
+                <div class="paragraph" style="text-align: center;">references</div>
+                <div class="preset">
+                    <ol style="padding-bottom: 40px;">
+                        <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://www.copetti.org/writings/consoles/playstation/" target="_blank">PlayStation Architecture — Rodrigo Copetti</a></li>
+                        <li style="font-family: monospace;"><a style="color: black; text-decoration: underline;" href="https://eater.net/8bit" target="_blank">Ben Eater — Build an 8-bit computer from scratch</a></li>
+                    </ol>
+                </div>
+            </div>
+
+        </div>
+
         <br><br><br><br>
     </div>
 
