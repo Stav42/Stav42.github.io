@@ -77,23 +77,29 @@ header{
 
 .pop_arrow{
     position: relative;
-    top: 2.0px;
+    top: 3px;
     content: "";
     display: inline-block;
-    width: 10px;
-    height: 13px;
-    border-right: 0.1em solid black;
-    border-top: 0.1em solid black;
+    width: 14px;
+    height: 18px;
+    border-right: 0.15em solid #555;
+    border-top: 0.15em solid #555;
     border-bottom: 0em;
     border-left: 0em;
     transform: rotate(135deg);
-    margin-right: 0.5em;
-    margin-left: 0.1em;
-    background-color: white;
+    margin-right: 0.3em;
+    margin-left: 0.4em;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
 }
 
 .pop_arrow:hover{
-    cursor: s-resize;
+    border-color: #000;
+    cursor: pointer;
 }
 
 .pop {
@@ -189,13 +195,13 @@ body{
 }
 
 .blog-article {
-    max-width: 680px;
+    max-width: 780px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .toc {
-    max-width: 680px;
+    max-width: 780px;
     margin: 20px auto 40px;
     padding: 20px 28px;
     background: #f8f8f8;
@@ -228,7 +234,7 @@ body{
 }
 
 .callout {
-    max-width: 680px;
+    max-width: 780px;
     margin: 20px auto;
     padding: 16px 20px;
     background: #fdf8f0;
