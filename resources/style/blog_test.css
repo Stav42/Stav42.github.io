@@ -76,30 +76,48 @@ header{
 }
 
 .pop_arrow{
-    position: relative;
-    top: 3px;
-    content: "";
     display: inline-block;
-    width: 14px;
-    height: 18px;
-    border-right: 0.15em solid #555;
-    border-top: 0.15em solid #555;
-    border-bottom: 0em;
-    border-left: 0em;
-    transform: rotate(135deg);
-    margin-right: 0.3em;
-    margin-left: 0.4em;
-    background: none;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid #999;
+    border-radius: 50%;
+    background: #fafafa;
     cursor: pointer;
     padding: 0;
     outline: none;
     vertical-align: middle;
-    transition: transform 0.3s ease;
+    margin-left: 0.4em;
+    margin-right: 0.2em;
+    position: relative;
+    transition: background 0.2s, border-color 0.2s;
 }
 
-.pop_arrow:hover{
-    border-color: #000;
-    cursor: pointer;
+.pop_arrow::after {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    line-height: 1;
+    color: #666;
+    font-weight: 400;
+    transition: transform 0.25s ease;
+}
+
+.pop_arrow:hover {
+    border-color: #444;
+    background: #f0f0f0;
+}
+
+.pop_arrow.active {
+    border-color: #444;
+    background: #e8e8e8;
+}
+
+.pop_arrow.active::after {
+    content: "−";
+    color: #333;
 }
 
 .pop {
