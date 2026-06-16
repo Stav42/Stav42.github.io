@@ -20,34 +20,46 @@ header{
 
 .blog_index{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 24px;
 }
 
 .content_button {
-    font-size: 16px;
-    font-weight: 200;
-    letter-spacing: 1px;
-    padding: 13px 20px 13px;
-    outline: 0;
-    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 28px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
     cursor: pointer;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0);
+    background: #fff;
+    transition: box-shadow 0.2s, border-color 0.2s, background 0.2s;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
 }
 
-.content_button:after {
-    content: "";
-    background-color: #B7CBAA;
-    width: 100%;
-    z-index: -1;
-    position: absolute;
-    height: 100%;
-    top: 7px;
-    left: 7px;
-    transition: 0.2s;
+.content_button:hover {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border-color: #bbb;
+}
+
+.content_button.clicked {
+    border-color: #333;
+    background: #f5f5f5;
+}
+
+.btn-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.btn-label {
+    font-size: 1.05rem;
+    color: #333;
 }
 
 .dropdown-content{
@@ -61,16 +73,6 @@ header{
 
 .dropdown:hover .dropdown-content{
     display: block;
-}
-
-.content_button:hover:after {
-    top: 0px;
-    left: 0px;
-}
-  
-.content_button.clicked:after {
-    top: 0px;
-    left: 0px;
 }
 
 .pop_arrow{
