@@ -16,7 +16,6 @@ function setReadingTime(targetId, sourceId) {
 }
 
 setReadingTime("reading-time-battery", "topic-content-battery");
-setReadingTime("reading-time-surgical", "topic-content-surgical");
 
 var coll = document.getElementsByClassName("pop_arrow");
 
