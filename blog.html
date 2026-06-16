@@ -666,8 +666,6 @@
                         <li><a href="#ps-buses">Buses: the Wires Everything Hangs Off</a></li>
                         <li><a href="#ps-inside-cpu">What's Inside the CPU</a></li>
                         <li><a href="#ps-cycle">The Fetch–Decode–Execute Cycle</a></li>
-                        <li><a href="#ps-chips">The Chips Around the CPU</a></li>
-                        <li><a href="#ps-68000">The Motorola 68000</a></li>
                     </ol>
                 </nav>
 
@@ -815,14 +813,6 @@ binary 0010 1010 = <strong>42</strong> in decimal (32 + 8 + 2)</pre>
                     </figure>
 
                     <p class="paragraph">
-                        How does a cell actually hold its bit? Each one is a minuscule circuit called a <strong>flip-flop</strong> (or latch) — a scrap of logic wired so that it stays put in whichever state it was last set to, holding its 0 or 1 steady for as long as the chip has power. Cut the power and every cell forgets at once; that is precisely why registers (and RAM) lose everything the moment the machine switches off. A handful of special registers that have to hold a memory <em>address</em> — like the Program Counter — are made wider, 16 bits, so they can store a full 16-bit address rather than a 0–255 value.
-                    </p>
-
-                    <p class="paragraph">
-                        And how do you get values in and out? <strong>Reading</strong> a register means copying its eight on/off states out onto the CPU's internal wires, so the ALU or another block can use them — and it is a <em>copy</em>, so reading never disturbs what is stored; you can read the same register as often as you like. <strong>Writing</strong> goes the other way: the new value is placed on the register's input wires, and a single control signal — call it "load" — tells the register to <em>latch</em> those eight bits on the next clock tick, overwriting whatever was there. That is the whole reason a register only ever holds one number: "storing a new value" literally means throwing the old pattern away and freezing a new one in its place.
-                    </p>
-
-                    <p class="paragraph">
                         Two consequences fall out of that picture. Registers are <em>fast</em> precisely because they live on the chip — no bus trip required — so the CPU keeps whatever it is working on <em>right now</em> in them. And there are only a <em>few</em> of them, because a counter has limited space — which is why each one gets its own short name. Those short names are exactly the cryptic single letters you will run into in any 8-bit programming guide.
                     </p>
 
@@ -858,46 +848,6 @@ binary 0010 1010 = <strong>42</strong> in decimal (32 + 8 + 2)</pre>
                         <div class="callout__title">Watch it happen on real wires</div>
                         If reading about this loop isn't enough, <a style="color: black; text-decoration: underline;" href="https://eater.net/8bit" target="_blank">Ben Eater's "Build an 8-bit computer from scratch"</a> series is the gold standard: he builds exactly this — buses, registers, the fetch–decode–execute cycle — on breadboards, one blinking LED at a time. The companion <a style="color: black; text-decoration: underline;" href="https://www.youtube.com/playlist?list=PLowKtXNTBypGqImE405J2565dvjafglHU" target="_blank">YouTube playlist</a> walks through every step.
                     </div>
-
-                    <hr style="width: 50%;">
-
-                    <div class="section-heading" id="ps-chips">The Chips Around the CPU</div>
-                    <hr style="width: 30%;">
-
-                    <p class="paragraph">
-                        A CPU on its own does nothing — it needs company. On a real 8-bit board you will physically see a small cast of supporting chips, and now you can recognise what each is for:
-                    </p>
-
-                    <ul class="paragraph">
-                        <li><strong>ROM (Read-Only Memory)</strong> — <em>non-volatile</em> storage: it keeps its contents even with the power off. It holds the program/firmware that runs the instant you switch the machine on.</li>
-                        <li><strong>RAM (Random-Access Memory)</strong> — <em>volatile</em> read/write scratch space. Fast and flexible, but it forgets everything the moment power is cut.</li>
-                        <li><strong>Clock / crystal oscillator</strong> — often a little metal can that "ticks" millions of times per second. Every single CPU step is gated by this tick. The 6502 ran at about 1 MHz (a million ticks a second); the Z80 at roughly 2–4 MHz. A faster clock means more instructions per second (roughly).</li>
-                        <li><strong>I/O chips</strong> — for example the 6522 VIA in the 6502 world, or the Z80 PIO. The CPU only knows how to read and write addresses; these chips bridge it to the messy outside world — keyboard, joystick, sound, serial ports — by making those things look like memory addresses. (That trick is called <strong>memory-mapped I/O</strong>.)</li>
-                        <li><strong>Address decoder</strong> — often just a cheap 74-series logic chip. It watches the top bits of the address bus and decides which chip the CPU is talking to right now (ROM? RAM? the I/O chip?). Without it, every chip would try to answer at once and you'd get garbage.</li>
-                    </ul>
-
-                    <hr style="width: 50%;">
-
-                    <div class="section-heading" id="ps-68000">The Motorola 68000</div>
-                    <hr style="width: 30%;">
-
-                    <p class="paragraph">
-                        The chip that defined the next era was the <strong>Motorola 68000</strong>, introduced in 1979. It was a 16/32-bit design — 32-bit registers and arithmetic internally, talking to the outside world over a 16-bit data bus — and it became the workhorse of an entire generation of serious hardware. It powered the original Apple Macintosh, the Commodore Amiga, the Atari ST, and, closer to home for games, the <strong>Sega Mega Drive / Genesis</strong> and a huge swathe of arcade machines (including Sega and Capcom boards) right through the late 1980s and early 1990s.
-                    </p>
-
-                    <p class="paragraph">
-                        Now the 68000's spec sheet actually <em>means</em> something. It's a <strong>16/32-bit</strong> chip: a 16-bit data bus (it moves two bytes per trip instead of one), 32-bit registers (its internal storage and arithmetic chew through 32-bit numbers natively), and a 24-bit address bus. Run the same calculation we did before — 2<sup>24</sup> = 16,777,216 locations ≈ <strong>16 MB</strong> addressable. The 64 KB wall doesn't just move; it <em>vanishes</em>. Arithmetic handles big numbers in one go, and the register file is large and uniform instead of cramped. Every limitation we just walked through gets relaxed at once — and that "all at once" is precisely what made the 68000 feel like a generational leap.
-                    </p>
-
-                    <p class="paragraph">
-                        The 68000 was a <strong>CISC</strong> design — a <em>Complex</em> Instruction Set Computer. It offered a rich, elaborate menu of instructions and flexible ways of addressing memory, which made it pleasant for humans to program in assembly. The trade-off: that complexity made each instruction take a variable, often large number of clock cycles, and it made the silicon itself bigger and harder to speed up.
-                    </p>
-
-                    <p class="paragraph">
-                        This is the fork in the road that matters for the PlayStation. By the early 1990s, an alternative philosophy — <strong>RISC</strong>, the <em>Reduced</em> Instruction Set approach — had matured: keep the instructions few and uniform so each runs fast and predictably, and lean on the compiler and on dedicated coprocessors to do the heavy lifting. When Sony designed the PlayStation, they did not reach for a 68000 descendant; they chose a RISC core from the MIPS family instead. The next section looks at why — and at what that choice cost and bought them.
-                    </p>
-
-                </div>
 
                 <hr style="width: 30%; margin-top: 80px;">
                 <div class="paragraph" style="text-align: center;">references</div>
