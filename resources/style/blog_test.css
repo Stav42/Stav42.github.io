@@ -195,13 +195,11 @@ body{
 }
 
 .blog-article {
-    max-width: 780px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .toc {
-    max-width: 780px;
     margin: 20px auto 40px;
     padding: 20px 28px;
     background: #f8f8f8;
@@ -234,8 +232,7 @@ body{
 }
 
 .callout {
-    max-width: 780px;
-    margin: 20px auto;
+    margin: 20px 0;
     padding: 16px 20px;
     background: #fdf8f0;
     border-left: 4px solid #d4a853;
