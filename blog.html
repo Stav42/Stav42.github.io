@@ -700,7 +700,7 @@
                     </p>
 
                     <p class="paragraph collapsible-trigger">
-                        <strong>What makes something a "subsystem"?</strong> Two things:
+                        <strong>What makes something a "subsystem"?</strong> Two things
                         <button type="button" class="pop_arrow" id="soc_explainer"></button>:
                     </p>
                     <div class="paragraph pop" id="soc_explainer_content">
@@ -720,8 +720,13 @@
                         </ul>
                         Each qualifies as a subsystem because each does one coherent part and exposes a clean input → output, hiding its internals from the others.
                         <br><br>
-                        So the <strong>"system" in System-on-Chip</strong> is this whole cluster of subsystems — CPU core + memory controller + geometry engine + decoder. "SoC" means <em>"we put this whole cluster of subsystems onto one piece of silicon."</em> It does <strong>not</strong> mean "the whole console," because the GPU is a different job entirely, living on its own chip.
+                        So the <strong>"system" in System-on-Chip</strong> is this whole cluster of subsystems — CPU core + memory controller + geometry engine + decoder. "SoC" means <em>"we put this whole cluster of subsystems onto one piece of silicon."</em>
                     </div>
+
+                    <figure style="width: 100%; text-align: center; margin: 24px 0;">
+                        <img style="width: 60%; object-fit: contain;" src="resources/sonyChip.jpg" alt="Sony CXD8530BQ Chip">
+                        <figcaption style="font-style: italic; text-align: center;">The Sony CXD8530BQ — the CPU-side System-on-Chip at the heart of the PlayStation. It contains all the subsystems specified in the collapsible note in the same die inside the black casing. The green thing below it is the PCB.</figcaption>
+                    </figure>
 
                     <hr style="width: 50%;">
 
@@ -737,11 +742,11 @@
                     </p>
 
                     <p class="paragraph">
-                        The home machines of the 1980s ran on humble 8-bit chips like the MOS 6502 (the brain of the NES and the Commodore 64) and the Zilog Z80 (the Master System, countless arcade boards). These were cheap and clever, but narrow: they shuffled data eight bits at a time and topped out at fairly modest speeds.
+                        The personal machines of the 1980s ran on humble 8-bit chips like the MOS 6502 (the brain of the NES and the Commodore 64) and the Zilog Z80 (the Master System, countless arcade boards). These were cheap and clever, but narrow: they shuffled data eight bits at a time and topped out at fairly modest speeds. We shall see what the eight bit shifting and the speed here refers too a bit later into the article. 
                     </p>
 
                     <p class="paragraph">
-                        So let's actually open one up — not the PlayStation yet, but a generic 8-bit machine of that era. Once you can see how the pieces sit together, the later jump to the 68000 (and then to the PlayStation itself) turns out to be the same handful of ideas, just scaled up.
+                        So let's actually open one up — a generic 8-bit machine of that era. Once you can see how the pieces sit together, the later jump to the 68000 (and then to the PlayStation itself) turns out to be the same handful of ideas, just scaled up.
                     </p>
 
                     <hr style="width: 50%;">
@@ -750,20 +755,20 @@
                     <hr style="width: 30%;">
 
                     <p class="paragraph">
-                        Strip away the mystique and a CPU is a chip that does three things, over and over, in a loop: it <strong>reads numbers from memory</strong>, <strong>does arithmetic or logic on them</strong>, and <strong>writes numbers back</strong>. That's the entire job. Every other part we're about to meet exists only to keep that loop fed and moving.
+                        Strip away the mystique and a CPU is a chip that does three things, over and over, in a loop: it <strong>reads numbers from memory</strong>, <strong>does arithmetic or logic on them</strong>, and <strong>writes numbers back</strong>. Memory being a place where information is stored. That's the entire job. Every other part we're about to meet exists only to keep that loop fed and moving.
                     </p>
 
                     <p class="paragraph">
-                        Here's the physical fact that makes the rest click: the CPU and the memory are <em>separate chips</em>. The processor does not hold your program inside it — the program lives in other chips sitting next to it on the board. So the very first thing to understand isn't really the CPU; it's the <strong>wires</strong> that connect it to everything else, because every other component hangs off those wires.
+                        Here's the important physical fact: the CPU and the memory are <em>separate chips</em>. The processor does not hold your program inside it — the program lives in other chips (other black boxes like the Sony CPU board) sitting next to it on the board. So the very first thing to understand isn't really the CPU; it's the <strong>wires</strong> that connect it to everything else, because every other component hangs off those wires.
                     </p>
 
                     <hr style="width: 50%;">
 
-                    <div class="section-heading" id="ps-buses">Buses: the Wires Everything Hangs Off</div>
+                    <div class="section-heading" id="ps-buses">Buses: the Wires That Connect Everything</div>
                     <hr style="width: 30%;">
 
                     <p class="paragraph">
-                        A <strong>bus</strong> is simply a bundle of wires that carries one kind of signal. Slow down here — this is the load-bearing idea that the whole rest of the article rests on. Three buses connect the CPU to the rest of the board:
+                        A <strong>bus</strong> is simply a bundle of wires that carries one kind of signal. Three buses connect the CPU to the rest of the board:
                     </p>
 
                     <table class="blog-table">
@@ -779,12 +784,12 @@
                     </table>
 
                     <div class="callout">
-                        <div class="callout__title">The thing almost everyone gets wrong</div>
+                        <div class="callout__title">An important fact</div>
                         "8-bit" refers to the <strong>data bus width</strong> — how many bits move per memory access — <em>not</em> the size of the CPU's internal registers, and <em>not</em> the address size. The 6502 and Z80 are called 8-bit because they move 8 bits at a time, even though their address bus is 16 bits wide. <strong>Data-bus width</strong> sets how much you move per cycle; <strong>address-bus width</strong> sets how much you can address. They are independent, and an 8-bit CPU with a 16-bit address bus is the completely normal case.
                     </div>
 
                     <p class="paragraph">
-                        That address-bus width has a hard, physical consequence. With 16 address wires you can count out 2<sup>16</sup> = 65,536 distinct locations. Each location holds one byte, so that is 65,536 bytes = <strong>64 KB</strong>. This is the famous "64 KB wall": an 8-bit machine simply runs out of addresses there, because there are no more wires to count any higher. (Tricks like <em>bank-switching</em> let programs swap different chunks of memory into view, but the raw ceiling is set purely by the wire count.)
+                        That address-bus width has a hard, physical consequence. With 16 address wires you can count out 2<sup>16</sup> = 65,536 distinct locations. Each location holds one byte, so that is 65,536 bytes = <strong>64 KB</strong>. This is the famous "64 KB wall": an 8-bit machine simply runs out of addresses there, because there are no more wires to count any higher.     
                     </p>
 
                     <hr style="width: 50%;">
@@ -793,7 +798,7 @@
                     <hr style="width: 30%;">
 
                     <p class="paragraph">
-                        Before we open the chip, one word in that loop needs unpacking, because every block inside leans on it: <strong>register</strong>.
+                        Before we open the chip, we must look at one word that occurs a lot when talking about processors: <strong>register</strong>.
                     </p>
 
                     <p class="paragraph">
@@ -848,6 +853,77 @@ binary 0010 1010 = <strong>42</strong> in decimal (32 + 8 + 2)</pre>
                         <div class="callout__title">Watch it happen on real wires</div>
                         If reading about this loop isn't enough, <a style="color: black; text-decoration: underline;" href="https://eater.net/8bit" target="_blank">Ben Eater's "Build an 8-bit computer from scratch"</a> series is the gold standard: he builds exactly this — buses, registers, the fetch–decode–execute cycle — on breadboards, one blinking LED at a time. The companion <a style="color: black; text-decoration: underline;" href="https://www.youtube.com/playlist?list=PLowKtXNTBypGqImE405J2565dvjafglHU" target="_blank">YouTube playlist</a> walks through every step.
                     </div>
+
+                    
+
+                    <div class="section-heading" id="ps-cycle">Other chips on the CPU</div>
+                    <hr style="width: 30%;">
+                    <p class="paragraph">
+
+                        There are some other chips in the CPU that are worth looking at. On the PCB (for an old 8-bit machine), there are other packages in support to the CPU which handle other systems:
+                        <ol class="paragraph">
+                            <li><strong>ROM</strong> - Read-only Memory: This contains programs that once configured do not change and they are retained across the power cycle. The computer starts executing the code in this memory as soon as it boots up. </li>
+                            <li><strong>RAM</strong> - Random Access Memory: This is the scratch pad that we referred to earlier in the table kitchen example. It is volatile in the sense that it loses all the information in it across a power cycle. </li>
+                            <li><strong>DRAM</strong> - Dynamic RAM: While RAM and VRAM are the purpose-driven categorization of RAM, DRAM is a way of making up this memory. Each bit is stored as a tiny charge in a capacitor, and because that charge leaks away, the chip has to be 'refreshed' thousands of times a second to hold onto its data. Both the main RAM and the VRAM below are usually DRAM. </li>
+                            <li><strong>Crystal oscillator/clock</strong> — This 'ticks' millions of times per second. Every CPU step is synchronized with this clock. The 6502 ran at about 1 MHz; the Z80 approximately 2-4 MHz. A faster clock frequency might mean more operations per second given that the operations can still be done in the same number of cycles. It's one of the factors that decides the speed, but the reality of course is more nuanced.
+                            </li>
+                            <li><strong>GPU</strong> - Graphics Processing Unit: A dedicated chip that draws the picture — sprites, polygons and textures — so the CPU doesn't have to. On the PlayStation this is the CXD8514Q (F in the board below). </li>
+                            <li><strong>VRAM</strong> - Video RAM: A separate pool of memory that belongs to the GPU. It holds the frame buffer (the image currently being sent to the screen) and the textures the GPU paints with. The difference from ordinary RAM is mostly about who owns it: main RAM is the CPU's workspace, while VRAM is the GPU's — kept separate so the GPU can read and write it at full speed without fighting the CPU for access. </li>
+                        </ol>
+                    </p>
+
+                    <p class="paragraph">
+                        To see all of this on a real board, here is the original PlayStation (SCPH-1000) motherboard with the main chips called out:
+                    </p>
+
+                    <figure style="width: 100%; text-align: center; position: relative; bottom: 0px;">
+                        <img style="width: 80%; object-fit: contain;" src="./resources/SCPH1000motherboard.png" alt="PlayStation SCPH-1000 motherboard with labelled chips">
+                        <figcaption style="font-style: italic; width: 100%; text-align: center;">The PlayStation (SCPH-1000) motherboard, with the major chips labelled A&ndash;H.</figcaption>
+                    </figure>
+
+                    <ol class="paragraph" type="A">
+                        <li><strong>CXD8530BQ &mdash; CPU.</strong> The main processor. It also packs the geometry (3D math) engine and the video decoder.</li>
+                        <li><strong>RS534340F &mdash; I/O controller.</strong> Handles the gamepad and memory-card ports.</li>
+                        <li><strong>CXD2922Q &mdash; SPU (Sound Processing Unit).</strong> Generates and mixes the audio.</li>
+                        <li><strong>Toshiba TC51V4260BJ-80 &mdash; VRAM.</strong> Fast video DRAM holding the GPU's frame buffer and textures.</li>
+                        <li><strong>NEC &micro;PD482445LGW-A70-S &mdash; main RAM.</strong> The working scratchpad the CPU reads and writes.</li>
+                        <li><strong>CXD8514Q &mdash; GPU (Graphics Processing Unit).</strong> Draws the sprites and textured polygons.</li>
+                        <li><strong>57.737 MHz crystal &mdash; clock.</strong> A system oscillator that paces the hardware.</li>
+                        <li><strong>53.69 MHz crystal &mdash; clock.</strong> The video/GPU oscillator that times the picture.</li>
+                    </ol>
+
+
+
+                    <!--
+                    <p class="paragraph collapsible-trigger">
+                        <strong>When is a machine "fast" and what does it have to do with the clock?</strong>
+                        <button type="button" class="pop_arrow" id="clock_explainer"></button>:
+                    </p>
+                    <div class="paragraph pop" id="clock_explainer_content">
+                        <br>
+                        <strong>Clock - full explanation</strong>
+                        <hr>
+                        <ol class="paragraph">
+                            <li>It does <strong>one coherent part</strong> of the larger job — not the whole thing, and not some random scrap.</li>
+                            <li>It's <strong>packaged as a unit</strong> with a clear input and output: you hand it something, it hands something back, and you never need to know how it did it inside.</li>
+                        </ol>
+                        By that definition, each block on chip #1 is its own subsystem:
+                        <ul class="paragraph">
+                            <li><strong>CPU core</strong> — the general worker. Arithmetic, logic, decisions.</li>
+                            <li><strong>Memory controller</strong> — one job: fetching and storing data in RAM.</li>
+                            <li><strong>Geometry Transformation Engine</strong> — one job: the heavy 3D math (rotating and positioning shapes in space) so the CPU doesn't have to.</li>
+                            <li><strong>Motion Decoder</strong> — one job: unpacking compressed video.</li>
+                        </ul>
+                        Each qualifies as a subsystem because each does one coherent part and exposes a clean input → output, hiding its internals from the others.
+                        <br><br>
+                        So the <strong>"system" in System-on-Chip</strong> is this whole cluster of subsystems — CPU core + memory controller + geometry engine + decoder. "SoC" means <em>"we put this whole cluster of subsystems onto one piece of silicon."</em>
+                    </div>
+                    -->
+
+                    <p class="paragraph">
+                        One last thing worth noting: the board above is the <strong>PU-7</strong>, the very first PlayStation motherboard, from the 1994 SCPH-1000. Sony sold the PS1 for the better part of a decade, and although the console looked unchanged on the outside, the insides were quietly redesigned again and again. Each revision folded more of those separate chips into fewer, cheaper packages &mdash; making the board smaller, cooler and less expensive to build. The PU-7 gave way to the PU-8 (SCPH-1001/3000), then the PU-18 and PU-20 (SCPH-5000/5500), the PU-22 and PU-23 (SCPH-7000/9000), and finally the tiny PM-41 board inside the PSone (SCPH-100) in 2000 &mdash; the same machine, shrunk to a fraction of the original's size.
+                    </p>
+
 
                 <hr style="width: 30%; margin-top: 80px;">
                 <div class="paragraph" style="text-align: center;">references</div>
