@@ -27,7 +27,7 @@
             </div>
         </div>
     </header>
-    <div class="banner">
+    <div class="banner" id="home">
         <img class="image-item box" src="resources/banners/sunrise.jpeg" alt="sunrise">
         <div class="banner-type overlay">
             <div class="typewriter">
@@ -39,6 +39,17 @@
             <span class="chevron"></span>
         </a>
     </div>
+    <div class="page-layout">
+        <nav class="page-contents" aria-label="On this page">
+            <p class="contents-label">Contents</p>
+            <ol>
+                <li><a href="#about-me" aria-current="location">About me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#work-beyond-work">Work beyond work</a></li>
+            </ol>
+        </nav>
+    <main class="page-content">
+    <section id="about-me" aria-label="About me">
     <div class="about-me">about me</div>
     <hr class="horizontal">
     <div class="intro">
@@ -49,7 +60,45 @@
             <div id="writing">
                 Hi, I am Aditya Vats. I have been working on technical things in the last few years of my life. Since you are here, I want to run you through my short and unconventional (I think) career so far. It won't be a regurgitation of my resume. It is going to be something more. The aspirational aspects of these roles that I had assumed, something resumes or CVs don't capture. It is also my personal and experimental space, where I share some interesting experiments that I have been running.
             </div>
+            <nav class="intro-links" aria-label="Explore this page">
+                <ul>
+                    <li>
+                        <a href="#projects">Projects <span class="link-note">(what I've been up to)</span><span class="link-arrow" aria-hidden="true">&darr;</span></a>
+                    </li>
+                    <li>
+                        <a href="#work-beyond-work">Work beyond work <span class="link-note">(hobbies (?))</span><span class="link-arrow" aria-hidden="true">&darr;</span></a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
-    </body>
+    </section>
+    <div class="home-sections">
+        <section class="home-section" id="projects" aria-labelledby="projects-heading">
+            <div class="section-heading">
+                <h2 id="projects-heading">Projects</h2>
+                <p>what I've been up to</p>
+            </div>
+            <div class="section-copy">
+                <p class="section-status">More soon</p>
+                <p>A space for the things I've been building, the experiments I've been running, and what I've learned along the way.</p>
+                <!-- Add project stories here. -->
+            </div>
+        </section>
+        <section class="home-section" id="work-beyond-work" aria-labelledby="work-beyond-work-heading">
+            <div class="section-heading">
+                <h2 id="work-beyond-work-heading">Work beyond work</h2>
+                <p>hobbies (?)</p>
+            </div>
+            <div class="section-copy">
+                <p class="section-status">More soon</p>
+                <p>A space for interests outside work, things I'm learning for the fun of it, and the occasional detour.</p>
+                <!-- Add hobbies and personal notes here. -->
+            </div>
+        </section>
+    </div>
+    </main>
+    </div>
+    <script src="./page-contents.js" defer></script>
+</body>
 </html>
