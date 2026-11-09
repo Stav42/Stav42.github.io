@@ -153,6 +153,7 @@ header{
 
 body{
     margin: 0;
+    padding-bottom: 120px;
 }
 
 * {
@@ -160,7 +161,10 @@ body{
 }
 
 .text{
-    height: 20em;
+    /* height:auto, not 20em: these wrappers hold full articles, and a fixed
+       height let the article overflow past the container so the page's
+       bottom padding never took effect */
+    height: auto;
 }
 
 .topic{
@@ -437,6 +441,10 @@ body{
 
 /* ---------- Mobile ---------- */
 @media (max-width: 768px) {
+    body {
+        padding-bottom: 72px;
+    }
+
     html, body {
         overflow-x: hidden;
     }
