@@ -54,7 +54,7 @@
     <hr class="horizontal">
     <div class="intro">
         <div class="profile photo">
-            <img src="resources/profile/profilepondicherry.png" alt="profile image">
+            <img src="resources/profile/aditya-vats.jpeg" alt="Aditya Vats standing beside a pond surrounded by greenery">
         </div>
         <div class="profile content" id="writeup">
             <div id="writing">
@@ -79,10 +79,23 @@
                 <h2 id="projects-heading">Projects</h2>
                 <p>what I've been up to</p>
             </div>
-            <div class="section-copy">
+            <div class="section-copy" id="projects-placeholder">
                 <p class="section-status">More soon</p>
                 <p>A space for the things I've been building, the experiments I've been running, and what I've learned along the way.</p>
-                <!-- Add project stories here. -->
+            </div>
+            <div class="project-stories" id="project-stories" hidden>
+                <article class="project-story" id="xterra" data-story-source="content/xterra.txt" aria-labelledby="xterra-heading" hidden>
+                    <h3 id="xterra-heading">xTerra Robotics</h3>
+                    <div class="story-body"></div>
+                </article>
+                <article class="project-story" id="ec" data-story-source="content/ec.txt" aria-labelledby="ec-heading" hidden>
+                    <h3 id="ec-heading">E&amp;C</h3>
+                    <div class="story-body"></div>
+                </article>
+                <article class="project-story" id="penn" data-story-source="content/penn.txt" aria-labelledby="penn-heading" hidden>
+                    <h3 id="penn-heading">Research at Penn</h3>
+                    <div class="story-body"></div>
+                </article>
             </div>
         </section>
         <section class="home-section" id="work-beyond-work" aria-labelledby="work-beyond-work-heading">
@@ -101,5 +114,6 @@
     </div>
     <script src="./page-contents.js" defer></script>
     <script src="./navbar-scroll.js" defer></script>
+    <script src="./stories.mjs" type="module"></script>
 </body>
 </html>

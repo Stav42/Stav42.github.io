@@ -1,0 +1,49 @@
+<!-- Write your xTerra Robotics story here. See WRITING.md for the format. -->
+@image-right https://xterrarobotics.com/robot/svan_m2_front_cam_lidar_PTZ_cam.jpg | svan M2
+
+**Why?** [xTerra Robotics](https://www.xterrarobotics.com/) is where I worked at in the last couple of years of my undergrad in the years 2023 and 2024. I joined them at their *earliest stage* of development and the company had not even been incorporated yet. Now they are making waves across the Indian robotics scene (and I am sure they will go global in a few years).
+
+@details Why did I work here
+
+Before coming here, I had done an internship at a big corporate in India (ITC). A super well respected company. I had recieved a job offer from them as well. I rejected it without having any other offer and chose to work at xTerra. Why? Here's why:
+
+- **Meaning**. I am always on the lookout for meaningful things to do with my life. I am NOT ok with working to get a salary or to build a career. Making strategies to sell noodles in millions is an interesting problem, but not an aspirational one. I think I chose well at that time. 
+- **Pretty high risk tolerance**. Leaving a high paying job is not something somebody from my college (IIT Kanpur) ever does. While the country praises us for our industrious nature, we are a sheepish crowd. There is a reason we sacrifice our teens and work hard for a single exams. *We are too afraid to disappoint society! We choose the most traditional form of success*. I am not like that though. I feel prosperity is a by-product when one meaningful work that holds value for society. xTerra felt the right step at that time.  
+
+@enddetails
+
+### Low-level interface and controllers 
+
+**Low-level motor API**. Essentially, I was developing a software layer of abstraction over the motor controller API that we were using. It involved setting the configurations correctly, the bootup sequence, while ensuring safe hardware limits. Developing the communication structure over ROS and ensuring stable rate. It is a very essential aspect of any robotics project of course and was fun to do. 
+
+**Sensor Suite**. A part of my job was to develop the sensor suite for the whole robot. Processing the signal from the joint encoders to clean them. Obtaining data from the current sensors in the motor controller to get the torque was also a part of it. 
+
+### Sim-2-real and actuator characterization
+
+Reinforcement Learning was particularly promising for quadruped systems. I took that up as a challenge (was also kind of assigned to me). While the policy itself is a topic of another discussion, it was interesting to transfer it to the hardware where the actual challenges lay. We had to
+
+- Ensure that the latency and noise was well characterized through distribution and we then replicated these distributions in the simulation
+- Write up an actuator model in the simulation, and fill in the parameters to match the actuator behavior of the real robot. We ran a very interesting experiment where I hung the robot in the air and then ran a specified sequence of commands for each of the legs. Then we ran the same sequence in the simulation, and we found out a set of parameters that, if we implemented it in the actuator model in the simulation, it would mimic the real joint evolution fairly closely. This was actually a characterization as had been done by Hutter's group, and we kind of used it to train our model. We had to find $I_a$, $d$, saturation limits, $\tau_{\mathrm{comp}}$, $\tau_f$ and the PD gains. 
+
+@math I_a\ddot{q} + d\dot{q} = \operatorname{sat}\!\left(P_{\tau}(\hat{q} - q + \tilde{q}_b) - D_{\tau}\dot{q} + \tau_{\mathrm{comp}}\right) + \tau_f
+
+@image-right resources/projects/xterra/rl-training-pipeline.png | Reinforcement learning pipeline: parallel simulation in Isaac Lab and policy updates with PPO.
+
+### Reinforcement Learning and the policy
+
+With a clear path given to me by the rest of the team, I had to come up with an RL pipeline that would be powerful, easy to work with and extend. After a few months of learning RL, and researching the state of the art, we went ahead with IsaacLab which was still quite new at that time. We used the walk these ways paper as the base and got a policy that could produce different gaits. 
+
+@video-right https://drive.google.com/file/d/1Aged-IxzXXpzRyzeittjEYcQ3P6QyswG/view?usp=sharing | xTerra Robotics demo
+
+It was a fun project. Will all this done and dusted, the end result that we had was okay-ish. With more time, I feel we could have had a cleaner motion. Here's a peek to how the motion was:
+
+So that was the story of my work here at xTerra.
+
+@details What I learned from the human aspect of this role
+
+When I reflect on my time there, here is what stands out in terms of the human aspect:
+
+- **They were very persistant** Right now, their progress seems awesome. Their newest robot is super cool and their work is well appreciated. I recall a time however when they were slogging day-in day-out, handling crises and nothing really seemed to work too well. The IMU was too noisy, or too many people were joining in and leaving without completing a project. That they had worked for too long on the idea without getting much of a recognition. They kept on with it though. Those countless meetings, the level-headed approach of their CEO and the senior team, and just the persistance to keep going.
+- **It takes a team** It always does. You need to connect with people if you wish to suceed. Need to talk to people, find like-minded people and need to have a mission that talks to all in the team.
+
+@enddetails
