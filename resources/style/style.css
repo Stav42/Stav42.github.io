@@ -21,11 +21,10 @@ header{
   text-decoration: none;
 }
 
-/* Top-level nav buttons (Home, Blog, Projects) white over the banner;
-   dropdown submenu links stay black so they're readable over the page. */
+/* The shared scroll script fades the top-level text as the banner leaves. */
 .navbar > .nav-item > .nav-links,
 .navbar > .nav-item > .dropdown {
-  color: white;
+  color: var(--nav-text-color, white);
 }
 
 
@@ -307,7 +306,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: white;
+    color: var(--nav-text-color, white);
 }
 
 .navbar {
