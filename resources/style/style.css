@@ -95,15 +95,19 @@ body{
 }
 
 #writing{
-    font-size: clamp(0.85rem, 1.4vw, 1.1rem);
+    /* Match the blog body text: serif, 16px, 1.7 line-height,
+       0.05em letter-spacing, 0.15em word-spacing, justified */
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
     text-align: justify;
     text-justify: inter-word;
+    word-spacing: 0.15em;
+    letter-spacing: 0.05em;
+    line-height: 1.7em;
+    overflow-wrap: break-word;
     margin: 20px auto;
     width: clamp(300px, 55vw, 640px);
     max-width: 100%;
-    line-height: 1.5em;
-    letter-spacing: 0.14em;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .navigation-bar {
