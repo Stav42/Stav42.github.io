@@ -294,10 +294,10 @@ body{
     grid-column: 1 / -1;
     width: 100%;
     min-width: 0;
-    color: #49453e;
-    font-family: 'Times New Roman', Times, serif;
+    color: #35332f;
+    font-family: Georgia, 'Times New Roman', serif;
     font-size: 1.0625rem;
-    line-height: 1.85;
+    line-height: 1.75;
     overflow-wrap: break-word;
 }
 
@@ -311,7 +311,7 @@ body{
 
 .story-details {
     clear: both;
-    margin: 40px 0 0;
+    margin: 28px 0 0;
     border-top: 1px solid #d9d3c9;
     border-bottom: 1px solid #d9d3c9;
 }
@@ -400,7 +400,7 @@ body{
 
 .story-body h5 {
     margin: 28px 0 12px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 .story-body p,
@@ -452,6 +452,13 @@ body{
     margin: -8px 0 24px 32px;
 }
 
+/* Keep the tall site photographs proportional to the surrounding text. */
+@media (min-width: 961px) {
+    #ec .story-image-right {
+        width: min(32%, 260px);
+    }
+}
+
 .story-body img,
 .story-body video {
     display: block;
@@ -478,7 +485,8 @@ body{
     color: #6b655c;
     font-size: 0.875rem;
     font-style: italic;
-    text-align: center;
+    line-height: 1.5;
+    text-align: left;
 }
 
 .navigation-bar {
@@ -563,165 +571,6 @@ body{
 /* ---------- Scroll-down cue: hidden on desktop ---------- */
 .scroll-down {
     display: none;
-}
-
-/* ---------- Mobile ---------- */
-@media (max-width: 768px) {
-    html, body {
-        overflow-x: clip;
-    }
-
-    .page-layout {
-        grid-template-columns: 80px minmax(0, 1fr);
-        column-gap: 8px;
-        padding-left: 8px;
-    }
-
-    .page-contents {
-        top: 64px;
-        max-height: calc(100svh - 96px);
-        padding: 8px 0;
-    }
-
-    .contents-label {
-        font-size: 0.7rem;
-        line-height: 1.5;
-        margin-bottom: 12px;
-    }
-
-    .page-contents a {
-        padding: 10px 4px 10px 7px;
-        font-size: 0.75rem;
-        overflow-wrap: break-word;
-    }
-
-    #about-me,
-    #writeup {
-        scroll-margin-top: 64px;
-    }
-
-    /* Keep the nav compact over the full-screen image */
-    header {
-        font-size: 1em;
-    }
-    .header-name {
-        display: none;
-    }
-    .navbar {
-        margin: 0;
-        padding: 0;
-    }
-    .nav-item {
-        padding: 0 0.9rem;
-    }
-
-    /* Banner fills the entire screen */
-    .banner {
-        height: 100vh;
-        height: 100svh;
-        bottom: 0;
-    }
-    .banner img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* Center "thinking big." vertically and horizontally */
-    .overlay {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        bottom: auto;
-        transform: translate(-50%, -50%);
-    }
-
-    /* "scroll down" indicator pinned to the bottom of the image */
-    .scroll-down {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        position: absolute;
-        bottom: 28px;
-        left: 50%;
-        transform: translateX(-50%);
-        color: white;
-        text-decoration: none;
-        font-family: monospace;
-        font-size: 0.85rem;
-        letter-spacing: 0.15em;
-        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
-        z-index: 10;
-        animation: scroll-bounce 1.6s ease-in-out infinite;
-    }
-    .scroll-down .chevron {
-        width: 12px;
-        height: 12px;
-        border-right: 2px solid currentColor;
-        border-bottom: 2px solid currentColor;
-        transform: rotate(45deg);
-    }
-
-    /* Home intro stacks vertically and fits the viewport */
-    .about-me {
-        margin-left: 20px;
-    }
-    .horizontal {
-        width: 60%;
-        margin-left: 20px;
-    }
-    .intro {
-        flex-direction: column;
-        gap: 24px;
-        margin-top: 24px;
-        padding-right: 0;
-        padding-bottom: 100px;
-    }
-    .profile {
-        width: auto;
-        height: auto;
-        margin-left: 0;
-        padding: 0 20px;
-    }
-    .profile.content {
-        flex: none;
-        min-width: auto;
-    }
-    .intro img {
-        height: auto;
-    }
-    #writing {
-        width: auto;
-        margin: 20px 0;
-    }
-
-    .intro-links {
-        width: auto;
-        margin: 32px 0 0;
-    }
-
-    .home-sections {
-        padding: 0 20px 64px;
-    }
-
-    .home-section {
-        grid-template-columns: 1fr;
-        gap: 28px;
-        padding: 36px 0 48px;
-        scroll-margin-top: 64px;
-    }
-
-    .project-story {
-        scroll-margin-top: 64px;
-    }
-
-    .story-body .story-image-right,
-    .story-body .story-video-right {
-        float: none;
-        width: 100%;
-        margin: 24px 0;
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {

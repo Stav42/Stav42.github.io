@@ -1,1 +1,49 @@
 <!-- Write your E&C story here. See WRITING.md for the format. -->
+
+@image-right resources/projects/ec/noida-airport-site-annotated.png | The scale of the construction site at Noida International Airport.
+
+At E&C Infrastructure Pvt Ltd, I worked on an 80-metric-ton steel fabrication and erection project for Tata Projects Limited at Noida International Airport. We were building a maintenance walkway approximately 20 metres above ground, spanning 300 metres and weighed 80 MT. The company was large enough to take on the project, but small enough for me to work across design, production, site operations, and finances.
+
+I wanted to experience the operational side of engineering. Until then, I had mostly worked in more controlled settings. Here, getting the engineering right also meant getting materials delivered, assigning people to the right tasks, keeping production moving, and coordinating with the client. That was the perspective I wanted.
+
+### Design and drawings
+
+The client provided us with broad requirements and preliminary drawings. Our job was to develop these into detailed designs, work out the bolted and welded connections, and prepare fabrication drawings. This involved several rounds of review with the client before the drawings could move into production. I had to assemble a team of designers, drafters and CAD engineers to flesh it out.
+
+### Production and quality
+
+I spent considerable time on the factory floor, working with the team to break fabrication into a sequence of operations that could be checked at each stage. Steel channels and plates had to arrive before production needed them, while welders, grinders, and cutters had to be allocated as worker availability changed.
+
+Quality had been a difficulty in earlier projects. For this one, we introduced a clearer procedure for checking the work throughout fabrication. That helped us keep closer control over what left the factory.
+
+@image-right resources/projects/ec/maintenance-walkway.jpeg | A closer view of the maintenance walkway steelwork at Noida International Airport.
+
+### Site coordination and erection
+
+The work continued beyond fabrication. We had to transport the steelwork to the airport, deploy a team, arrange machinery, and coordinate installation at height.
+
+Alongside this, I handled communication concerning drawings, schedules, transportation, and quality documentation. Keeping the factory, site team, and client aligned was a substantial part of the role.
+
+### Finances and logistics
+
+We monitored costs daily and adjusted worker allocation to keep production moving while controlling labour costs. Materials were purchased through a combination of cash and credit, with delivery schedules planned around production. Even procuring the specified paint required attention because it was relatively specialised and expensive.
+
+Cash flow remained difficult. We never achieved the positive cash flow we were aiming for, despite working towards it. That was part of the experience too.
+
+This project made me realise the intensity of any operational work. I liked being on the factory floor or at the site, understanding what was holding things up, and working with people to get things moving.
+
+@details The work behind things we take for granted
+
+The sheer amount of effort involved in making something physical stayed with me. Even a relatively small part of a large construction project required drawings, materials, fabrication, inspection, transport, and installation.
+
+We tend to see a finished road or building without thinking about the people and years of work behind it. This project gave me a much stronger appreciation for that effort. Work at this scale depends on a team, and getting that team to function is often what makes or breaks the project.
+
+@enddetails
+
+@details What managing a team taught me
+
+Working with a team of around 40 people made workforce planning a daily responsibility. Skilled workers were not always available when expected, and allocating welders, grinders, and cutters meant understanding how each task depended on the others.
+
+It taught me that managing people is a core part of executing an engineering project. A technically sound plan still depends on people understanding it, having what they need, and being able to work together.
+
+@enddetails

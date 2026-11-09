@@ -1,5 +1,6 @@
 (() => {
     const links = [...document.querySelectorAll('.page-contents a')];
+    const contents = document.querySelector('.page-contents');
     const sections = links.map(link => document.querySelector(link.hash));
     if (!links.length || sections.some(section => !section)) return;
 
@@ -7,7 +8,10 @@
 
     function updateCurrentSection() {
         // Follow the heading that has passed the upper part of the viewport.
-        const readingLine = Math.min(window.innerHeight * 0.28, 160);
+        const compact = window.matchMedia('(max-width: 960px)').matches;
+        const readingLine = compact && contents
+            ? contents.getBoundingClientRect().bottom + 24
+            : Math.min(window.innerHeight * 0.28, 160);
         let current = 0;
 
         sections.forEach((section, index) => {

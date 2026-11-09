@@ -1,0 +1,534 @@
+/* An editorial reading layout shared by Home and Blog. */
+@media (max-width: 960px) {
+    :root {
+        --mobile-header-height: 94px;
+        --mobile-contents-height: 48px;
+        --mobile-anchor-offset: calc(var(--mobile-header-height) + var(--mobile-contents-height) + 20px);
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    html, body {
+        overflow-x: clip;
+    }
+
+    body {
+        padding-top: var(--mobile-header-height);
+        padding-bottom: 0;
+        background: #fff;
+        color: #222;
+    }
+
+    /* A compact masthead and separate row of navigation links. */
+    header {
+        font-size: 1rem;
+    }
+
+    .navigation-bar {
+        height: var(--mobile-header-height);
+        flex-direction: column;
+        justify-content: flex-start;
+        background: #fff;
+        border-bottom: 1px solid #222;
+    }
+
+    .navigation-bar .header-name {
+        display: flex;
+        min-height: 48px;
+        align-items: center;
+        color: #171717;
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.035em;
+    }
+
+    .site-title-suffix {
+        display: none;
+    }
+
+    .nav-ribbon {
+        width: 100%;
+        border-top: 1px solid #eee;
+    }
+
+    .navbar {
+        justify-content: center;
+        gap: 28px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-item {
+        padding: 0;
+    }
+
+    .navbar > .nav-item > .nav-links {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        padding: 0 8px;
+        border-bottom: 2px solid transparent;
+        color: #222;
+        font-family: system-ui, sans-serif;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .navbar .nav-links[aria-current="page"] {
+        border-bottom-color: #222;
+    }
+
+    /* Keep the painting, with the introduction close enough to discover. */
+    .banner {
+        height: clamp(220px, 38svh, 360px);
+        bottom: 0;
+    }
+
+    .banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+    }
+
+    .scroll-down {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        font-family: system-ui, sans-serif;
+        font-size: 0.65rem;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        text-shadow: 0 1px 4px #333;
+    }
+
+    .scroll-down .chevron {
+        width: 8px;
+        height: 8px;
+        border-right: 1px solid currentColor;
+        border-bottom: 1px solid currentColor;
+        transform: rotate(45deg);
+    }
+
+    /* The contents menu starts below the painting, then sticks below the masthead. */
+    .page-layout {
+        display: block;
+        padding: 0;
+    }
+
+    .page-contents {
+        top: var(--mobile-header-height);
+        z-index: 999;
+        width: 100%;
+        height: var(--mobile-contents-height);
+        max-height: none;
+        padding: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        background: #fff;
+        border-bottom: 1px solid #d8d8d8;
+    }
+
+    .contents-label {
+        display: none;
+    }
+
+    .page-contents ol {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        width: 100%;
+        max-width: 44rem;
+        min-width: max-content;
+        margin: 0 auto;
+        padding: 0 18px;
+        border: 0;
+    }
+
+    .page-contents a {
+        display: flex;
+        height: var(--mobile-contents-height);
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-bottom: 2px solid transparent;
+        color: #666;
+        font-family: system-ui, sans-serif;
+        font-size: 0.75rem;
+        font-style: normal;
+        line-height: 1.2;
+        white-space: nowrap;
+    }
+
+    .page-contents a:hover,
+    .page-contents a[aria-current="location"] {
+        color: #111;
+        border-bottom-color: #111;
+        font-style: normal;
+    }
+
+    .page-content {
+        width: 100%;
+    }
+
+    #about-me, #writeup, .home-section, .project-story {
+        scroll-margin-top: var(--mobile-anchor-offset);
+    }
+
+    #about-me {
+        max-width: 44rem;
+        margin: 0 auto;
+        padding: 28px 18px 0;
+    }
+
+    .about-me {
+        margin: 0 0 12px;
+        font-family: 'Eczar', Georgia, serif;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+
+    .horizontal {
+        width: 100%;
+        margin: 0;
+        border: 0;
+        border-top: 1px solid #222;
+    }
+
+    .intro {
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 24px;
+        padding: 0 0 48px;
+    }
+
+    .profile {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    .profile.photo {
+        max-width: 420px;
+        align-self: center;
+    }
+
+    .profile.content {
+        flex: none;
+        min-width: 0;
+    }
+
+    .intro img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    #writing, .project-stories, .section-copy, .paragraph {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 1.125rem;
+        line-height: 1.7;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-align: left;
+        overflow-wrap: anywhere;
+    }
+
+    #writing {
+        width: 100%;
+        margin: 0;
+    }
+
+    .intro-links {
+        width: 100%;
+        margin: 24px 0 0;
+    }
+
+    .intro-links li + li {
+        margin: 0;
+    }
+
+    .intro-links a {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0 6px;
+        min-height: 44px;
+        padding: 12px 0;
+        border-bottom: 1px solid #ddd;
+        font-size: 1rem;
+        text-decoration: none;
+    }
+
+    .link-note {
+        font-size: 0.875rem;
+    }
+
+    .link-arrow {
+        margin-left: auto;
+    }
+
+    .home-sections {
+        max-width: 44rem;
+        margin: 0 auto;
+        padding: 0 18px 64px;
+    }
+
+    .home-section {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        padding: 32px 0 40px;
+        border-top-color: #222;
+    }
+
+    .home-section:last-child {
+        min-height: calc(100svh - var(--mobile-anchor-offset));
+    }
+
+    .section-heading h2 {
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+
+    .section-heading p {
+        margin-top: 6px;
+        font-size: 0.9rem;
+    }
+
+    .project-story h3 {
+        margin-bottom: 20px;
+        font-size: clamp(1.9rem, 6vw, 2.5rem);
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        line-height: 1.2;
+    }
+
+    .story-body h4, .story-body h5 {
+        margin: 30px 0 14px;
+        font-weight: 600;
+        line-height: 1.35;
+    }
+
+    .story-body h4 {
+        font-size: 1.4rem;
+    }
+
+    .story-body h5 {
+        font-size: 1.2rem;
+    }
+
+    .story-body ul, .story-body ol {
+        padding-left: 1.25rem;
+    }
+
+    .story-body li + li {
+        margin-top: 14px;
+    }
+
+    .story-body figure,
+    .story-body .story-image-right,
+    .story-body .story-video-right {
+        float: none;
+        width: 100%;
+        margin: 24px 0;
+    }
+
+    .story-body figcaption {
+        font-size: 0.8rem;
+        font-style: normal;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    .story-video-frame {
+        height: auto;
+    }
+
+    .story-details {
+        margin-top: 28px;
+    }
+
+    .story-details > summary {
+        display: block;
+        padding: 18px 0;
+        font-size: 1.1rem;
+    }
+
+    .story-details > summary::after {
+        display: block;
+        margin: 6px 0 0;
+        content: 'Tap to read  +';
+        font-family: system-ui, sans-serif;
+        font-size: 0.7rem;
+        font-style: normal;
+        text-align: left;
+    }
+
+    .story-details[open] > summary::after {
+        content: 'Tap to close  \2212';
+    }
+
+    .story-equation {
+        margin: 24px 0;
+        padding: 8px 0;
+    }
+
+    /* The blog uses the same reading measure, masthead, and media treatment. */
+    .blog_index {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 0;
+        max-width: 44rem;
+        margin: 0 auto;
+        padding: 0 18px;
+        overflow-x: auto;
+        border-bottom: 1px solid #222;
+        scroll-margin-top: calc(var(--mobile-header-height) + 16px);
+    }
+
+    .content_button {
+        flex: 0 0 auto;
+        min-height: 48px;
+        padding: 12px;
+        border: 0;
+        border-bottom: 2px solid transparent;
+        border-radius: 0;
+        background: #fff;
+        box-shadow: none;
+    }
+
+    .content_button:hover, .content_button.clicked {
+        border-bottom-color: #222;
+        background: #fff;
+        box-shadow: none;
+    }
+
+    .btn-label {
+        font-family: system-ui, sans-serif;
+        font-size: 0.8rem;
+    }
+
+    .btn-icon {
+        display: none;
+    }
+
+    .topic_blog {
+        max-width: 44rem;
+        margin: 0 auto;
+        padding: 28px 18px 64px;
+        overflow-wrap: anywhere;
+    }
+
+    .topic {
+        font-family: 'Eczar', Georgia, serif;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1.25;
+        text-align: left;
+    }
+
+    .topic_blog .horizontal {
+        margin: 16px 0;
+    }
+
+    .topic_blog .intro {
+        display: block;
+        margin: 24px 0 0;
+        padding: 0;
+    }
+
+    .topic_blog .preset, .topic_blog .inline-image {
+        width: 100%;
+        margin: 0 0 22px;
+    }
+
+    .blog-article {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .topic_blog figure {
+        float: none;
+        position: static;
+        width: 100% !important;
+        max-width: 100%;
+        margin: 24px 0;
+    }
+
+    .topic_blog figure img {
+        width: 100% !important;
+        height: auto !important;
+        margin: 0;
+        object-fit: contain;
+    }
+
+    .topic_blog figcaption {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    .topic_blog iframe {
+        display: block;
+        float: none !important;
+        position: static;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin: 24px 0;
+        padding: 0 !important;
+        border: 0;
+    }
+
+    .toc {
+        margin: 24px 0;
+        padding: 16px;
+    }
+
+    .callout {
+        margin: 24px 0;
+        padding: 16px;
+        font-size: 1rem;
+    }
+
+    .blog-table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    .topic_blog mjx-container[display="true"] {
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+}
+
+@media (max-width: 960px) and (prefers-reduced-motion: reduce) {
+    .typewriter {
+        animation: none;
+        border-right: 0;
+    }
+}
